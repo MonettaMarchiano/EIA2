@@ -11,13 +11,10 @@ nicht kopiert und auch nicht diktiert.
 
 @CHARSET "UTF-8";
 
-@import
-url('https://fonts.googleapis.com/css?family=Ubuntu');
-
 body{
-  font-family: 'Ubuntu', sans-serif;
+  font-family: Courier New;
 	text-align: center;
-	background-color: #b4b0ae;
+	background-color: #ffffff;
 }
 
 hr {
