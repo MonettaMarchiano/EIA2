@@ -10,12 +10,12 @@ nicht kopiert und auch nicht diktiert.
 */
 var n = "";
 function text() {
-    var n = prompt("wie heißt du?");
+    var n = prompt("Wie heißt du?");
     var node = document.getElementById("X");
     node.innerHTML += "Hey ";
     node.innerHTML += n;
-    node.innerHTML += "alles gut?";
-    console.log("Hey ", n, "alles gut?");
+    node.innerHTML += ", alles gut?";
+    console.log("Hey ", n, ", alles gut?");
 }
 document.addEventListener('DOMContentLoaded', text);
 //# sourceMappingURL=Aufgabe0.js.map

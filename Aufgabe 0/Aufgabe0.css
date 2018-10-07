@@ -1,0 +1,21 @@
+/* 
+Aufgabe: 0
+Name: Monetta Marchiano
+Matrikel: 256063
+Datum: 07.10.2018
+
+Hiermit versichere ich, dass ich diesen
+Code selbst geschrieben habe. Er wurde
+nicht kopiert und auch nicht diktiert. 
+*/
+
+@CHARSET "UTF-8";
+
+@import
+url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+body{
+  font-family: 'Ubuntu', sans-serif;
+	text-align: center;
+	background-color: #b4b0ae;
+}
