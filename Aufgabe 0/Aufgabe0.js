@@ -9,9 +9,9 @@ Code selbst geschrieben habe. Er wurde
 nicht kopiert und auch nicht diktiert.
 */
 function text() {
-    var n = prompt("Wie heißt du?"); // Wert ist "Wie heißt du?"
-    var node = document.getElementById("X"); // node-Variable ist vom Typ HTMLElement; Methode wird aufgerufen
-    node.innerHTML += "Hey "; // node ist Name der Variable, welche vorher aufgerufen wurde; 
+    var n = prompt("Wie heißt du?"); //Wert ist "Wie heißt du?"
+    var node = document.getElementById("X"); //node-Variable ist vom Typ HTMLElement; Methode wird aufgerufen
+    node.innerHTML += "Hey "; //node ist Name der Variable, welche vorher aufgerufen wurde; 
     node.innerHTML += n;
     node.innerHTML += ", alles gut?";
     console.log("Hey ", n, ", alles gut?");
