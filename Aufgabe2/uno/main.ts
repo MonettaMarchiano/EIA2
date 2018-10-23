@@ -29,7 +29,7 @@ namespace Aufgabe2 {
     //_____________________________________________________________________________________________________________________    
 
     function promptCards() {
-        let cards: string = prompt("Text")
+        let cards: string = prompt("Ziehe zwischen 5 und 10 Karten aus!")
         let cardsSum: number = parseInt(cards) //parseInt = konvertiert String zu Number
 
 
