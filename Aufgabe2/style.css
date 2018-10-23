@@ -1,0 +1,84 @@
+<!-- /* 
+Aufgabe: 2
+Name: Monetta Marchiano
+Matrikel: 256063
+Datum: 21.10.2018
+
+Hiermit versichere ich, dass ich diesen
+Code selbst geschrieben habe. Er wurde
+nicht kopiert und auch nicht diktiert. 
+*/ -->
+
+
+@import url('https://fonts.googleapis.com/css?family=Gugi');
+
+/* Mobile First; Ansicht: 0 - 570px / 0 - 35,625em */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	width: 100%;
+	background-color: black;
+}
+
+body {
+	width: 100%;
+}
+
+/**stackSec**/
+/*mittig gedacht
+und 90° gedreht*/
+
+
+
+/**discardSec**/
+/*mittig gedacht
+evt mit verdrehungen */
+
+
+
+/**handSec**/
+/*mittig gedacht
+max 5 nebeneinander dann float 
+aber trotzdem orientierung an der mitte*/
+
+
+
+/** footer **/
+footer {
+	color: grey;
+	text-align: center;
+}
+
+footer a:link {
+	color: grey;
+	text-decoration: none;
+}
+
+footer a:visited {
+	color: grey;
+}
+
+footer a:hover {
+	color: red;
+	cursor: grab;
+}
+
+footer a:active {
+	color: red;
+	cursor: grabbing;
+}
+
+/* Tablet "Portrait"; Ansicht: 570px - 768px / 35,625em - 48em */
+@media screen and (min-width: 35.625em) {
+}
+
+/* Tablet "Landscape"; Ansicht: 768px - 1024px / 48em - 64em */
+@media screen and (min-width: 48em) {
+}
+
+/* Desktop Ansicht: grösser 1024px / 64em - open end */
+@media screen and (min-width: 64em) {
+}
