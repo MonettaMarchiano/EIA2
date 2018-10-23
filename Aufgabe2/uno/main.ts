@@ -54,7 +54,7 @@ namespace Aufgabe2 {
     //_____________________________________________________________________________________________________________________     
     function createGame(_cards: number): void { //_cards:number ist Parameter der übergeben wird
         console.log("*call function createGame*");
-            //hier hab ich die sematischen elemente erstellt
+            //semantischen elemente werden erstellt
 
 
             //main erstellen *Schema um Elemente in ts zu erstellen, damit das HTML dynamisch ist*
