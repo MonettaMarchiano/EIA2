@@ -39,6 +39,7 @@ namespace Aufgabe2 {
             console.log("invalide input");
             init();
         }
+        
 
         //wenn alles richtig ist, dann
         else {
