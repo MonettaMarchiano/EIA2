@@ -27,24 +27,46 @@ body {
 	width: 100%;
 }
 
+body div {
+	display: inline;
+}
+
 /**stackSec**/
 /*mittig gedacht
 und 90° gedreht*/
+#stackSec {
+	max-width: 90px;
+	margin: auto;
+}
 
-
+#stackSec img {
+	transform: rotate(90deg);
+}
 
 /**discardSec**/
 /*mittig gedacht
-evt mit verdrehungen */
+evt mit verdrehungen lol*/
+#discardSec {
+	max-width: 90px;
+	margin: 3em auto;
+}
 
-
+#discardSec img {
+	transform: rotate(30deg);
+}
 
 /**handSec**/
 /*mittig gedacht
 max 5 nebeneinander dann float 
 aber trotzdem orientierung an der mitte*/
+#handSec {
+	max-width: 450px;
+	margin: auto;
+}
 
-
+#handSec img {
+	max-width: 90px;
+}
 
 /** footer **/
 footer {
