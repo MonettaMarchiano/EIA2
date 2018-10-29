@@ -22,7 +22,7 @@ var Aufgabe2;
     }
     //_____________________________________________________________________________________________________________________    
     function promptCards() {
-        let cards = prompt("Text");
+        let cards = prompt("Ziehe zwischen 5 und 10 Karten!");
         //parseInt googeln ;)
         let cardsSum = parseInt(cards);
         //definition für falsche Eingabe (also keine Zahl oder im falschen Intervall)
