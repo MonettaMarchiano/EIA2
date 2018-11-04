@@ -1,11 +1,12 @@
-/*
-Aufgabe 2: Memory
-Name: Laura Vogt
-Matrikel: 254671
-Datum: 15.Apr18
+/* 
+Aufgabe: 2
+Name: Monetta Marchiano
+Matrikel: 256063
+Datum: 21.10.2018
+
 Hiermit versichere ich, dass ich diesen
 Code selbst geschrieben habe. Er wurde
-nicht kopiert und auch nicht diktiert.
+nicht kopiert und auch nicht diktiert. 
 */
 //namespace machen 
 var Aufgabe2;
