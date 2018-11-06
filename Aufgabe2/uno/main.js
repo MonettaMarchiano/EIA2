@@ -1,4 +1,4 @@
-/* 
+/*
 Aufgabe: 2
 Name: Monetta Marchiano
 Matrikel: 256063
@@ -6,26 +6,26 @@ Datum: 21.10.2018
 
 Hiermit versichere ich, dass ich diesen
 Code selbst geschrieben habe. Er wurde
-nicht kopiert und auch nicht diktiert. 
+nicht kopiert und auch nicht diktiert.
 */
 //namespace machen 
 var Aufgabe2;
 (function (Aufgabe2) {
     //_____________________________________________________________________________________________________________________
     //ruft function init auf
-    document.addEventListener("DOMContentLoaded", init);
+    document.addEventListener("DOMContentLoaded", init); //sobald DOM geladen ist, wird Funktion init ausgeführt
     function init() {
-        let cards = promptCards();
+        let cards = promptCards(); //cards wird durch function promptCards der Rückgabewert der prompt-Funktion zugewiesen;  --> das was bei prompt rauskommt, ist der Wert von Cards
         //schaue dir "promptCards()" an
-        console.log(cards + " cards");
+        console.log(cards + " cards"); //Debugger
         //Rufe createGame auf(mit dem Parameter cards auf dem prompt)
         createGame(cards);
     }
     //_____________________________________________________________________________________________________________________    
     function promptCards() {
         let cards = prompt("Ziehe zwischen 5 und 10 Karten!");
-        //parseInt googeln ;)
-        let cardsSum = parseInt(cards);
+        let cardsSum = parseInt(cards); //parseInt = konvertiert String zu Number
+        //folgende if-else-Bedingung validiert die Eingabe vom prompt-Fenster
         //definition für falsche Eingabe (also keine Zahl oder im falschen Intervall)
         if (isNaN(cardsSum) || cardsSum < 5 || cardsSum > 10) {
             alert("Falsche Eingabe. Versuche es von vorne.");
@@ -35,23 +35,23 @@ var Aufgabe2;
         else {
             console.log("valide input");
             //,dann gebe Anzahl Karten zurück
-            return cardsSum;
+            return cardsSum; //Ergebnis von eingegebenen Wert
         }
     }
     //_____________________________________________________________________________________________________________________     
     function createGame(_cards) {
         console.log("*call function createGame*");
-        //hier hab ich die sematischen elemente erstellt
+        //semantischen elemente werden erstellt
         //main erstellen *Schema um Elemente in ts zu erstellen, damit das HTML dynamisch ist*
         //hier wird eine Variable vom Typ HTMLElement erstellt; eine Methode als Wert zugewiesen (document.kreiere ein Element("welcherArt")
-        let main = document.createElement("main");
+        let main = document.createElement("main"); //eine Methode als Wert zugewiesen (document.kreiere ein Element("welcherArt")
         //hier wird "main" ein Ort zugewiesen >> body
         //document.*ELTERNELEMENT des erstellten Elements*.appendChild(*Variable des neuen Elements*)
         //also zuerst <body> </body> danach <body> <main></main> </body>
         document.body.appendChild(main);
         console.log("create main");
         // das ist die Funktion, die die Karten generiert
-        // sie hat als Parameter u.a die _cards aus dem prompt, die info muss weitergetragen werden ;)
+        // sie hat als Parameter u.a die _cards aus dem prompt, die info muss weitergetragen werden
         createGameArea(_cards, main);
         //Funktion die den Footer generiert
         createFooter();
@@ -60,7 +60,8 @@ var Aufgabe2;
     //_____________________________________________________________________________________________________________________     
     function createGameArea(_cards, _main) {
         console.log("*call function createGameArea*");
-        //kompletter Satz UNO-Karten
+        //kompletter Satz UNO-Karten 
+        // vom Typen String Array, d.h. eine Liste mit Strings, diese sind gleichzeitig die src für die Strings für die cardImg
         let cardContentAll = [
             //blue
             "img/blue0.png", "img/blue1.png", "img/blue2.png", "img/blue3.png", "img/blue4.png",
@@ -93,33 +94,36 @@ var Aufgabe2;
             //extra
             "img/colorChange.png", "img/colorChange.png", "img/colorChange.png", "img/colorChange.png",
             "img/colorChange4+.png", "img/colorChange4+.png", "img/colorChange4+.png", "img/colorChange4+.png"];
-        shuffleArray(cardContentAll);
-        console.log(cardContentAll);
+        shuffleArray(cardContentAll); //Funktion, weiter unten, wird aufgerufen (Befehl zum Mischen; Array wird als Parameter in die Funktio übergeben)
+        console.log(cardContentAll); //neues Array wird in der Konsole ausgegeben
         // array zieht aus großem Array die anzahl der karten, die eingegeben wurde >> neues Array besteht aus teil des alten
         // array.splice(start, end(not included))
         // cCH.[zahl] >> cardContentNeeded[index]
         // sprich die ersten zB 5 Karten (cCH.[0],cCH.[1],cCH.[2],cCH.[3],cCH.[4])
-        let cardContentHand = cardContentAll.slice(0, _cards);
-        console.log(cardContentHand);
+        let cardContentHand = cardContentAll.slice(0, _cards); //ist vom Typ Array mit Strings(Liste von Strings); durch slice wird großes array nicht angerührt
+        //--> die Länge des Arrays richtet sich nach der Eingabe im Promptfenster
+        // warum? für die Eingabe, damit es DYNAMISCH bleibt. weil die Anzeige abhängig von der Eingabe ist  
         // selbes prinzip
         // sprich die 6. karte (cCH.[5])
         // DO NOT CHANGE, das ist die karte, die obligatorisch offen liegt
         let cardContentOpen = cardContentAll.slice(_cards, (_cards + 1));
+        //--> nicht abhängig von Eingabe, demnach NICHT DYNAMISCH
         console.log(cardContentOpen);
         // selbes prinzip
-        // zieht den rest der karne raus, also inkl. 7. karte bis zum schluss (cCH.[6],cCH.[7],..[...]..cCH.[107],cCH.[108])
+        // zieht den rest der karte raus, also inkl. 7. karte bis zum schluss (cCH.[6],cCH.[7],..[...]..cCH.[107],cCH.[108])
         // "simuliert" den stack
         let cardContentStack = cardContentAll.slice((_cards + 1), cardContentAll.length);
+        // --> es kopiert restliche Werte bis zum Ende aus dem großen Array raus
         console.log(cardContentStack);
         // Stack
         // AufnahmeStapel neue Karten
         let stackSec = document.createElement("section");
-        stackSec.id = "stackSec";
-        _main.appendChild(stackSec);
+        stackSec.id = "stackSec"; //das Element hat die ID "stackSec"; falls es für css gebraucht, für bspw. spätere Spielogik
+        _main.appendChild(stackSec); //_main ist parent-Element von stackSec
         console.log("load Stack Section");
-        // rufe function createCard mit den paramentern src und parent, also die src-Angabe + zukünftigesParentElement
+        // rufe function createCard mit den paramentern src und parent, also die src-Angabe + zukünftiges ParentElement, wo die Karte rein soll
         // src >> festes Bild der Rückseite || parent >> stackSec
-        createCard("img/unoBack.png", stackSec);
+        createCard("img/unoBack.png", stackSec); //extra mit diesen Variablen, damit man sowohl einen festen src-Wert (s. stackSec), als auch mit einer vorgehenden for-Schleife ein Array abarbeiten kann
         // Discard
         // AbwurfStapel Karten
         let discardSec = document.createElement("section");
@@ -132,7 +136,7 @@ var Aufgabe2;
         // Hand
         // HandKarten
         let handSec = document.createElement("section");
-        handSec.id = "handSec";
+        handSec.id = "handSec"; //das Element hat die ID "handSec"
         _main.appendChild(handSec);
         console.log("load Hand Section");
         // for-schleife durchläuft den array cardContentHand(der so lang ist wie cards)
@@ -155,7 +159,7 @@ var Aufgabe2;
     function shuffleArray(_array) {
         console.log("*call shuffleArray*");
         let b = 0;
-        let rndm = null;
+        let rndm = null; //wie undefined
         for (let a = _array.length - 1; a > 0; a -= 1) {
             b = Math.floor(Math.random() * (a + 1));
             rndm = _array[a];
@@ -169,17 +173,18 @@ var Aufgabe2;
         console.log("*call function createCard*");
         // div erstellen und in _parent(wird jwls. als parameter übergeben) hochladen
         let card = document.createElement("div");
-        // substring scheidet ab von sting || variable.substring(start, end not inkl.)
+        // substring schneidet ab von string || variable.substring(start, end not inkl.)
         // [(0-4) und (ende - (ende-4))], also wird aus img/green1.png "green1" als id
         // _src.length gibt die länge des string zurück
         // cardImg.id = _src.substring(4, _src.length - 4);
         card.id = _src.substring(4, _src.length - 4);
+        //--> die ID der card besteht aus der _src, die durch die Methode substring beschnitten wird; es ist Variabel je nach Länge, deshalb _src.length
         // lade card in sein parent
         _parent.appendChild(card);
         // img wird erstellt, mit einer src befüllt und in den gerade erstellten div "card" geladen
         // _src wird als parameter oben (ursprüngl. aus dem array) übergeben
         let cardImg = document.createElement("img");
-        cardImg.src = _src;
+        cardImg.src = _src; // da das img-Element immer src braucht, wird der Wert _src zugewiesen
         // lade das img in des div "card"
         card.appendChild(cardImg);
         console.log(card.id);
