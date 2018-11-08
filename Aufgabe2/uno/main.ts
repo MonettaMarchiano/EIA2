@@ -61,7 +61,7 @@ namespace Aufgabe2 {
 
 
         //main erstellen *Schema um Elemente in ts zu erstellen, damit das HTML dynamisch ist*
-        //hier wird eine Variable vom Typ HTMLElement erstellt; eine Methode als Wert zugewiesen (document.kreiere ein Element("welcherArt")
+        //hier wird eine Variable vom Typ HTMLElement erstellt; 
         let main: HTMLElement = document.createElement("main"); //eine Methode als Wert zugewiesen (document.kreiere ein Element("welcherArt")
 
         //hier wird "main" ein Ort zugewiesen >> body
@@ -232,7 +232,7 @@ namespace Aufgabe2 {
         _parent.appendChild(card);
 
         // img wird erstellt, mit einer src befüllt und in den gerade erstellten div "card" geladen
-        // _src wird als parameter oben (ursprüngl. aus dem array) übergeben
+        //   wird als parameter oben (ursprüngl. aus dem array) übergeben
         let cardImg: HTMLImageElement = document.createElement("img");
         cardImg.src = _src; // da das img-Element immer src braucht, wird der Wert _src zugewiesen
         // lade das img in des div "card"
