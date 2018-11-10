@@ -28,7 +28,7 @@ namespace Aufgabe2 {
     }
     //_____________________________________________________________________________________________________________________    
 
-    function promptCards() {
+    function promptCards(){
         let cards: string = prompt("Ziehe zwischen 5 und 10 Karten!")
         let cardsSum: number = parseInt(cards) //parseInt = konvertiert String zu Number
 
@@ -248,7 +248,7 @@ namespace Aufgabe2 {
     function createFooter(): void {
         console.log("*call function createFooter*");
 
-        let footer: HTMLElement = document.createElement("footer")
+        let footer: HTMLElement = document.createElement("footer");
         document.body.appendChild(footer);
 
         let footerP: HTMLParagraphElement = document.createElement("p");

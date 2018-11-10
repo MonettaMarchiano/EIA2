@@ -1,0 +1,130 @@
+
+<!-- /* 
+Aufgabe: 3
+Name: Monetta Marchiano
+Matrikel: 256063
+Datum: 21.10.2018
+
+Hiermit versichere ich, dass ich diesen
+Code selbst geschrieben habe. Er wurde
+nicht kopiert und auch nicht diktiert. 
+*/
+-->
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* Mobile First; Ansicht: 0 - 570px / 0 - 35,625em */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	width: 100%;
+	background-color: black;
+}
+
+body {width: 100%;}
+
+/**stackSec____________________________________________**/
+#stackSec {
+	max-width: 90px;
+	margin: auto;
+}
+
+#stackSec img {transform: rotate(90deg);}
+
+/**discardSec**/
+#discardSec {
+	max-width: 90px;
+	margin: 3em auto 5em;
+}
+
+#discardSec img {position: absolute;}
+
+.rotate0 {transform: rotate(0deg);}
+.rotate22 {transform: rotate(22.5deg);}
+.rotate45 {transform: rotate(45deg);}
+.rotate67 {transform: rotate(67.5deg);}
+.rotate90 {transform: rotate(90deg);}
+.rotate112 {transform: rotate(112.5deg);}
+.rotate135 {transform: rotate(135deg);}
+.rotate157 {transform: rotate(157.5deg);}
+.rotate180 {transform: rotate(180deg);}
+.rotate202 {transform: rotate(202.5deg);}
+.rotate225 {transform: rotate(225deg);}
+.rotate247 {transform: rotate(247.5deg);}
+.rotate270 {transform: rotate(270deg);}
+.rotate292 {transform: rotate(292.5deg);}
+.rotate315 {transform: rotate(315deg);}
+.rotate337 {transform: rotate(337.5deg);}
+
+/**buttSection____________________________________________**/
+#buttSec {
+	width: 50%;
+	margin: auto 25%;
+}
+
+#sortButt {
+	width: 70%;
+	height: 2em;
+	margin: 10rem 15% 2rem;
+	color: white;
+	background-color: black;
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	border: 1px solid white
+}
+
+#sortButt:hover, #sortButt:active {
+	color: red;
+	background-color: black;
+	border: 1px solid red;
+}
+
+/**handSec____________________________________________**/
+#handSec {
+	width: 70%;
+	margin: auto 15%;
+}
+
+#handSec img {
+	width: 25%;
+	max-width: 90px;
+}
+
+/** footer____________________________________________**/
+footer {
+	margin-top: 3rem;
+	color: grey;
+	text-align: center;
+}
+
+footer a:link {
+	color: grey;
+	text-decoration: none;
+}
+
+footer a:visited {color: grey;}
+
+footer a:hover {
+	color: red;
+	cursor: grab;
+}
+
+footer a:active {
+	color: red;
+	cursor: grabbing;
+}
+
+/* Tablet "Portrait"; Ansicht: 570px - 768px / 35,625em - 48em */
+@media screen and (min-width: 35.625em) {
+}
+
+/* Tablet "Landscape"; Ansicht: 768px - 1024px / 48em - 64em */
+@media screen and (min-width: 48em) {
+}
+
+/* Desktop Ansicht: grösser 1024px / 64em - open end */
+@media screen and (min-width: 64em) {
+}
