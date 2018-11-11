@@ -8,176 +8,100 @@ Hiermit versichere ich, dass ich diesen
 Code selbst geschrieben habe. Er wurde
 nicht kopiert und auch nicht diktiert. 
 */
-
-//namespace start 
+    
 namespace A3 {
 
-//_____________________________________________________________________________________________________________________
-
-    //installs eventListener on document
-    //calls init when the DOM is loaded
-    //it can trouble the performance loading scripts while DOM is busy loading
     document.addEventListener("DOMContentLoaded", init);
+    
+    //declare globals
+    let cardContentAll: string[];
+    let cardContentHand: string[];
+    let cardContentStack: string[];
+    let cardContentDiscard: string[];
+    let main: HTMLElement = document.getElementById("main");
 
-    //global let
-    //array with src.strings for whole content
-    let cardContentAll: string[] = [];
-    //array containing src.strings for handCards
-    let cardContentHand: string[] = [];
-    //array containing src.strings for stackCards
-    let cardContentStack: string[] = [];
-    //array containing src.strings for discardCards
-    let cardContentDiscard: string[] = [];
-    //main
-    let main: HTMLElement;
-
-//_____________________________________________________________________________________________________________________    
-
-    function init(): void {
-
-        //cards will get the value [promtCards] returns
-        let cards: number = promptCards();
-
-        //debugger
-        console.log(cards + " cards");
-        createGame(cards);
-    }
-
-//_____________________________________________________________________________________________________________________    
-
-    function promptCards() {
-
-        //represents the string the prompt() returns
+    function init() {
+        //declare [cards] & assgin [promt()-input] as it's value
+        //the prompt() method displays a dialog box that prompts the visitor for input
         let cards: string = prompt("Ziehe zwischen 5 und 10 Karten!");
-
-        //represents the string parsed to an integer
+        //declare [cardsSum] & assign parsed input as it's value
         let cardsSum: number = parseInt(cards);
 
-        //checks wrong conditions
+        //if (conditions for invaide input)
         if (isNaN(cardsSum) || cardsSum < 5 || cardsSum > 10) {
-
-            //gives alert
+            //condition [true]
             alert("Falsche Eingabe.");
-
-            //debugger
-            console.log("invalide input");
-
-            //reloads page
+            //the reload() method is used to reload the current document >> like a reload button
             location.reload();
         }
-        //when if conditions are not true
+        //condition [false]
         else {
-
-            //debugger
-            console.log("valide input");
-
-            //returns [cardsSum]
-            return cardsSum;
+            //call [createGame] & transfer parameter [cardsSum]
+             createGame(cardsSum);
         }
     }
 
-//_____________________________________________________________________________________________________________________     
-
     function createGame(_cards: number): void {
-
-        //debugger
-        console.log(">create Game<");
-
-        //installs eventListener on body
+        
+        //install EventListener on body | [keydown] releasing [spaceDown]
         document.body.addEventListener("keydown", spaceDown);
 
-        //debugger
-        console.log(">>install Eventlistener for keydown space");
-
-        //gives main a value > creates the element in DOM
-        main = document.createElement("main");
-
-        //body appends main as its child
-        document.body.appendChild(main);
-
-        //debugger
-        console.log(">main<");
-
-        //calls..
-        createSections(_cards);
-
-        //calls...
-        createFooter();
-    }
-
-//_____________________________________________________________________________________________________________________     
-
-    function createSections(_cards: number): void {
-
-        //debugger
-        console.log(">GameArea<");
-
-        //fills cardContentAll
-        //kompletter Satz UNO-Karten | 11=change | 22=2+ | 33=nono
+        //>> 10=missTurn| 11=changeDirection | 12=2+ | ajoker00=colorChange | ajoker04=colorChange4+|
         cardContentAll = [
-            //blue
-            "img/blue00.png", "img/blue01.png", "img/blue02.png", "img/blue03.png", "img/blue04.png",
+            //blue | 1x0 | 2x1-9, missTurn, changeDirection, take2Cards
+            "img/blue00.png", "img/blue01.png", "img/blue02.png", "img/blue03.png", "img/blue04.png", 
             "img/blue05.png", "img/blue06.png", "img/blue07.png", "img/blue08.png", "img/blue09.png",
-            "img/blue11.png", "img/blue33.png", "img/blue22.png",
-            "img/blue01.png", "img/blue02.png", "img/blue03.png", "img/blue04.png",
+            "img/blue10.png", "img/blue11.png", "img/blue12.png",
+                              "img/blue01.png", "img/blue02.png", "img/blue03.png", "img/blue04.png",
             "img/blue05.png", "img/blue06.png", "img/blue07.png", "img/blue08.png", "img/blue09.png",
-            "img/blue11.png", "img/blue33.png", "img/blue22.png",
-
-            //green
+            "img/blue10.png", "img/blue11.png", "img/blue12.png",
+            //green | 1x0 | 2x1-9, missTurn, changeDirection, take2Cards
             "img/green00.png", "img/green01.png", "img/green02.png", "img/green03.png", "img/green04.png",
             "img/green05.png", "img/green06.png", "img/green07.png", "img/green08.png", "img/green09.png",
-            "img/green11.png", "img/green33.png", "img/green22.png",
-            "img/green01.png", "img/green02.png", "img/green03.png", "img/green04.png",
+            "img/green10.png", "img/green11.png", "img/green12.png",
+                               "img/green01.png", "img/green02.png", "img/green03.png", "img/green04.png",
             "img/green05.png", "img/green06.png", "img/green07.png", "img/green08.png", "img/green09.png",
-            "img/green11.png", "img/green33.png", "img/green22.png",
-
-            //red
+            "img/green10.png", "img/green11.png", "img/green12.png",
+            //red | 1x0 | 2x1-9, missTurn, changeDirection, take2Cards
             "img/red00.png", "img/red01.png", "img/red02.png", "img/red03.png", "img/red04.png",
             "img/red05.png", "img/red06.png", "img/red07.png", "img/red08.png", "img/red09.png",
-            "img/red11.png", "img/red33.png", "img/red22.png",
-            "img/red01.png", "img/red02.png", "img/red03.png", "img/red04.png",
+            "img/red10.png", "img/red11.png", "img/red12.png",
+                             "img/red01.png", "img/red02.png", "img/red03.png", "img/red04.png",
             "img/red05.png", "img/red06.png", "img/red07.png", "img/red08.png", "img/red09.png",
-            "img/red11.png", "img/red33.png", "img/red22.png",
-
-            //yellow
+            "img/red10.png", "img/red11.png", "img/red12.png",
+            //yellow | 1x0 | 2x1-9, missTurn, changeDirection, take2Cards
             "img/yellow00.png", "img/yellow01.png", "img/yellow02.png", "img/yellow03.png", "img/yellow04.png",
             "img/yellow05.png", "img/yellow06.png", "img/yellow07.png", "img/yellow08.png", "img/yellow09.png",
-            "img/yellow11.png", "img/yellow33.png", "img/yellow22.png",
-            "img/yellow01.png", "img/yellow02.png", "img/yellow03.png", "img/yellow04.png",
+            "img/yellow10.png", "img/yellow11.png", "img/yellow12.png",
+                                "img/yellow01.png", "img/yellow02.png", "img/yellow03.png", "img/yellow04.png",
             "img/yellow05.png", "img/yellow06.png", "img/yellow07.png", "img/yellow08.png", "img/yellow09.png",
-            "img/yellow11.png", "img/yellow33.png", "img/yellow22.png",
+            "img/yellow10.png", "img/yellow11.png", "img/yellow12.png",
+            //jokers | 4x colorChange, colorChangeTake4
+            "img/ajoker00.png", "img/ajoker00.png", "img/ajoker00.png", "img/ajoker00.png",
+            "img/ajoker04.png", "img/ajoker04.png", "img/ajoker04.png", "img/ajoker04.png"];
 
-            //extra            
-            "img/zion11.png", "img/zion11.png", "img/zion11.png", "img/zion11.png",
-            "img/zion44.png", "img/zion44.png", "img/zion44.png", "img/zion44.png"];
-
-        //shuffles array
+        //calls [shuffleArray] & transfers [cardContentAll] as a parameter
         shuffleArray(cardContentAll);
-
-        //creates new array containing sliced out cards from [cardContentAll], depending on number, which the user put in
+        
+        //the slice() method returns the selected elements in an array, as a new array object
+        //assign sliced out elements, dependet on [_cards] as [cardContentHand]'s value
         cardContentHand = cardContentAll.slice(0, _cards);
-
-        //creates new array containing sliced out cards from [cardContentAll], one after the number the user put in 
+        //assign sliced out element, dependet on [_cards] as [cardContentDiscards]'s value
         cardContentDiscard = cardContentAll.slice(_cards, (_cards + 1));
-
-        //creates new array containing sliced out cards form [cardContentAll], appending the cards left over
+        //assign sliced out elements, dependet on [_cards] as [cardContentStack]'s value
         cardContentStack = cardContentAll.slice((_cards + 1), cardContentAll.length);
 
-        //calling functions
-        createStack();
-        createDiscard();
-        createSortButt();
-        createHand();
+        //calls [createSection] & transfers [string] as parameter
+        createSection("stack");
+        createSection("discard");
+        createSection("button");
+        createSection("hand");
+
     }
 
-//__________________________________________________________________________________________________________________    
-
     function shuffleArray(_array: string[]): void {
-        console.log("shuffle le Array");
-
         let b: number = 0;
         let rndm: any = null;
-
         for (let a: number = _array.length - 1; a > 0; a -= 1) {
             b = Math.floor(Math.random() * (a + 1));
             rndm = _array[a];
@@ -186,341 +110,142 @@ namespace A3 {
         }
     }
 
-//__________________________________________________________________________________________________________________    
+    function createSection(_name: string): void {
+        //declare [section] & assgin created section Element as it's value
+        let section: HTMLElement = document.createElement("section");
+        //define id >> parameter [_name] + [string] => id
+        section.id = _name + "Sec";
+        //[main] appends [created section] as it's child 
+        main.appendChild(section);
 
-    function createStack(): void {
-
-        //debugger
-        console.log(">create Stack<");
-
-        //creates section, give id and appends it to main
-        let stackSec: HTMLElement = document.createElement("section");
-        stackSec.id = "stackSec";
-        main.appendChild(stackSec);
-
-        //debugger
-        console.log("load StackSec");
-
-        //createsCard with this src in stackSec
-        createCard("img/backside.png", stackSec);
-    }
-
-    function createDiscard(): void {
-
-        //debugger
-        console.log(">create Discard<");
-
-        //creates section, give id and appends it to main
-        let discardSec: HTMLElement = document.createElement("section");
-        discardSec.id = "discardSec";
-        main.appendChild(discardSec);
-
-        //debugger
-        console.log("load DiscardSec");
-
-        //createsCard with putting out src from the first string of cardContentDiscard in discardSec
-        createCard(cardContentDiscard[0], discardSec);
-    }
-
-    function createSortButt(): void {
-
-        //debugger
-        console.log(">create SortButt<");
-
-        //creates section, give id and appends it to main
-        let buttSec: HTMLElement = document.createElement("section");
-        buttSec.id = "buttSec";
-        main.appendChild(buttSec);
-
-        //debugger
-        console.log("load buttSec");
-
-        //creates button, gives id, innerHTML
-        let sortButt: HTMLButtonElement = document.createElement("button");
-        sortButt.id = "sortButt";
-        sortButt.innerHTML = "sort cards";
-
-        //install EventListenener 
-        sortButt.addEventListener("click", sortButtAction);
-
-        //debugger
-        console.log(">> install EventListener to sort cards");
-
-        //appends button to it's section
-        buttSec.appendChild(sortButt);
-
-        //debugger
-        console.log("load sortButt");
-    }
-    
-    function createHand(): void {
-
-        //debugger
-        console.log(">create Hand<");
-
-        //creates section, give id and appends it to main
-        let handSec: HTMLElement = document.createElement("section");
-        handSec.id = "handSec";
-        main.appendChild(handSec);
-
-        //debugger
-        console.log("load HandSec");
-
-        //calls createCard depending on the length of cardContentHand 
-        for (let i: number = 0; i < cardContentHand.length; i++) {
-
-            //debugger
-            console.log(cardContentHand[i]);
-
-            //calls createCard with putting out src from the strings of cardContentHand, depending on how often the loop looped [i] in handSec
-            createCard(cardContentHand[i], handSec);
+        //following commands are dependent on value of parameter [_name]
+        switch (_name) {
+            //for value ["stack"]
+            case "stack":
+                //calls [createCard] & transfers [src.string] & [created section] as parameter
+                createCard("img/backside.png", document.getElementById(section.id));
+                break;
+            //for value ["discard"]
+            case "discard":
+                //calls [createCard] & transfers [first element of cardContentDiscard] & [created section] as parameter            
+                createCard(cardContentDiscard[0], document.getElementById(section.id));
+                break;
+            //for value ["button"]
+            case "button":
+                let sortButt: HTMLButtonElement = document.createElement("button");
+                sortButt.id = "sortButt";
+                sortButt.innerHTML = "sort cards";
+                sortButt.addEventListener("click", sortButtAction);
+                document.getElementById(section.id).appendChild(sortButt);
+                break;
+            //for value ["hand"]
+            case "hand":
+                //runs through array [cardContentHand]
+                for (let i: number = 0; i < cardContentHand.length; i++) {
+                    //calls [createCard] & transfers [element of cardContentHand, index dependent on run-number] & [created section] as parameter                                
+                    createCard(cardContentHand[i], document.getElementById(section.id));
+                }
+                break;
         }
+
     }
-    
-//_____________________________________________________________________________________________________________________
-    
+
     function createCard(_src: string, _parent: HTMLElement): void {
-
-        //debugger
-        console.log(">create Card<");
-
-        //creates img, takes given parameter to define src of the img 
+        //declare [card] & assgin created img Element as it's value
         let card: HTMLImageElement = document.createElement("img");
+        //define src with parameter [_src]
         card.src = _src;
+        //the classList property returns the class name(s) of an element, as a DOMTokenList object >> use add() to modify classList property
+        //adds color &  number to [classList] of created [img]
+        card.classList.add(
+            //the substring() method extracts the characters from a string, between two specified indices, & returns the new sub string
+            /*color*/_src.substring(4, _src.length - 6),
+            /*number*/_src.substring(_src.length - 6, _src.length - 4));
 
-        //adds classes to the classList 
-        //vereinfacht >> element.classList.add('red', 'no_margin');
-        card.classList.add(_src.substring(4, _src.length - 4), //color+number
-            _src.substring(4, _src.length - 6),                //color
-            _src.substring(_src.length - 6, _src.length - 4)); //number
-
-        //debugger
-        console.log(card.classList);
-
-        // installs EventListener depending on in which section the card is located
+        //following commands are dependent on value of parameter [_parent.id]
         switch (_parent.id) {
+            //for value ["stackSec"]
             case "stackSec":
+                //install EventListener on [card] | [click] releasing [takeCard]
                 card.addEventListener("click", takeCard);
-                console.log(">> install EventListener on stack to take");
                 break;
+            //for value ["handSec"]
             case "handSec":
+                //install EventListener on [card] | [click] releasing [playCard]           
                 card.addEventListener("click", playCard);
-                console.log(">> install EventListener on cards to play");
-                break;
-            default:
                 break;
         }
-        //appends img to given parameter _parent
+        //
         _parent.appendChild(card);
-
-        //debugger
-        console.log("load card");
     }
-
-    function changeLocation(_checkedCard: HTMLImageElement, _newParent: HTMLElement): void {
-        //debugger
-        console.log("#change Location");
-
-        //removes img delivered through a parameter from old parent
-        //"child forces parent to remove itself"
-        _checkedCard.parentNode.removeChild(_checkedCard);
-
-        //also remove eventlistener from img delvered through a parameter
-        _checkedCard.removeEventListener("click", playCard);
-
-        //debugger
-        console.log(">> remove EventListener from played card");
-
-        //adds style class to classList of _checkedCard to let them rotate on discard
-        //gives random number between 0 and 16, excluding 16
-        let random: number = Math.floor(Math.random() * 16);
-
-        //switch gives a case for every random umber you can get
-        switch (random) {
-            case 0:
-                //adds "class" to clasList if checkedCard
-                _checkedCard.classList.add();
-                //debugger
-                console.log("rotate0");
-                break;
-            case 1:
-                _checkedCard.classList.add("rotate22");
-                console.log("rotate22");
-                break;
-            case 2:
-                _checkedCard.classList.add("rotate45");
-                console.log("rotate45");
-                break;
-            case 3:
-                _checkedCard.classList.add("rotate67");
-                console.log("rotate67");
-                break;
-            case 4:
-                _checkedCard.classList.add("rotate90");
-                console.log("rotate90");
-                break;
-            case 5:
-                _checkedCard.classList.add("rotate112");
-                console.log("rotate112");
-                break;
-            case 6:
-                _checkedCard.classList.add("rotate135");
-                console.log("rotate135");
-                break;
-            case 7:
-                _checkedCard.classList.add("rotate157");
-                console.log("rotate157");
-                break;
-            case 8:
-                _checkedCard.classList.add("rotate180");
-                console.log("rotate180");
-                break;
-            case 9:
-                _checkedCard.classList.add("rotate202");
-                console.log("rotate202");
-                break;
-            case 10:
-                _checkedCard.classList.add("rotate225");
-                console.log("rotate225");
-                break;
-            case 11:
-                _checkedCard.classList.add("rotate247");
-                console.log("rotate247");
-                break;
-            case 12:
-                _checkedCard.classList.add("rotate270");
-                console.log("rotate270");
-                break;
-            case 13:
-                _checkedCard.classList.add("rotate292");
-                console.log("rotate292");
-                break;
-            case 14:
-                _checkedCard.classList.add("rotate315");
-                console.log("rotate315");
-                break;
-            case 15:
-                _checkedCard.classList.add("rotate337");
-                console.log("rotate337");
-                break;
-        }
-
-        //new parent appends delivered img/card
-        _newParent.appendChild(_checkedCard);
-
-        //debugger
-        console.log("reload card");
-    }
-
-//__________________________________________________________________________________________________________________     
 
     function spaceDown(_event: KeyboardEvent): void {
-        //debugger
-        console.log("#spaceDown");
-
-        //identify, which key was pressed, if it was "space", do {this}
-        if (_event.keyCode = 32) {
+        //if(condition space is pressed key)
+        if (_event.keyCode == 32) {
+            // call [takeCard] & transfer [_event] as a parameter 
             takeCard(_event);
         }
     }
 
     function sortButtAction(_event: MouseEvent): void {
-        //debugger
-        console.log("#sortButtAction");
-
-        //sorts array [cardContentHand]
+        //the sort() method sorts the items of an array [cardContentHand] in alphabetical order
         cardContentHand.sort();
-
-        //getsElementById handSec and force it's parent Element to remove itself
-        document.getElementById("handSec").parentElement.removeChild(document.getElementById("handSec"));
-
-        //create new HandSec cotaining the now sorted array
-        createHand();
+        //the removeChild() method removes a specified child node of the specified element
+        //main removes it's child Element [handSec] & it'S children
+        main.removeChild(document.getElementById("handSec"));
+        //calls [createSection] & transfers parameter ["hand"]
+        createSection("hand");
     }
 
     function takeCard(_event: Event): void {
-        //debugger
-        console.log("#takeCard");
-
-        //check stack array
-        console.log(cardContentStack);
-
-        //remove last card from stack array & name it [takenCard]
+        //declare [takenCard] & assgin [cardContentStack.pop()] as it's value
+        //the pop() method removes the last element of an array, & returns that element
         let takenCard: string = cardContentStack.pop();
-
-        //check stack array
-        console.log(cardContentStack);
-
-        //if stack.length ever gets smaller than 1, remove both eventListeners
+        
+        //if(condition for an empty [cardContentStack] array)
         if (cardContentStack.length < 1) {
+            //[true]
+            //remove EventListener from body | [keydown] releasing [spaceDown]
             document.body.removeEventListener("keydown", spaceDown);
-            document.getElementById("backside").removeEventListener("click", takeCard);
-            //debugger
-            console.log(">> remove EventListeners for taking cards");
+            //remove EventListener from img in [stackSec] | [click] releasing [takeCard]
+            //first get element by id [stackSec], then refer to it's first an only child
+            //because the [img] itself has no id this indirect way is necessary to get access to the [stackSec<img]
+            document.getElementById("stackSec").firstChild.removeEventListener("click", takeCard);
         }
 
-        //check hand array
-        console.log(cardContentHand);
-
-        //insert [takenCard] in hand array
+        //the push() method adds new items to the end of an array, & returns the new length
+        //push [takenCard] at the end of [cardContentHand]
         cardContentHand.push(takenCard);
-
-        //check hand array
-        console.log(cardContentHand);
-
-        //createCard [takenCard] in [handSec], 'cause it was only a string in an array 
-        //with createCard it becomes an element in DOM with the parent handSec
+        //call [createCard] & transfer parameters [takenCard] & [handSec]
         createCard(takenCard, document.getElementById("handSec"));
     }
 
     function playCard(_event: MouseEvent): void {
-        //debugger
-        console.log("#playCard");
-
-        //idetify event target
+        //declare [checkedCard] & assgin [_event.target] as it's value
         let checkedCard: HTMLImageElement = <HTMLImageElement>_event.target;
-
-        //debugger
-        console.log(checkedCard);
-
-        //idetify position in hand array
+        //declare [handPosition] & assgin [array.IndexOf([checkedCard.src])] as it's value
+        //the indexOf() method searches the array for the specified item, & returns its position
         let handPosition: number = cardContentHand.indexOf(checkedCard.src);
-
-        //remove card from hand array
+        
+        //the splice() method adds/removes items to/from an array, & returns the removed item(s)
+        //splices out the index element number which is [_event.target]
         cardContentHand.splice(handPosition, 1);
-
-        //insert card at end of discard array
+        //push() [checkedCard.src] at the end of [cardContentDiscard]
         cardContentDiscard.push(checkedCard.src);
+        
+        //[handSec] removes [_event.target] & it's children
+        checkedCard.parentNode.removeChild(checkedCard);
+        //remove EventListener from checkedCard | [click] releasing [playCard]
+        checkedCard.removeEventListener("click", playCard);
 
-        //change location of element in DOM [from handSec to discardSec]
-        changeLocation(checkedCard, document.getElementById("discardSec"));
+        //declare [rotationValues] & assgin [array.string] as it's value
+        let rotationValues: string[] = ["0", "22", "45", "67", "90", "112", "135", "157", "180", "202", "225", "247", "270", "292", "315", "337"];
+        //declare [random] & assgin [random number between 0-16 as it's value
+        let random: number = Math.floor(Math.random() * 16);
+        //add rotation.class to [checkedCard]
+        checkedCard.classList.add("rotate" + rotationValues[random]);
+        
+        //[discardSec] appends [checkedCard] a it's child
+        document.getElementById("discardSec").appendChild(checkedCard);
     }
-
-//__________________________________________________________________________________________________________________    
-
-    function createFooter(): void {
-        console.log(">Footer<");
-
-        let footer: HTMLElement = document.createElement("footer");
-        document.body.appendChild(footer);
-
-        let footerP: HTMLParagraphElement = document.createElement("p");
-        footerP.innerHTML = "© Monetta Marchiano";
-        footer.appendChild(footerP);
-
-        let footerSpan: HTMLSpanElement = document.createElement("span");
-        footer.appendChild(footerSpan);
-
-        let userLink: HTMLAnchorElement = document.createElement("a");
-        userLink.href = "https://monettamarchiano.github.io";
-        userLink.target = "_blank";
-        userLink.innerText = "Userpage";
-        footerSpan.appendChild(userLink);
-
-        console.log("load footer");
-
-    }
-    
-//__________________________________________________________________________________________________________________
-//namespace end     
 }       
