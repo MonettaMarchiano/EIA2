@@ -240,8 +240,8 @@ namespace A3 {
 
         //declare [rotationValues] & assgin [array.string] as it's value
         let rotationValues: string[] = ["0", "22", "45", "67", "90", "112", "135", "157", "180", "202", "225", "247", "270", "292", "315", "337"];
-        //declare [random] & assgin [random number between 0-16 as it's value
-        let random: number = Math.floor(Math.random() * 16);
+        //declare [random] & assgin [random number between 0 and [length of array] as it's value
+        let random: number = Math.floor(Math.random() * rotationValues.length);
         //add rotation.class to [checkedCard]
         checkedCard.classList.add("rotate" + rotationValues[random]);
         
