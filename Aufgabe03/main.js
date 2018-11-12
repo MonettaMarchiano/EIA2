@@ -8,6 +8,7 @@ Hiermit versichere ich, dass ich diesen
 Code selbst geschrieben habe. Er wurde
 nicht kopiert und auch nicht diktiert.
 */
+
 var A3;
 (function (A3) {
     document.addEventListener("DOMContentLoaded", init);
