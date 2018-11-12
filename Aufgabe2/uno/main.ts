@@ -18,7 +18,7 @@ namespace Aufgabe2 {
 
     function init(): void { // void = ohne spezifische Rückgabe
 
-        let cards = promptCards(); //cards wird durch function promptCards der Rückgabewert der prompt-Funktion zugewiesen;  --> das was bei prompt rauskommt, ist der Wert von Cards
+        let cards: void = promptCards(); //cards wird durch function promptCards der Rückgabewert der prompt-Funktion zugewiesen;  --> das was bei prompt rauskommt, ist der Wert von Cards
         //schaue dir "promptCards()" an
         console.log(cards + " cards"); //Debugger
 
@@ -28,9 +28,9 @@ namespace Aufgabe2 {
     }
     //_____________________________________________________________________________________________________________________    
 
-    function promptCards(){
-        let cards: string = prompt("Ziehe zwischen 5 und 10 Karten!")
-        let cardsSum: number = parseInt(cards) //parseInt = konvertiert String zu Number
+    function promptCards(): void {
+        let cards: string = prompt("Ziehe zwischen 5 und 10 Karten!");
+        let cardsSum: number = parseInt(cards); //parseInt = konvertiert String zu Number
 
 
 
@@ -38,7 +38,7 @@ namespace Aufgabe2 {
 
         //definition für falsche Eingabe (also keine Zahl oder im falschen Intervall)
         if (isNaN(cardsSum) || cardsSum < 5 || cardsSum > 10) {//isNaN = is Not a Number
-            alert("Falsche Eingabe. Versuche es von vorne.")
+            alert("Falsche Eingabe. Versuche es von vorne.");
             console.log("invalide input");
             init();
         }
@@ -204,14 +204,14 @@ namespace Aufgabe2 {
     function shuffleArray(_array: string[]): void {
         console.log("*call shuffleArray*");
 
-        let b: number = 0
-        let rndm: any = null //wie undefined
+        let b: number = 0;
+        let rndm: any = null; //wie undefined
 
         for (let a: number = _array.length - 1; a > 0; a -= 1) {
-            b = Math.floor(Math.random() * (a + 1))
-            rndm = _array[a]
-            _array[a] = _array[b]
-            _array[b] = rndm
+            b = Math.floor(Math.random() * (a + 1));
+            rndm = _array[a];
+            _array[a] = _array[b];
+            _array[b] = rndm;
         }
     }
 

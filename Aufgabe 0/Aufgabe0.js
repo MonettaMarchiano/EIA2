@@ -16,5 +16,5 @@ function text() {
     node.innerHTML += ", alles gut?";
     console.log("Hey ", n, ", alles gut?");
 }
-document.addEventListener('DOMContentLoaded', text);
+document.addEventListener("DOMContentLoaded", text);
 //# sourceMappingURL=Aufgabe0.js.map
