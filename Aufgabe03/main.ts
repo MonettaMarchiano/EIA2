@@ -20,7 +20,7 @@ namespace A3 {
     let cardContentDiscard: string[];
     let main: HTMLElement = document.getElementById("main");
 
-    function init() {
+    function init(): void {
         //declare [cards] & assgin [promt()-input] as it's value
         //the prompt() method displays a dialog box that prompts the visitor for input
         let cards: string = prompt("Ziehe zwischen 5 und 10 Karten!");
