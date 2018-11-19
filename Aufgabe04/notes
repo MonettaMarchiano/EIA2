@@ -1,0 +1,74 @@
+    function createDyn1(_art: string): void {
+
+        let fieldSet: HTMLFieldSetElement = <HTMLFieldSetElement>document.getElementById(_art);
+        let fieldSetDiv: HTMLDivElement = document.createElement("div");
+
+        for (let i: number = 0; i < items.length; i++) {
+            if (items[i].art == _art) {
+                let radioButt: HTMLInputElement = document.createElement("input");
+                radioButt.type = "radio";
+                radioButt.value = items[i].name;
+                radioButt.name = "checkBox";
+                radioButt.id = "checkBox_" + items[i].name;
+                fieldSetDiv.appendChild(radioButt);
+                let label: HTMLLabelElement = document.createElement("label");
+                label.htmlFor = radioButt.id;
+                label.innerHTML = items[i].name;
+                fieldSetDiv.appendChild(label);
+            }
+
+        }
+        fieldSet.appendChild(fieldSetDiv);
+    }
+
+    function createSelectBox(_art: string): void {
+
+        let fieldSet: HTMLFieldSetElement = <HTMLFieldSetElement>document.getElementById(_art);
+
+        let selectBox: HTMLSelectElement = document.createElement("select");
+        selectBox.name = "selectBox";
+        selectBox.id = "selectBox_" + _art;
+        fieldSet.appendChild(selectBox);
+
+        let label: HTMLLabelElement = document.createElement("label");
+        label.htmlFor = selectBox.id;
+        label.innerHTML = _art;
+        fieldSet.appendChild(label);
+
+        let optGroup: HTMLOptGroupElement = document.createElement("optgroup");
+        optGroup.label = _art;
+        selectBox.appendChild(optGroup);
+
+        for (let i: number = 0; i < items.length; i++) {
+            if (items[i].art == _art) {
+                let opt: HTMLOptionElement = document.createElement("option");
+                opt.innerText = items[i].name;
+                opt.id = _art + "selectOpt_" + items[i].name;
+                opt.value = items[i].name;
+                selectBox.appendChild(opt);
+            }
+        }
+    }
+
+    function createCheckBox(_art: string): void {
+
+        let fieldSet: HTMLFieldSetElement = <HTMLFieldSetElement>document.getElementById(_art);
+        let fieldSetDiv: HTMLDivElement = document.createElement("div");
+
+        for (let i: number = 0; i < items.length; i++) {
+            if (items[i].art == _art) {
+                let checkBox: HTMLInputElement = document.createElement("input");
+                checkBox.type = "checkbox";
+                checkBox.value = items[i].name;
+                checkBox.name = "checkBox";
+                checkBox.id = "checkBox_" + items[i].name;
+                fieldSetDiv.appendChild(checkBox);
+                let label: HTMLLabelElement = document.createElement("label");
+                label.htmlFor = checkBox.id;
+                label.innerHTML = items[i].name;
+                fieldSetDiv.appendChild(label);
+            }
+
+        }
+        fieldSet.appendChild(fieldSetDiv);
+    }
