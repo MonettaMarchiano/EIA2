@@ -9,7 +9,7 @@
 		"start" : "node Server.js"
 	},
 	"engines" : {
-		"node" : "8.10.0"
+		"node" : "v10.14.1"
 	},
 	"dependencies" : {
 	}
