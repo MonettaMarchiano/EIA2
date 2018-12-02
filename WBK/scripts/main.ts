@@ -48,6 +48,7 @@ namespace wbk_reloaded {
     function writeBasket(): void {
         let basDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("basket");
    
+        
     }
 
     function createFieldset(_parent: HTMLElement, _name: string): HTMLFieldSetElement {
