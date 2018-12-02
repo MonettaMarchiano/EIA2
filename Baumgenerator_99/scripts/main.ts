@@ -1,5 +1,5 @@
 /* 
-Aufgabe: 6
+Aufgabe: 5
 Name: Monetta Marchiano
 Matrikel: 256063
 Datum: 02.12.2018
@@ -12,15 +12,6 @@ nicht kopiert und auch nicht diktiert.
 namespace wbk_99 {
 
     document.addEventListener("DOMContentLoaded", init);
-
-    let valideBaumart: boolean = false;
-    let valideHalterung: boolean = false;
-    let valideBeleuchtung: boolean = false;
-    let valideGlaskugeln: boolean = false;
-    let valideSchmuck: boolean = false;
-
-    let valideLieferdienst: boolean = false;
-    let valideLieferart: boolean = false;
 
     function init(): void {
         createFieldsets(items);
@@ -108,6 +99,7 @@ namespace wbk_99 {
         _fieldSet.appendChild(stepper);
     }
 
+    // change Event function
     function changeAttributes(_event: Event): void {
         console.log("writeBas");
         let target: HTMLInputElement = <HTMLInputElement>_event.target;
@@ -128,15 +120,19 @@ namespace wbk_99 {
 
         writeBasket();
 
-
     }
 
+    // creates p's in basket & fills them
     function writeBasket(): void {
 
         let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
 
         let basketDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("basket");
         basketDiv.innerText = "";
+
+        let caption: HTMLHeadingElement = document.createElement("h2");
+        caption.innerText = "Bestellübersicht:";
+        basketDiv.appendChild(caption);
 
         for (let i: number = 0; i < inputs.length; i++) {
 
@@ -146,23 +142,37 @@ namespace wbk_99 {
             let attrShow: string = input.getAttribute("show");
             let attrPrice: string = input.getAttribute("price");
 
-
             if (attrShow == "true") {
                 let p: HTMLParagraphElement = createParagraph(basketDiv);
                 p.setAttribute("price", attrPrice);
-                if (input.type == "radio")
+                if (input.type == "radio") {
                     p.innerText = "1x " + attrName + " à " + attrPrice + " €";
+                    p.setAttribute("value", "1");
+                }
                 else if (input.type == "number") {
                     p.innerText = input.value + "x " + attrName + " à " + attrPrice + " €";
+                    p.setAttribute("value", input.value);
                 }
             }
 
 
         }
 
-        let p: HTMLParagraphElement = createParagraph(basketDiv);
+        // calc Endpreis
+        let price: number = 0;
 
-        p.innerText = "Gesamtpreis: ";
+        let basketPs: NodeListOf<HTMLParagraphElement> = basketDiv.getElementsByTagName("p");
+        for (let i: number = 0; i < basketPs.length; i++) {
+
+            let singlePrice: number = parseFloat(basketPs[i].getAttribute("price"));
+            let value: number = parseInt(basketPs[i].getAttribute("value"));
+            price += (singlePrice * value);
+        }
+
+        let priceString: string = price.toString() + " €";
+        let p: HTMLParagraphElement = createParagraph(basketDiv);
+        p.innerText = "Gesamtpreis: " + priceString;
+        p.style.textDecoration = "overline";
 
     }
 
