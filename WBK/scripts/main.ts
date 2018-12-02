@@ -1,5 +1,5 @@
 /* 
-Aufgabe: 6
+Aufgabe: 06
 Name: Monetta Marchiano
 Matrikel: 256063
 Datum: 02.12.2018
