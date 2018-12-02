@@ -1,5 +1,5 @@
 /*
-Aufgabe: 6
+Aufgabe: 5
 Name: Monetta Marchiano
 Matrikel: 256063
 Datum: 02.12.2018
@@ -11,13 +11,6 @@ nicht kopiert und auch nicht diktiert.
 var wbk_99;
 (function (wbk_99) {
     document.addEventListener("DOMContentLoaded", init);
-    let valideBaumart = false;
-    let valideHalterung = false;
-    let valideBeleuchtung = false;
-    let valideGlaskugeln = false;
-    let valideSchmuck = false;
-    let valideLieferdienst = false;
-    let valideLieferart = false;
     function init() {
         createFieldsets(wbk_99.items);
         document.getElementsByTagName("body")[0].addEventListener("input", changeAttributes);
@@ -86,6 +79,7 @@ var wbk_99;
         stepper.setAttribute("show", "false");
         _fieldSet.appendChild(stepper);
     }
+    // change Event function
     function changeAttributes(_event) {
         console.log("writeBas");
         let target = _event.target;
@@ -103,10 +97,14 @@ var wbk_99;
         target.setAttribute("show", "true");
         writeBasket();
     }
+    // creates p's in basket & fills them
     function writeBasket() {
         let inputs = document.getElementsByTagName("input");
         let basketDiv = document.getElementById("basket");
         basketDiv.innerText = "";
+        let caption = document.createElement("h2");
+        caption.innerText = "Bestellübersicht:";
+        basketDiv.appendChild(caption);
         for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
             let attrName = input.getAttribute("itemName");
@@ -116,15 +114,28 @@ var wbk_99;
             if (attrShow == "true") {
                 let p = createParagraph(basketDiv);
                 p.setAttribute("price", attrPrice);
-                if (input.type == "radio")
+                if (input.type == "radio") {
                     p.innerText = "1x " + attrName + " à " + attrPrice + " €";
+                    p.setAttribute("value", "1");
+                }
                 else if (input.type == "number") {
                     p.innerText = input.value + "x " + attrName + " à " + attrPrice + " €";
+                    p.setAttribute("value", input.value);
                 }
             }
         }
+        // calc Endpreis
+        let price = 0;
+        let basketPs = basketDiv.getElementsByTagName("p");
+        for (let i = 0; i < basketPs.length; i++) {
+            let singlePrice = parseFloat(basketPs[i].getAttribute("price"));
+            let value = parseInt(basketPs[i].getAttribute("value"));
+            price += (singlePrice * value);
+        }
+        let priceString = price.toString() + " €";
         let p = createParagraph(basketDiv);
-        p.innerText = "Gesamtpreis: ";
+        p.innerText = "Gesamtpreis: " + priceString;
+        p.style.textDecoration = "overline";
     }
     function createParagraph(_parent) {
         let paragraph = document.createElement("p");
