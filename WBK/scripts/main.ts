@@ -51,7 +51,7 @@ namespace A06_wbk {
                     case ("Baumschmuck"):
                         createCheckBox(parentRow, value[i].name);
                         createSelectBox(parentRow, value[i].name, value[i].attr);
-                        createStepper(parentRow, value[i].name, "0", "1", "20")
+                        createStepper(parentRow, value[i].name, "0", "1", "20");
                         createAddButt(parentRow, value[i].name);
                         break;
                     case ("Lieferung"):
