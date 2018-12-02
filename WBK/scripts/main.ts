@@ -1,8 +1,8 @@
 /* 
-Aufgabe: 5
+Aufgabe: 6
 Name: Monetta Marchiano
 Matrikel: 256063
-Datum: 25.11.2018
+Datum: 02.12.2018
 
 Hiermit versichere ich, dass ich diesen
 Code selbst geschrieben habe. Er wurde
