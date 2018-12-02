@@ -276,7 +276,7 @@ namespace A06_wbk {
             createBasketTableData(caption, captionRow, "caption", baskey);
 
             //dynamischeTabeCells
-            createDynamicTableCells(baskey, valueBasket);
+            createDynamicTableCells(baskey, -);
         }
 
         //außerhalb des loops, wird nur einmal gemacht
