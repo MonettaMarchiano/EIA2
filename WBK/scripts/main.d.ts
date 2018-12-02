@@ -1,2 +1,2 @@
-declare namespace A06_wbk {
+declare namespace wbk_reloaded {
 }

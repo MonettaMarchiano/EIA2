@@ -1,21 +1,10 @@
-declare namespace A06_wbk {
+declare namespace wbk_reloaded {
     interface HeteroItem {
         name: string;
-        attr: string[];
-        price: number[];
+        price: number;
     }
     interface HomoItem {
         [key: string]: HeteroItem[];
     }
     let items: HomoItem;
-    interface BasketHeteroItem {
-        name: string;
-        attr: string;
-        num: number;
-        price: number;
-    }
-    interface BasketHomoItem {
-        [baskey: string]: BasketHeteroItem[];
-    }
-    let basketItems: BasketHomoItem;
 }
