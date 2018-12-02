@@ -24,7 +24,7 @@ namespace wbk_reloaded {
 
         for (let key in items) {
             let value: HeteroItem[] = items[key];
-            let parentFieldset = createFieldset (dynDiv, key);
+            let parentFieldset: HTMLFieldSetElement = createFieldset (dynDiv, key);
             for (let i: number = 0; i < value.length; i++) {
 
                 switch (key) {
