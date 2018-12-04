@@ -1,8 +1,9 @@
+//Schaue bei Node.js (Mindmap)
 import * as Http from "http"; // importiert eine Datai als http
 
 namespace L06_SendData { //Namespace 
     console.log("Starting server"); //Konsolenausgabe von "Starting server"
-    let port: number = process.env.PORT; //process.env.PORT ist eine Nummer, port definiert welchem Server du bist
+    let port: number = process.env.PORT; //process.env.PORT ist eine Nummer, port definiert welchem Server du bist (process.env = Umgebung des Prozesses)
     if (port == undefined) //wenn der port nicht definiert ist
         port = 8100; //dann soll port 8100 sein um mit dem port verbunden zu sein
 
