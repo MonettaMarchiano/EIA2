@@ -43,7 +43,6 @@ namespace L06_SendData { //Namespace
             
             _response.write(key + " : " + url[key] + "<br>");
 
-            _response.write(key + " = " + url[key] + "<br>");
 }    
         _response.end(); //Konversation wird beendet
     }
