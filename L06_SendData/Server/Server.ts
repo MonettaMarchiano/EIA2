@@ -1,7 +1,14 @@
 //Schaue bei Node.js (Mindmap)
 import * as Http from "http"; // importiert eine Datai als http
+import * as Url from "url";
 
 namespace L06_SendData { //Namespace 
+    
+     namespace wbk_99 {
+        interface HeteroItem {
+            [key: string]: number;
+}    
+         
     console.log("Starting server"); //Konsolenausgabe von "Starting server"
     let port: number = process.env.PORT; //process.env.PORT ist eine Nummer, port definiert welchem Server du bist (process.env = Umgebung des Prozesses)
     if (port == undefined) //wenn der port nicht definiert ist
@@ -25,6 +32,17 @@ namespace L06_SendData { //Namespace
 
         _response.write(_request.url); //Ruft Informationen über die URL der aktuellen Anforderung ab.
         console.log(_request.url); //Konsolenausgabe von _request.url
+        
+        let url: HeteroItem = Url.parse(_request.url, true).query;
+        console.log(url);
+        
+        for (let key in url) {
+            console.log(url[key]);
+            console.log(key);
+            
+            _response.write(key + " = " + url[key] + "<br>");
+}    
         _response.end(); //Konversation wird beendet
     }
 }
+    }
