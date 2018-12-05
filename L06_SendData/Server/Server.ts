@@ -1,4 +1,3 @@
-//Aufgabe 7 
 
 //Schaue bei Node.js (Mindmap)
 import * as Http from "http"; // importiert eine Datai als http
@@ -43,8 +42,11 @@ namespace L06_SendData { //Namespace
             console.log(key);
             
             _response.write(key + " : " + url[key] + "<br>");
+
+            _response.write(key + " = " + url[key] + "<br>");
 }    
         _response.end(); //Konversation wird beendet
     }
 }
     }
+    

@@ -1,4 +1,3 @@
-//Aufgabe 7 
 "use strict";
 //Schaue bei Node.js (Mindmap)
 const Http = require("http"); // importiert eine Datai als http
@@ -30,6 +29,7 @@ var L06_SendData;
                 console.log(url[key]);
                 console.log(key);
                 _response.write(key + " : " + url[key] + "<br>");
+                _response.write(key + " = " + url[key] + "<br>");
             }
             _response.end(); //Konversation wird beendet
         }
