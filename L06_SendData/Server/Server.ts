@@ -1,3 +1,5 @@
+//Aufgabe 7 
+
 //Schaue bei Node.js (Mindmap)
 import * as Http from "http"; // importiert eine Datai als http
 import * as Url from "url";
