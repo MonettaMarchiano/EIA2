@@ -28,7 +28,7 @@ var L06_SendData;
             for (let key in url) {
                 console.log(url[key]);
                 console.log(key);
-                _response.write(key + " = " + url[key] + "<br>");
+                _response.write(key + " : " + url[key] + "<br>");
             }
             _response.end(); //Konversation wird beendet
         }
