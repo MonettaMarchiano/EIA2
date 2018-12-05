@@ -41,7 +41,7 @@ namespace L06_SendData { //Namespace
             console.log(url[key]);
             console.log(key);
             
-            _response.write(key + " : " + url[key] + "<br>");
+            _response.write("<br>" + key + " : " + url[key] + "<br>");
 
 }    
         _response.end(); //Konversation wird beendet
