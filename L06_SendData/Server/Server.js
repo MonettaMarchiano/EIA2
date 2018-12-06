@@ -21,7 +21,7 @@ var L06_SendData;
             console.log("I hear voices!"); //Konsolenausgabe von "I heare voices!"
             _response.setHeader("content-type", "text/html; charset=utf-8"); //dem Header werden die Werte die "content-type", "text/html; charset=utf-8" zugeteilt, um die Nachricht auszugeben
             _response.setHeader("Access-Control-Allow-Origin", "*"); //dem Header wird Access-Control-Allow-Origin hinzugefügt; damit erlaubt er die Aussage des Nutzers mit der Quelle zu teilen
-            _response.write(_request.url); //Ruft Informationen über die URL der aktuellen Anforderung ab.
+            // _response.write(_request.url); // Schreibt was _request.url ist auf die Seite
             console.log(_request.url); //Konsolenausgabe von _request.url
             let url = Url.parse(_request.url, true).query;
             console.log(url);
