@@ -12,6 +12,7 @@ nicht kopiert und auch nicht diktiert.
 namespace wbk_99 {
 
     document.addEventListener("DOMContentLoaded", init);
+    let address: string = "https://eia-2-marchian.herokuapp.com";
 
     //_____initial function
     function init(): void {
