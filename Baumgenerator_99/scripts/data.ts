@@ -25,7 +25,7 @@ namespace wbk_99 {
         "Baumart": [
             { name: "Tanne", price: 30.0 },
             { name: "Fichte", price: 30.0 },
-            { name: "Kiefer", price: 30.0 },
+           // { name: "Kiefer", price: 30.0 },
             { name: "Plastik", price: 20.0 }
 
         ],
@@ -33,14 +33,14 @@ namespace wbk_99 {
         "Halterung": [
             { name: "keine", price: 0.0 },
             { name: "Seilzug", price: 10.0 },
-            { name: "Klemmschraube", price: 5.0 },
-            { name: "Klemmbacken", price: 5.0 }
+            { name: "Klemmschraube", price: 5.0 }
+           // { name: "Klemmbacken", price: 5.0 }
         ],
 
         "Beleuchtung": [
             { name: "Kerze weiss", price: 2.0 },
             { name: "Kerze rot", price: 2.0 },
-            { name: "Kerze Bienenwachs", price: 2.0 },
+          //  { name: "Kerze Bienenwachs", price: 2.0 },
             { name: "20er Lichterkette kaltweiß", price: 10.0 },
             { name: "20er Lichterkette warmweis", price: 10.0 }
         ],
@@ -49,12 +49,12 @@ namespace wbk_99 {
             { name: "silber", price: 3.0 },
             { name: "gold", price: 3.0 },
             { name: "rot", price: 3.0 },
-            { name: "weiß", price: 3.0 },
-            { name: "grün", price: 3.0 }
+            { name: "weiß", price: 3.0 }
+          //  { name: "grün", price: 3.0 }
         ],
 
         "Schmuck": [
-            { name: "Engel", price: 5.0 },
+          //  { name: "Engel", price: 5.0 },
             { name: "Stern", price: 5.0 },
             { name: "Herz", price: 5.0 }
         ],
@@ -70,8 +70,5 @@ namespace wbk_99 {
             { name: "24h-Express", price: 5.0 },
             { name: "Morning-Express", price: 10.0 }
         ]
-
     };
-
 }
-

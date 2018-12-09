@@ -22,8 +22,8 @@ namespace wbk_99 {
         // eventListener for change => changeAttributes 
         document.getElementsByTagName("body")[0].addEventListener("input", changeAttributes);
         
-        let bestellButton: HTMLElement = document.getElementById("Bestellbutton");
-        bestellButton.addEventListener("click", handleClickOnAsync);
+        let uebersicht: HTMLElement = document.getElementById("uebersicht");
+        uebersicht.addEventListener("click", handleClickOnAsync);
     }
  }
 function handleClickOnAsync(_event: Event): void {
@@ -88,7 +88,7 @@ function handleClickOnAsync(_event: Event): void {
             let value: HeteroItem[] = items[key];
 
             //create fieldset
-            let parentFieldset:  = createFieldset(dynDiv, key);
+            let parentFieldset: any = createFieldset(dynDiv, key);
 
             //for loop through "inner arrays"
             //wenn outer for "Baumart" hat
@@ -517,6 +517,6 @@ function handleClickOnAsync(_event: Event): void {
         //returns <p>
         return paragraph;
     }
-
     //namespace   
+
 }
