@@ -24,9 +24,9 @@ namespace wbk_99 {
         
         let uebersicht: HTMLElement = document.getElementById("uebersicht");
         uebersicht.addEventListener("click", handleClickOnAsync);
-    }
+    
  
-function handleClickOnAsync(_event: Event): void {
+    function handleClickOnAsync(_event: Event): void {
         document.getElementById("order").innerHTML =  " "; 
         let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
         for (let i: number = 0; i < inputs.length; i++) {
@@ -43,12 +43,7 @@ function handleClickOnAsync(_event: Event): void {
             }
         }
 
-
         let product: string = (<HTMLInputElement>document.querySelector(":checked")).value;
-
-
-
-
 
         console.log(product);
     }
@@ -66,11 +61,7 @@ function handleClickOnAsync(_event: Event): void {
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             console.log("response: " + xhr.response);
             
-           
             document.getElementById("order").innerHTML += xhr.response;
-
-            
-         
         }
     }
     
@@ -517,3 +508,5 @@ function handleClickOnAsync(_event: Event): void {
       }   
     }
   } 
+}
+    }
