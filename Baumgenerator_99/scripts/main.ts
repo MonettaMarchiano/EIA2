@@ -25,7 +25,7 @@ namespace wbk_99 {
         let uebersicht: HTMLElement = document.getElementById("uebersicht");
         uebersicht.addEventListener("click", handleClickOnAsync);
     }
- }
+ 
 function handleClickOnAsync(_event: Event): void {
         document.getElementById("order").innerHTML =  " "; 
         let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
@@ -498,11 +498,9 @@ function handleClickOnAsync(_event: Event): void {
             //drain it
             p.innerText = "";
 
-        }
-
-    }
-
-    //_____create <p> >> return paragraph:HTMLParagraphElement
+       
+    
+    //create <p> >> return paragraph:HTMLParagraphElement
     function createParagraph(_parent: HTMLDivElement): HTMLParagraphElement {
 
         //create <p>
@@ -516,7 +514,6 @@ function handleClickOnAsync(_event: Event): void {
 
         //returns <p>
         return paragraph;
+      }   
     }
-    //namespace   
-
-}
+  } 
