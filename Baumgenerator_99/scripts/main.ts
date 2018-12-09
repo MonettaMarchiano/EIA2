@@ -21,10 +21,61 @@ namespace wbk_99 {
 
         // eventListener for change => changeAttributes 
         document.getElementsByTagName("body")[0].addEventListener("input", changeAttributes);
+        
+        let bestellButton: HTMLElement = document.getElementById("Bestellbutton");
+        bestellButton.addEventListener("click", handleClickOnAsync);
+    }
+ }
+function handleClickOnAsync(_event: Event): void {
+        document.getElementById("order").innerHTML =  " "; 
+        let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
+        for (let i: number = 0; i < inputs.length; i++) {
+            let input: HTMLInputElement = inputs[i];
+            if (input.type == "number") {
+                if (parseInt(input.value) > 0) {
+                    sendRequestWithCustomData(input.name, parseInt(input.value));
+                }
+            }
 
+            if (input.checked == true) {
+                sendRequestWithCustomData(input.value, 1);
+
+            }
+        }
+
+
+        let product: string = (<HTMLInputElement>document.querySelector(":checked")).value;
+
+
+
+
+
+        console.log(product);
     }
 
-    //_____creates all fieldsets in "dynamic" based on data-content
+    function sendRequestWithCustomData(_product: string, _amount: number): void {
+        let xhr: XMLHttpRequest = new XMLHttpRequest();
+        xhr.open("GET", address + "?" + _product + "=" + _amount, true);
+        xhr.addEventListener("readystatechange", handleStateChange);
+        xhr.send();
+    }
+
+    function handleStateChange(_event: ProgressEvent): void {
+        var xhr: XMLHttpRequest = <XMLHttpRequest>_event.target;
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
+            console.log("response: " + xhr.response);
+            
+           
+            document.getElementById("order").innerHTML += xhr.response;
+
+            
+         
+        }
+    }
+    
+    
+    //creates all fieldsets in "dynamic" based on data-content
     function createFieldsets(_items: HomoItem): void {
         //get div "dynamic"
         let dynDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("dynamic");
