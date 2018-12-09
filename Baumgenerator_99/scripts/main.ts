@@ -26,7 +26,8 @@ namespace wbk_99 {
         let uebersicht: HTMLElement = document.getElementById("uebersicht");
         uebersicht.addEventListener("click", handleClickOnAsync);
     
- 
+ }
+    
     function handleClickOnAsync(_event: Event): void {
         document.getElementById("order").innerHTML =  " "; 
         let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
@@ -249,7 +250,7 @@ namespace wbk_99 {
         }
     }
 
-    //_____creates p's in basket & fills them
+    //_creates p's in basket & fills them
     function writeBasket(): void {
 
         //get all <inputs> in a NodeList (list of nodes)
@@ -490,7 +491,7 @@ namespace wbk_99 {
             //drain it
             p.innerText = "";
 
-       
+       }
     
     //create <p> >> return paragraph:HTMLParagraphElement
     function createParagraph(_parent: HTMLDivElement): HTMLParagraphElement {
@@ -508,6 +509,4 @@ namespace wbk_99 {
         return paragraph;
       }   
     }
-  } 
-}
-    }
+  }
