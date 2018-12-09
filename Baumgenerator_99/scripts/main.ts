@@ -37,7 +37,7 @@ namespace wbk_99 {
             let value: HeteroItem[] = items[key];
 
             //create fieldset
-            let parentFieldset = createFieldset(dynDiv, key);
+            let parentFieldset:  = createFieldset(dynDiv, key);
 
             //for loop through "inner arrays"
             //wenn outer for "Baumart" hat
@@ -266,7 +266,7 @@ namespace wbk_99 {
                                 //add innerText to p
                                 p.innerText = "Versand mit " + attrName + " à " + attrPrice + " €";
                                 //add attribute to check in next else if, if a radio with key=="Lieferdienst" is selected
-                                p.setAttribute("approved", "true")
+                                p.setAttribute("approved", "true");
                                 //add attribute to check in calc function if there is something to cals in this p
                                 p.setAttribute("toCalc", "true");
                             }
@@ -305,7 +305,7 @@ namespace wbk_99 {
                             else {
                                 if (attrKey == "Baumart") {
                                     //add attribute to check in next else if, if a radio with key=="Lieferdienst" is selected
-                                    p.setAttribute("approved", "true")
+                                    p.setAttribute("approved", "true");
                                 }
 
                                 //add innerText to p
@@ -455,7 +455,7 @@ namespace wbk_99 {
     function createParagraph(_parent: HTMLDivElement): HTMLParagraphElement {
 
         //create <p>
-        let paragraph: HTMLParagraphElement = document.createElement("p")
+        let paragraph: HTMLParagraphElement = document.createElement("p");
 
         //add attribute
         paragraph.setAttribute("location", "basket");
