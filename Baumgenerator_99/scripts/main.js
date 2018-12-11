@@ -8,18 +8,17 @@ Hiermit versichere ich, dass ich diesen
 Code selbst geschrieben habe. Er wurde
 nicht kopiert und auch nicht diktiert.
 */
-var wbk_99;
-(function (wbk_99) {
+var probs12;
+(function (probs12) {
     document.addEventListener("DOMContentLoaded", init);
     let address = "https://eia-2-marchian.herokuapp.com";
     //_____initial function
     function init() {
         // create fieldsets (in "dynamic")
-        createFieldsets(wbk_99.items);
+        createFieldsets(probs12.items);
         // eventListener for change => changeAttributes 
         document.getElementsByTagName("body")[0].addEventListener("input", changeAttributes);
-        let uebersicht = document.getElementById("uebersicht");
-        uebersicht.addEventListener("click", handleClickOnAsync);
+        document.getElementById("uebersicht").addEventListener("click", createOverview);
     }
     function handleClickOnAsync(_event) {
         document.getElementById("order").innerHTML = " ";
@@ -58,9 +57,9 @@ var wbk_99;
         let dynDiv = document.getElementById("dynamic");
         //for loop through "outer array" keys (Baumart, Halterung, Schmuck)
         //"for every key in items"
-        for (let key in wbk_99.items) {
+        for (let key in probs12.items) {
             //variable for the "inner array" => array of heteroItems
-            let value = wbk_99.items[key];
+            let value = probs12.items[key];
             //create fieldset
             let parentFieldset = createFieldset(dynDiv, key);
             //for loop through "inner arrays"
@@ -164,7 +163,7 @@ var wbk_99;
             //if target.type=radio
             case ("radio"):
                 //variable for inner array with key=target.key
-                let tempVal = wbk_99.items[target.getAttribute("key")];
+                let tempVal = probs12.items[target.getAttribute("key")];
                 //1st==> set every radio with key=target.key "false"
                 //for every index of the inner array with key=target.key
                 for (let i = 0; i < tempVal.length; i++) {
@@ -348,7 +347,7 @@ var wbk_99;
     //_____checks and writes a persons data after submit
     function writePersonsData() {
         //get persData
-        let persData = document.getElementById("datenReq");
+        let persData = document.getElementById("persData");
         persData.innerText = "";
         //get NodeList fo inputs in data
         let inputs = document.getElementById("daten").getElementsByTagName("input");
@@ -388,6 +387,23 @@ var wbk_99;
             p.innerText = "";
         }
     }
+    //alert
+    function createOverview(_event) {
+        console.log("alert");
+        let posten = document.getElementById("basket").getElementsByTagName("p");
+        console.log(posten);
+        let caption;
+        caption += "Bestellübersicht:";
+        caption += "\n";
+        let txt;
+        for (let i = 0; i < (posten.length - 1); i++) {
+            txt += posten[i].innerText + "\n";
+        }
+        let endpreis;
+        endpreis += posten[posten.length - 1].innerText;
+        endpreis += "\n";
+        alert(caption + txt + endpreis);
+    }
     //create <p> >> return paragraph:HTMLParagraphElement
     function createParagraph(_parent) {
         //create <p>
@@ -399,5 +415,5 @@ var wbk_99;
         //returns <p>
         return paragraph;
     }
-})(wbk_99 || (wbk_99 = {}));
+})(probs12 || (probs12 = {}));
 //# sourceMappingURL=main.js.map

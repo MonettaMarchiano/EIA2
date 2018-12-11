@@ -9,7 +9,7 @@ Code selbst geschrieben habe. Er wurde
 nicht kopiert und auch nicht diktiert. 
 */
 
-namespace wbk_99 {
+namespace probs12 {
 
     document.addEventListener("DOMContentLoaded", init);
     let address: string = "https://eia-2-marchian.herokuapp.com";
@@ -22,9 +22,7 @@ namespace wbk_99 {
 
         // eventListener for change => changeAttributes 
         document.getElementsByTagName("body")[0].addEventListener("input", changeAttributes);
-
-        let uebersicht: HTMLElement = document.getElementById("uebersicht");
-        uebersicht.addEventListener("click", handleClickOnAsync);
+        document.getElementById("uebersicht").addEventListener("click", createOverview);
 
     }
 
@@ -447,7 +445,7 @@ namespace wbk_99 {
     function writePersonsData(): void {
 
         //get persData
-        let persData: HTMLDivElement = <HTMLDivElement>document.getElementById("datenReq");
+        let persData: HTMLDivElement = <HTMLDivElement>document.getElementById("persData");
         persData.innerText = "";
 
         //get NodeList fo inputs in data
@@ -493,6 +491,30 @@ namespace wbk_99 {
 
         }
     }
+
+    //alert
+    function createOverview(_event: Event): void {
+        console.log("alert");
+        let posten: NodeListOf<HTMLParagraphElement> = document.getElementById("basket").getElementsByTagName("p");
+        console.log(posten);
+
+        let caption: string;
+        caption += "Bestellübersicht:";
+        caption += "\n";
+
+        let txt: string;
+        for (let i: number = 0; i < (posten.length - 1); i++) {
+            txt += posten[i].innerText + "\n";
+        }
+
+        let endpreis: string;
+        endpreis += posten[posten.length - 1].innerText;
+        endpreis += "\n";
+
+        alert(caption + txt + endpreis);
+
+    }
+
     //create <p> >> return paragraph:HTMLParagraphElement
     function createParagraph(_parent: HTMLDivElement): HTMLParagraphElement {
 

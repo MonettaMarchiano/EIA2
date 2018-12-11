@@ -1,4 +1,4 @@
-declare namespace wbk_99 {
+declare namespace probs12 {
     interface HeteroItem {
         name: string;
         price: number;

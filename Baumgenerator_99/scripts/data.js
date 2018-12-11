@@ -8,11 +8,11 @@ Hiermit versichere ich, dass ich diesen
 Code selbst geschrieben habe. Er wurde
 nicht kopiert und auch nicht diktiert.
 */
-var wbk_99;
-(function (wbk_99) {
+var probs12;
+(function (probs12) {
     ;
     ;
-    wbk_99.items = {
+    probs12.items = {
         "Baumart": [
             { name: "Tanne", price: 30.0 },
             { name: "Fichte", price: 30.0 },
@@ -53,5 +53,5 @@ var wbk_99;
             { name: "Morning-Express", price: 10.0 }
         ]
     };
-})(wbk_99 || (wbk_99 = {}));
+})(probs12 || (probs12 = {}));
 //# sourceMappingURL=data.js.map

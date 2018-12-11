@@ -9,7 +9,7 @@ Code selbst geschrieben habe. Er wurde
 nicht kopiert und auch nicht diktiert. 
 */
 
-namespace wbk_99 {
+namespace probs12 {
 
     export interface HeteroItem {
         name: string;
