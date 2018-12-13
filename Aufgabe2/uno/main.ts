@@ -23,7 +23,7 @@ namespace Aufgabe2 {
         console.log(cards + " cards"); //Debugger
 
         //Rufe createGame auf(mit dem Parameter cards auf dem prompt)
-        createGame(cards);
+        //createGame(cards);
 
     }
     //_____________________________________________________________________________________________________________________    
@@ -48,7 +48,7 @@ namespace Aufgabe2 {
         else {
             console.log("valide input");
             //,dann gebe Anzahl Karten zurück
-            return cardsSum; //Ergebnis von eingegebenen Wert
+            //return cardsSum; //Ergebnis von eingegebenen Wert
             //zurück zu init()
         }
 

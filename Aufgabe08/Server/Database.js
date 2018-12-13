@@ -5,15 +5,15 @@
  */
 const Mongo = require("mongodb");
 console.log("Database starting");
-let databaseURL = "mongodb://localhost:27017";
+let databaseURL = "mongodb://localhost:8100";
 let databaseName = "Test";
 let db;
 let students;
 // running on heroku?
 if (process.env.NODE_ENV == "production") {
     //    databaseURL = "mongodb://username:password@hostname:port/database";
-    databaseURL = "mongodb://testuser:testpassword@ds129532.mlab.com:29532/eia2";
-    databaseName = "eia2";
+    databaseURL = "mongodb://user:passwortuser1@ds131784.mlab.com:31784/mnttm-data";
+    databaseName = "mnttm-data";
 }
 // try to connect to database, then activate callback "handleConnect" 
 Mongo.MongoClient.connect(databaseURL, handleConnect);
