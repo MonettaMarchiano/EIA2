@@ -9,9 +9,9 @@
 <body>
 	<fieldset id="input">
 		<legend> Type student data here </legend>
-		<input type="text" name="name" placeholder="name" id="name" />
-		<input type="text" name="firstname" placeholder="firstname" id="firstname" />
-		<input type="text" name="matrikel" placeholder="matrikel" id="matrikel" />
+		<input type="text" name="name" placeholder="Name" id="name" />
+		<input type="text" name="firstname" placeholder="Vorname" id="firstname" />
+		<input type="text" name="matrikel" placeholder="Matrikel" id="matrikel" />
 		
 		<button type="button" id="insert">Insert to database</button>
 	</fieldset>
@@ -19,6 +19,11 @@
 		<legend> All student data </legend>
 		<button type="button" id="refresh">Refresh</button>
 		<textarea rows="20" cols="90"> </textarea>
+	</fieldset>
+	<fieldset>
+		<legend> Find matriculation number </legend>
+		<input type="text" placeholder="Matrikelnummer" id="matrikelnummer"/>
+		<button type="button" id="find">Find</button>
 	</fieldset>
 </body>
 </html>

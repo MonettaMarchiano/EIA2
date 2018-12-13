@@ -34,6 +34,10 @@ function handleRequest(_request, _response) {
         case "refresh":
             Database.findAll(findCallback);
             break;
+        case "find":
+            let mat = parseInt(query["Matrikelnummer"]);
+            Database.findMatrikel(mat, findCallback);
+            break;
         default:
             respond(_response, "unknown command: " + command);
             break;
