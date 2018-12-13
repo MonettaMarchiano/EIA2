@@ -12,6 +12,7 @@ var probs12;
 (function (probs12) {
     document.addEventListener("DOMContentLoaded", init);
     let address = "https://eia-2-marchian.herokuapp.com";
+    let url = "";
     //_____initial function
     function init() {
         // create fieldsets (in "dynamic")
@@ -20,26 +21,29 @@ var probs12;
         document.getElementsByTagName("body")[0].addEventListener("input", changeAttributes);
         document.getElementById("uebersicht").addEventListener("click", createOverview);
     }
-    function handleClickOnAsync(_event) {
+    function handleClickOnAsync() {
         document.getElementById("order").innerHTML = " ";
-        let inputs = document.getElementsByTagName("input");
-        for (let i = 0; i < inputs.length; i++) {
-            let input = inputs[i];
-            if (input.type == "number") {
-                if (parseInt(input.value) > 0) {
-                    sendRequestWithCustomData(input.name, parseInt(input.value));
-                }
-            }
-            if (input.checked == true) {
-                sendRequestWithCustomData(input.value, 1);
-            }
-        }
-        let product = document.querySelector(":checked").value;
-        console.log(product);
+        //        let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
+        //        for (let i: number = 0; i < inputs.length; i++) {
+        //            let input: HTMLInputElement = inputs[i];
+        //            if (input.type == "number") {
+        //                if (parseInt(input.value) > 0) {
+        //                    sendRequestWithCustomData(input.name, parseInt(input.value));
+        //                }
+        //            }
+        //
+        //            if (input.checked == true) {
+        //                sendRequestWithCustomData(input.value, 1);
+        //
+        //            }
+        //       } 
+        //        let product: string = (<HTMLInputElement>document.querySelector(":checked")).value;
+        //        console.log(product);
+        sendRequestWithCustomData();
     }
-    function sendRequestWithCustomData(_product, _amount) {
+    function sendRequestWithCustomData() {
         let xhr = new XMLHttpRequest();
-        xhr.open("GET", address + "?" + _product + "=" + _amount, true);
+        xhr.open("GET", address + "?" + url, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }
@@ -197,6 +201,7 @@ var probs12;
                 writePersonsData();
                 break;
         }
+        handleClickOnAsync();
     }
     //_creates p's in basket & fills them
     function writeBasket() {
@@ -206,6 +211,7 @@ var probs12;
         let basketDiv = document.getElementById("basket");
         //define, that basket div has an innerText && it's empty (>>delete older bullshit)
         basketDiv.innerText = "";
+        url = "";
         //create caption
         let caption = document.createElement("h2");
         //add innerText
@@ -230,6 +236,7 @@ var probs12;
                     let previousP = p.previousSibling;
                     //add attribute price (from input) to p
                     p.setAttribute("price", attrPrice);
+                    url += attrName + "=" + input.value + "&";
                     //if input show is true && type is radio
                     switch (input.type) {
                         case ("radio"):
@@ -405,7 +412,7 @@ var probs12;
         endpreis += "\n";
         alert(caption + txt + endpreis);
     }
-    //create <p> >> return paragraph:HTMLParagraphElement
+    // create <p> >> return paragraph:HTMLParagraphElement
     function createParagraph(_parent) {
         //create <p>
         let paragraph = document.createElement("p");

@@ -13,10 +13,13 @@ namespace probs12 {
 
     document.addEventListener("DOMContentLoaded", init);
     let address: string = "https://eia-2-marchian.herokuapp.com";
+    let url: string = "";
 
+    
     //_____initial function
     function init(): void {
 
+       
         // create fieldsets (in "dynamic")
         createFieldsets(items);
 
@@ -26,31 +29,34 @@ namespace probs12 {
 
     }
 
-    function handleClickOnAsync(_event: Event): void {
+    function handleClickOnAsync(): void {
         document.getElementById("order").innerHTML = " ";
-        let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
-        for (let i: number = 0; i < inputs.length; i++) {
-            let input: HTMLInputElement = inputs[i];
-            if (input.type == "number") {
-                if (parseInt(input.value) > 0) {
-                    sendRequestWithCustomData(input.name, parseInt(input.value));
-                }
-            }
+//        let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
+//        for (let i: number = 0; i < inputs.length; i++) {
+//            let input: HTMLInputElement = inputs[i];
+//            if (input.type == "number") {
+//                if (parseInt(input.value) > 0) {
+//                    sendRequestWithCustomData(input.name, parseInt(input.value));
+//                }
+//            }
+//
+//            if (input.checked == true) {
+//                sendRequestWithCustomData(input.value, 1);
+//
+//            }
+//       } 
 
-            if (input.checked == true) {
-                sendRequestWithCustomData(input.value, 1);
+//        let product: string = (<HTMLInputElement>document.querySelector(":checked")).value;
 
-            }
-        }
-
-        let product: string = (<HTMLInputElement>document.querySelector(":checked")).value;
-
-        console.log(product);
+//        console.log(product);
+        
+        sendRequestWithCustomData();
+        
     }
 
-    function sendRequestWithCustomData(_product: string, _amount: number): void {
+    function sendRequestWithCustomData(): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
-        xhr.open("GET", address + "?" + _product + "=" + _amount, true);
+        xhr.open("GET", address + "?" + url, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }
@@ -247,6 +253,7 @@ namespace probs12 {
                 writePersonsData();
                 break;
         }
+        handleClickOnAsync();
     }
 
     //_creates p's in basket & fills them
@@ -259,6 +266,7 @@ namespace probs12 {
         let basketDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("basket");
         //define, that basket div has an innerText && it's empty (>>delete older bullshit)
         basketDiv.innerText = "";
+        url = "";
 
         //create caption
         let caption: HTMLHeadingElement = document.createElement("h2");
@@ -289,6 +297,8 @@ namespace probs12 {
                     let previousP: HTMLParagraphElement = <HTMLParagraphElement>p.previousSibling;
                     //add attribute price (from input) to p
                     p.setAttribute("price", attrPrice);
+
+                    url += attrName + "=" + input.value + "&";
 
                     //if input show is true && type is radio
                     switch (input.type) {
@@ -513,10 +523,9 @@ namespace probs12 {
         endpreis += "\n";
 
         alert(caption + txt + endpreis);
-
-    }
-
-    //create <p> >> return paragraph:HTMLParagraphElement
+        }
+    
+// create <p> >> return paragraph:HTMLParagraphElement
     function createParagraph(_parent: HTMLDivElement): HTMLParagraphElement {
 
         //create <p>
