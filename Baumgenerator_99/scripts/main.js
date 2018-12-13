@@ -22,7 +22,7 @@ var probs12;
         document.getElementById("uebersicht").addEventListener("click", createOverview);
     }
     function handleClickOnAsync() {
-        document.getElementById("order").innerHTML = " ";
+        //        document.getElementById("uebersicht").innerHTML;
         //        let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
         //        for (let i: number = 0; i < inputs.length; i++) {
         //            let input: HTMLInputElement = inputs[i];
@@ -52,7 +52,7 @@ var probs12;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             console.log("response: " + xhr.response);
-            document.getElementById("order").innerHTML += xhr.response;
+            document.getElementById("anzeige").innerHTML = xhr.response;
         }
     }
     //creates all fieldsets in "dynamic" based on data-content
