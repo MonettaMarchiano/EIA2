@@ -144,6 +144,7 @@ var probs12;
         stepper.max = "20";
         stepper.step = "1";
         stepper.id = "stepper_" + _item.name;
+        stepper.name = _item.name;
         //set inividual Attributes
         stepper.setAttribute("itemName", _item.name);
         stepper.setAttribute("key", _key);
