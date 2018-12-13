@@ -59,9 +59,9 @@ export function findAll(_callback: Function): void {
     }
 }
 
-export function findMatrikel(_mat:number,_callback: Function): void {
+export function findMatrikel(_mat: number, _callback: Function): void {
     // cursor points to the retreived set of documents in memory
-    var cursor: Mongo.Cursor = students.find(_mat);
+    var cursor: Mongo.Cursor = students.find({matrikel:_mat});
     // try to convert to array, then activate callback "prepareAnswer"
     cursor.toArray(prepareAnswer);
 
