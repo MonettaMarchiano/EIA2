@@ -253,7 +253,7 @@ namespace probs12 {
                 writePersonsData();
                 break;
         }
-        handleClickOnAsync();
+        
     }
 
     //_creates p's in basket & fills them
@@ -523,6 +523,8 @@ namespace probs12 {
         endpreis += "\n";
 
         alert(caption + txt + endpreis);
+        
+        handleClickOnAsync();
         }
     
 // create <p> >> return paragraph:HTMLParagraphElement

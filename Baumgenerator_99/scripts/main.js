@@ -201,7 +201,6 @@ var probs12;
                 writePersonsData();
                 break;
         }
-        handleClickOnAsync();
     }
     //_creates p's in basket & fills them
     function writeBasket() {
@@ -411,6 +410,7 @@ var probs12;
         endpreis += posten[posten.length - 1].innerText;
         endpreis += "\n";
         alert(caption + txt + endpreis);
+        handleClickOnAsync();
     }
     // create <p> >> return paragraph:HTMLParagraphElement
     function createParagraph(_parent) {
