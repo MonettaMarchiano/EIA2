@@ -6,7 +6,7 @@
 	"author" : "Monetta",
 	"main" : "Server.js",
 	"scripts" : {
-		"start" : "node Aufgabe06/Server/Server.js"
+		"start" : "node L06_SendData/Server/Server.js"
 	},
 	"engines" : {
 		"node" : "10.14.1"
