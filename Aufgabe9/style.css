@@ -20,7 +20,7 @@ canvas {
 		@media screen and (min-width: 64em) {
 			canvas {
 				width: 500px;
-				height: 800px;
+				height: 700px;
 			}
 		}
 	}

@@ -21,32 +21,32 @@ var Rodelhang;
         //Bäume
         for (let i = 0; i < 10; i++) {
             let x = 40 + Math.random() * 200;
-            let y = 500 + Math.random() * 200;
+            let y = 450 + Math.random() * 150;
             drawTree(x, y, "#0B6138");
         }
         for (let i = 0; i < 5; i++) {
             let x = 40 + Math.random() * 200;
-            let y = 500 + Math.random() * 200;
+            let y = 450 + Math.random() * 150;
             drawTree(x, y, "#0B3B2E");
         }
         //Schneeflocken
         for (let i = 0; i <= 200; i++) {
             let x = Math.random() * 500;
-            let y = Math.random() * 800;
+            let y = Math.random() * 700;
             drawSnow(x, y);
         }
     }
     function drawSky() {
         crc.fillStyle = "#CEF6F5";
-        crc.fillRect(0, 0, 500, 800);
+        crc.fillRect(0, 0, 500, 700);
         crc.fill();
     }
     function drawHillside() {
         crc.beginPath();
         crc.moveTo(0, 300);
         crc.lineTo(500, 700);
-        crc.lineTo(500, 800);
-        crc.lineTo(0, 800);
+        crc.lineTo(500, 700);
+        crc.lineTo(0, 700);
         crc.lineTo(0, 300);
         crc.closePath();
         crc.fillStyle = "#FFFFFF";
@@ -94,13 +94,42 @@ var Rodelhang;
         crc.stroke();
     }
     function drawChildren() {
+        //Kind1
         crc.beginPath();
         crc.fillStyle = "#E2A9F3";
-        crc.fillRect(450, 750, 10, 20);
+        crc.fillRect(410, 650, 10, 20);
         crc.fill();
         crc.beginPath();
         crc.fillStyle = "#000000";
-        crc.arc(450, 25, 20, 0, 2 * Math.PI);
+        crc.arc(415, 645, 6, 0, 2 * Math.PI);
+        crc.fill();
+        //Kind2
+        crc.beginPath();
+        crc.fillStyle = "#81F7BE";
+        crc.fillRect(400, 650, 10, 20);
+        crc.fill();
+        crc.beginPath();
+        crc.fillStyle = "#000000";
+        crc.arc(405, 645, 6, 0, 2 * Math.PI);
+        crc.fill();
+        //Kind3
+        crc.beginPath();
+        crc.fillStyle = "#F7BE81";
+        crc.fillRect(390, 650, 10, 20);
+        crc.fill();
+        crc.beginPath();
+        crc.fillStyle = "#000000";
+        crc.arc(395, 645, 6, 0, 2 * Math.PI);
+        crc.fill();
+        console.log("kinder");
+        //Kind4 
+        crc.beginPath();
+        crc.fillStyle = "#A9A9F5";
+        crc.fillRect(70, 420, 10, 20);
+        crc.fill();
+        crc.beginPath();
+        crc.fillStyle = "#000000";
+        crc.arc(75, 415, 6, 0, 2 * Math.PI);
         crc.fill();
         console.log("kinder");
     }
