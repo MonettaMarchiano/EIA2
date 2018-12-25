@@ -17,7 +17,7 @@ var Rodelhang;
         drawCloud1();
         drawCloud2();
         drawChildren();
-        // drawSleight();
+        drawSleight();
         //Bäume
         for (let i = 0; i < 10; i++) {
             let x = 40 + Math.random() * 200;
@@ -132,6 +132,46 @@ var Rodelhang;
         crc.arc(75, 415, 6, 0, 2 * Math.PI);
         crc.fill();
         console.log("kinder");
+    }
+    function drawSleight() {
+        //Schlitten1
+        crc.beginPath();
+        //console.log("obere Linie");
+        crc.moveTo(65, 435);
+        crc.lineTo(85, 448);
+        //console.log("rechter Strich");
+        crc.moveTo(80, 455);
+        crc.lineTo(80, 444);
+        //console.log("linker Strich");
+        crc.moveTo(72, 450);
+        crc.lineTo(72, 440);
+        //console.log("unterer Strich");
+        crc.moveTo(65, 447);
+        crc.lineTo(85, 460);
+        crc.closePath();
+        crc.fillStyle = "#000000";
+        crc.strokeStyle = "#000000";
+        crc.stroke();
+        crc.fill();
+        //Schlitten2
+        crc.beginPath();
+        //console.log("obere Linie");
+        crc.moveTo(410, 680);
+        crc.lineTo(430, 680);
+        //        //console.log("rechter Strich");
+        crc.moveTo(425, 680);
+        crc.lineTo(425, 690);
+        //        //console.log("linker Strich");
+        crc.moveTo(415, 680);
+        crc.lineTo(415, 690);
+        //        //console.log("unterer Strich");
+        crc.moveTo(410, 690);
+        crc.lineTo(430, 690);
+        crc.closePath();
+        crc.fillStyle = "#000000";
+        crc.strokeStyle = "#000000";
+        crc.stroke();
+        crc.fill();
     }
 })(Rodelhang || (Rodelhang = {}));
 //# sourceMappingURL=main.js.map

@@ -22,8 +22,7 @@ namespace Rodelhang {
         drawCloud1();
         drawCloud2();
         drawChildren();
-
-        // drawSleight();
+        drawSleight();
 
 
 
@@ -129,7 +128,7 @@ namespace Rodelhang {
 
 
     function drawChildren(): void {
-        
+
         //Kind1
         crc.beginPath();
         crc.fillStyle = "#E2A9F3";
@@ -139,7 +138,7 @@ namespace Rodelhang {
         crc.fillStyle = "#000000";
         crc.arc(415, 645, 6, 0, 2 * Math.PI);
         crc.fill();
-       
+
         //Kind2
         crc.beginPath();
         crc.fillStyle = "#81F7BE";
@@ -149,7 +148,7 @@ namespace Rodelhang {
         crc.fillStyle = "#000000";
         crc.arc(405, 645, 6, 0, 2 * Math.PI);
         crc.fill();
-       
+
         //Kind3
         crc.beginPath();
         crc.fillStyle = "#F7BE81";
@@ -160,7 +159,7 @@ namespace Rodelhang {
         crc.arc(395, 645, 6, 0, 2 * Math.PI);
         crc.fill();
         console.log("kinder");
-        
+
         //Kind4 
         crc.beginPath();
         crc.fillStyle = "#A9A9F5";
@@ -171,8 +170,52 @@ namespace Rodelhang {
         crc.arc(75, 415, 6, 0, 2 * Math.PI);
         crc.fill();
         console.log("kinder");
+    }
 
 
-}
+    function drawSleight(): void {
 
+        //Schlitten1
+        crc.beginPath();
+        //console.log("obere Linie");
+        crc.moveTo(65, 435);
+        crc.lineTo(85, 448);
+        //console.log("rechter Strich");
+        crc.moveTo(80, 455);
+        crc.lineTo(80, 444);
+        //console.log("linker Strich");
+        crc.moveTo(72, 450);
+        crc.lineTo(72, 440);
+        //console.log("unterer Strich");
+        crc.moveTo(65, 447);
+        crc.lineTo(85, 460);
+        crc.closePath();
+        crc.fillStyle = "#000000";
+        crc.strokeStyle = "#000000";
+        crc.stroke();
+        crc.fill();
+
+        //Schlitten2
+        crc.beginPath();
+        //console.log("obere Linie");
+        crc.moveTo(410, 680);
+        crc.lineTo(430, 680);
+//        //console.log("rechter Strich");
+        crc.moveTo(425, 680);
+        crc.lineTo(425, 690);
+//        //console.log("linker Strich");
+        crc.moveTo(415, 680);
+        crc.lineTo(415, 690);
+//        //console.log("unterer Strich");
+        crc.moveTo(410, 690);
+        crc.lineTo(430, 690);
+        crc.closePath();
+        crc.fillStyle = "#000000";
+        crc.strokeStyle = "#000000";
+        crc.stroke();
+        crc.fill();
+
+       
+    
+    }
 }
