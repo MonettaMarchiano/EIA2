@@ -23,9 +23,7 @@ namespace Rodelhang {
         drawCloud2();
         drawChildren();
         drawSleight();
-
-
-
+        
         //Bäume
         for (let i: number = 0; i < 10; i++) {
             let x: number = 40 + Math.random() * 200;
@@ -52,9 +50,7 @@ namespace Rodelhang {
         crc.fillStyle = "#CEF6F5";
         crc.fillRect(0, 0, 500, 700);
         crc.fill();
-
     }
-
 
     function drawHillside(): void {
 
@@ -67,7 +63,6 @@ namespace Rodelhang {
         crc.closePath();
         crc.fillStyle = "#FFFFFF";
         crc.fill();
-
     }
 
     function drawSun(): void {
@@ -86,7 +81,6 @@ namespace Rodelhang {
         crc.arc(160, 100, 40, 0, 2 * Math.PI);
         crc.fillStyle = "#FFFFFF";
         crc.fill();
-
     }
 
     function drawCloud2(): void {
@@ -96,7 +90,6 @@ namespace Rodelhang {
         crc.arc(290, 150, 50, 0, 2 * Math.PI);
         crc.fillStyle = "#FFFFFF";
         crc.fill();
-
     }
 
     function drawTree(_x: number, _y: number, _color: string): void {
@@ -110,7 +103,6 @@ namespace Rodelhang {
         crc.closePath();
         crc.fillStyle = _color;
         crc.fill();
-
     }
 
     function drawSnow(_x: number, _y: number): void {
@@ -121,11 +113,8 @@ namespace Rodelhang {
         crc.fill();
         crc.lineWidth = .3;
         crc.strokeStyle = "#707070";
-        crc.stroke();
-
-
+        crc.stroke();   
     }
-
 
     function drawChildren(): void {
 
@@ -172,7 +161,6 @@ namespace Rodelhang {
         console.log("kinder");
     }
 
-
     function drawSleight(): void {
 
         //Schlitten1
@@ -214,6 +202,5 @@ namespace Rodelhang {
         crc.strokeStyle = "#000000";
         crc.stroke();
         crc.fill();
-
     }
 }
