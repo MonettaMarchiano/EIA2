@@ -21,6 +21,7 @@ namespace Classes_Rodelhang {
 
     let fps: number = 25;
 
+     
 
 
     function init(): void {
@@ -84,20 +85,25 @@ namespace Classes_Rodelhang {
             //Kinder
             for (let i: number = 0; i < childrenUp.length; i++) {
                 let childUp: ChildrenUp = childrenUp[i];
+
                 childUp.move();
+
                 console.log("childUp.move();");
+
                 childUp.draw();
             }
 
             for (let i: number = 0; i < childrenDown.length; i++) {
                 let childDown: ChildrenDown = childrenDown[i];
+
                 childDown.move();
+
                 console.log("childDown.move();");
 
                 childDown.draw();
             }
 
-            update();
+
         } //update();
 
 

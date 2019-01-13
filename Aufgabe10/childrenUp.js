@@ -8,8 +8,8 @@ var Classes_Rodelhang;
 (function (Classes_Rodelhang) {
     class ChildrenUp {
         move() {
-            this.yD = Math.random() * -3;
-            this.xD = Math.random() * -6;
+            this.xD = Math.random() * (-6);
+            this.yD = Math.random() * (-3);
             this.xP += this.xD;
             this.yP += this.yD;
             if (this.xP > 500) {

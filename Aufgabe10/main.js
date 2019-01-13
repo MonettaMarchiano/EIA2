@@ -63,7 +63,6 @@ var Classes_Rodelhang;
                 console.log("childDown.move();");
                 childDown.draw();
             }
-            update();
         } //update();
         //Bäume
         function generateTrees() {
