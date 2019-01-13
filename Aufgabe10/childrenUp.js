@@ -40,7 +40,6 @@ var Classes_Rodelhang;
             Classes_Rodelhang.crc.strokeStyle = "#000000";
             Classes_Rodelhang.crc.stroke();
             Classes_Rodelhang.crc.fill();
-            console.log("kind3");
         }
     }
     Classes_Rodelhang.ChildrenUp = ChildrenUp;

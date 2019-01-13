@@ -32,7 +32,6 @@ namespace Classes_Rodelhang {
         } //  move();
 
         draw(): void {
-
             //Kind3
             crc.beginPath();
             crc.fillStyle = "#000000";
@@ -55,10 +54,6 @@ namespace Classes_Rodelhang {
             crc.strokeStyle = "#000000";
             crc.stroke();
             crc.fill();
-
-            console.log("kind3");
-
-
         }
     }
 }
