@@ -9,7 +9,7 @@ var Classes_Rodelhang;
     class Snow {
         move() {
             this.yD = 5;
-            this.xD = Math.random() * 3 - 3;
+            this.xD = Math.random() * 0;
             this.xP += this.xD;
             this.yP += this.yD;
             if (this.yP > 700) {
