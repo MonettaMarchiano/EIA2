@@ -86,7 +86,7 @@ var Classes_Rodelhang;
             }
         }
         function generateChildrenUp() {
-            for (let i = 0; i <= 5; i++) {
+            for (let i = 0; i <= 4; i++) {
                 let childUp = new Classes_Rodelhang.ChildrenUp();
                 console.log(Classes_Rodelhang.crc);
                 childUp.xP = Math.random() * 75 + 400;
@@ -98,7 +98,7 @@ var Classes_Rodelhang;
             }
         } //generateChildrenUp();
         function generateChildrenDown() {
-            for (let i = 0; i <= 5; i++) {
+            for (let i = 0; i <= 4; i++) {
                 let childDown = new Classes_Rodelhang.ChildrenDown;
                 childDown.xP = Math.random() * 75 + 100;
                 childDown.yP = Math.random() * 75 + 400;
@@ -116,10 +116,10 @@ var Classes_Rodelhang;
         function drawHillside() {
             Classes_Rodelhang.crc.beginPath();
             Classes_Rodelhang.crc.moveTo(0, 300);
-            Classes_Rodelhang.crc.lineTo(500, 700);
-            Classes_Rodelhang.crc.lineTo(500, 700);
+            Classes_Rodelhang.crc.lineTo(700, 700);
+            Classes_Rodelhang.crc.lineTo(600, 700);
             Classes_Rodelhang.crc.lineTo(0, 700);
-            Classes_Rodelhang.crc.lineTo(0, 300);
+            Classes_Rodelhang.crc.lineTo(0, 500);
             Classes_Rodelhang.crc.closePath();
             Classes_Rodelhang.crc.fillStyle = "#FFFFFF";
             Classes_Rodelhang.crc.fill();

@@ -126,7 +126,7 @@ namespace Classes_Rodelhang {
         }
 
         function generateChildrenUp(): void {
-            for (let i: number = 0; i <= 5; i++) {
+            for (let i: number = 0; i <= 4; i++) {
                 let childUp: ChildrenUp = new ChildrenUp();
                 console.log(crc);
                 childUp.xP = Math.random() * 75 + 400;
@@ -142,7 +142,7 @@ namespace Classes_Rodelhang {
         } //generateChildrenUp();
 
         function generateChildrenDown(): void {
-            for (let i: number = 0; i <= 5; i++) {
+            for (let i: number = 0; i <= 4; i++) {
                 let childDown: ChildrenDown = new ChildrenDown;
                 childDown.xP = Math.random() * 75 + 100;
                 childDown.yP = Math.random() * 75 + 400;
@@ -167,10 +167,10 @@ namespace Classes_Rodelhang {
 
             crc.beginPath();
             crc.moveTo(0, 300);
-            crc.lineTo(500, 700);
-            crc.lineTo(500, 700);
+            crc.lineTo(700, 700);
+            crc.lineTo(600, 700);
             crc.lineTo(0, 700);
-            crc.lineTo(0, 300);
+            crc.lineTo(0, 500);
             crc.closePath();
             crc.fillStyle = "#FFFFFF";
             crc.fill();
