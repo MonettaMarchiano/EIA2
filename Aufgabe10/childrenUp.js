@@ -12,9 +12,9 @@ var Classes_Rodelhang;
             this.yD = Math.random() * (-3);
             this.xP += this.xD;
             this.yP += this.yD;
-            if (this.xP > 500) {
+            if (this.xP > 0) {
                 this.xP = Math.random() * 20 + 10;
-                this.xP = -10;
+                this.xP = 500;
             }
             this.draw();
         } //  move();
