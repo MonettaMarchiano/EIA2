@@ -71,7 +71,6 @@ namespace Classes_Rodelhang {
             cloudOne.draw();
 
 
-            console.log("cloud1");
 
             let cloudTwo: CloudTwo = new CloudTwo();
             cloudTwo.xP = 100;
@@ -80,7 +79,6 @@ namespace Classes_Rodelhang {
             cloudTwo.move();
             cloudTwo.draw();
 
-            console.log("cloud2");
 
 
             //Kinder
