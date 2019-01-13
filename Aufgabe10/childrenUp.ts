@@ -8,40 +8,50 @@ Er wurde nicht kopiert und auch nicht diktiert. */
 namespace Classes_Rodelhang {
 
     export class ChildrenUp {
-        x: number;
-        y: number;
+        xP: number;
+        yP: number;
+        xD: number;
+        yD: number;
         colorHead: string;
         colorBody: string;
 
         move(): void {
+            
+            if (this.xP > 500) {
+                this.xP = Math.random() * 10 + 30;
+                this.yP = 700;
 
-            if (this.x > 700) {
-                this.x = Math.random() * 200 - 300;
-                this.y = Math.random() * 300 - 200;
+//            this.yD = Math.random() * (-2);
+//            this.xD = Math.random() * (-5);
+
+            this.xP += this.xD;
+            this.yP += this.yD;
+            
+            
 
 
             }
-        } // close move
+        } //  move();
 
         draw(): void {
-            
+
             //Kind3
             crc.beginPath();
             crc.fillStyle = "#000000";
-            crc.arc(this.x - 20 , this.y - 5, 6, 0, 2 * Math.PI);
+            crc.arc(this.xP - 20, this.yP - 5, 6, 0, 2 * Math.PI);
             crc.fill();
             crc.stroke();
             crc.beginPath();
             crc.fillStyle = this.colorBody;
-            crc.fillRect(this.x - 25, this.y + 2, 10, 20);
+            crc.fillRect(this.xP - 25, this.yP + 2, 10, 20);
             crc.stroke();
             crc.fill();
 
             //Schlitten
             crc.beginPath();
-            crc.moveTo(this.x - 37, this.y + 25);
-            crc.lineTo(this.x - 10, this.y + 42);
-            crc.lineTo(this.x - 6, this.y + 43);
+            crc.moveTo(this.xP - 37, this.yP + 25);
+            crc.lineTo(this.xP - 10, this.yP + 42);
+            crc.lineTo(this.xP - 6, this.yP + 43);
             crc.lineWidth = 1;
             crc.lineCap = "round";
             crc.strokeStyle = "#000000";
@@ -49,8 +59,6 @@ namespace Classes_Rodelhang {
             crc.fill();
 
             console.log("kind3");
-
-
 
 
         }

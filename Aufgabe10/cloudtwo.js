@@ -8,16 +8,16 @@ var Classes_Rodelhang;
 (function (Classes_Rodelhang) {
     class CloudTwo {
         move() {
-            if (this.x > 500) {
-                this.x = 0;
+            if (this.xP > 500) {
+                this.xP = 0;
             }
-            this.x += 6;
+            this.xP += 6;
             this.draw();
         }
         draw() {
             Classes_Rodelhang.crc.beginPath();
-            Classes_Rodelhang.crc.arc(this.x + 250, this.y + 150, 45, 0, 2 * Math.PI);
-            Classes_Rodelhang.crc.arc(this.x + 290, this.y + 150, 50, 0, 2 * Math.PI);
+            Classes_Rodelhang.crc.arc(this.xP + 250, this.yP + 150, 45, 0, 2 * Math.PI);
+            Classes_Rodelhang.crc.arc(this.xP + 290, this.yP + 150, 50, 0, 2 * Math.PI);
             Classes_Rodelhang.crc.fillStyle = "#FFFFFF";
             Classes_Rodelhang.crc.fill();
         }

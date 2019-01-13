@@ -8,24 +8,33 @@ Er wurde nicht kopiert und auch nicht diktiert. */
 namespace Classes_Rodelhang {
 
     export class Snow {
-        x: number;
-        y: number;
+        xP: number;
+        yP: number;
+        xD: number;
+        yD: number;
 
 
         move(): void {
+            
+        this.yD = 2;
+        this.xD = Math.random() * 4 - 2; 
+            
+        this.xP += this.xD;
+        this.yP += this.yD;
+        
+            
 
-        if (this.y > 700) {
-           this.y = 0;
+        if (this.yP > 700) {
+           this.yP = 0;
         }
 
-        this.y += 15 + Math.round(Math.random() * 6);
-        
         this.draw();
+       
         }   
         
         draw(): void {
         crc.beginPath();
-        crc.arc(this.x, this.y, 5, 0, 2 * Math.PI);
+        crc.arc(this.xP, this.yP, 5, 0, 2 * Math.PI);
         crc.fillStyle = "#FFFFFF";
         crc.fill();
         crc.lineWidth = .3;
@@ -33,6 +42,10 @@ namespace Classes_Rodelhang {
         crc.stroke();     
         
         }
-
+        
+       
+        
       }
+    
+
 }

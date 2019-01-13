@@ -9,37 +9,46 @@ namespace Classes_Rodelhang {
 
 
     export class ChildrenDown {
-        x: number;
-        y: number;
+        xP: number;
+        yP: number;
+        xD: number;
+        yD: number;
         colorHead: string;
         colorBody: string;
 
         move(): void {
 
-            if (this.x > 700) {
-                this.x = Math.random() * 200 - 300;
-                this.y = Math.random() * 300 - 200;
+            this.yD = 2;
+            this.xD = 5;
+            
+            this.xP += this.xD;
+            this.yP += this.yD;
+            
+            
+            if (this.xP > 700) {
+                this.xP = -60
+                this.yP = Math.random() * 300 + 200;
 
             }
         } // close move
-        
+
         draw(): void {
             crc.beginPath();
             crc.fillStyle = "#000000";
-            crc.arc(this.x - 20 , this.y - 5, 6, 0, 2 * Math.PI);
+            crc.arc(this.xP - 20, this.yP - 5, 6, 0, 2 * Math.PI);
             crc.fill();
             crc.beginPath();
             crc.fillStyle = this.colorBody;
-            crc.fillRect(this.x - 25, this.y + 2, 10, 20);
+            crc.fillRect(this.xP - 25, this.yP + 2, 10, 20);
             crc.stroke();
             crc.fill();
             console.log("kind3");
-            
+
             //Schlitten
             crc.beginPath();
-            crc.moveTo(this.x - 37, this.y + 25);
-            crc.lineTo(this.x - 10, this.y + 42);
-            crc.lineTo(this.x - 6, this.y + 43);
+            crc.moveTo(this.xP - 37, this.yP + 25);
+            crc.lineTo(this.xP - 10, this.yP + 42);
+            crc.lineTo(this.xP - 6, this.yP + 43);
             crc.lineWidth = 1;
             crc.lineCap = "round";
             crc.strokeStyle = "#000000";

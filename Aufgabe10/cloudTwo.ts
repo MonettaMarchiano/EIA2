@@ -8,17 +8,19 @@ Er wurde nicht kopiert und auch nicht diktiert. */
 namespace Classes_Rodelhang {
 
     export class CloudTwo {
-        x: number;
-        y: number;
+        xP: number;
+        yP: number;
+        xD: number;
+        yD: number;
         
 
         move(): void {
 
-            if (this.x > 500) {
-                this.x = 0;
+            if (this.xP > 500) {
+                this.xP = 0;
             }
 
-            this.x += 6;
+            this.xP += 6;
 
             this.draw();
 
@@ -28,8 +30,8 @@ namespace Classes_Rodelhang {
             
 
             crc.beginPath();
-            crc.arc(this.x + 250, this.y + 150, 45, 0, 2 * Math.PI);
-            crc.arc(this.x + 290, this.y + 150, 50, 0, 2 * Math.PI);
+            crc.arc(this.xP + 250, this.yP + 150, 45, 0, 2 * Math.PI);
+            crc.arc(this.xP + 290, this.yP + 150, 50, 0, 2 * Math.PI);
             crc.fillStyle = "#FFFFFF";
             crc.fill();
         }

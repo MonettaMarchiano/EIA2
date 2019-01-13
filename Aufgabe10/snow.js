@@ -8,15 +8,18 @@ var Classes_Rodelhang;
 (function (Classes_Rodelhang) {
     class Snow {
         move() {
-            if (this.y > 700) {
-                this.y = 0;
+            this.yD = 2;
+            this.xD = Math.random() * 4 - 2;
+            this.xP += this.xD;
+            this.yP += this.yD;
+            if (this.yP > 700) {
+                this.yP = 0;
             }
-            this.y += 15 + Math.round(Math.random() * 6);
             this.draw();
         }
         draw() {
             Classes_Rodelhang.crc.beginPath();
-            Classes_Rodelhang.crc.arc(this.x, this.y, 5, 0, 2 * Math.PI);
+            Classes_Rodelhang.crc.arc(this.xP, this.yP, 5, 0, 2 * Math.PI);
             Classes_Rodelhang.crc.fillStyle = "#FFFFFF";
             Classes_Rodelhang.crc.fill();
             Classes_Rodelhang.crc.lineWidth = .3;
