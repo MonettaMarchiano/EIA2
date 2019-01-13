@@ -22,7 +22,6 @@ namespace Classes_Rodelhang {
     let fps: number = 25;
 
 
-
     function init(): void {
 
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
@@ -37,8 +36,6 @@ namespace Classes_Rodelhang {
         generateSnow();
         generateChildrenUp();
         generateChildrenDown();
-
-
 
         imagedata = crc.getImageData(0, 0, canvas.width, canvas.height);
 
@@ -87,7 +84,7 @@ namespace Classes_Rodelhang {
 
                 childUp.move();
 
-                
+
 
                 childUp.draw();
             }
@@ -128,7 +125,7 @@ namespace Classes_Rodelhang {
                 snowflake.xP = Math.random() * 500;
                 snowflake.yP = Math.random() * 700;
 
-               // snowflake.draw();
+                // snowflake.draw();
 
                 snowflakes.push(snowflake);
 
@@ -143,7 +140,7 @@ namespace Classes_Rodelhang {
                 childUp.yP = Math.random() * 3 + 650;
                 childUp.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
 
-               // childUp.draw();
+                // childUp.draw();
 
                 console.log("childrenUp");
 
@@ -158,7 +155,7 @@ namespace Classes_Rodelhang {
                 childDown.yP = Math.random() * 75 + 400;
                 childDown.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
 
-              //  childDown.draw();
+                //  childDown.draw();
 
                 console.log("childrenDown");
 
