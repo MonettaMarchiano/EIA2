@@ -7,16 +7,17 @@ Er wurde nicht kopiert und auch nicht diktiert. */
 var Classes_Rodelhang;
 (function (Classes_Rodelhang) {
     window.addEventListener("load", init);
+    let imagedata;
     let snowflakes = [];
     let cloudOne = [];
     let cloudTwo = [];
     let childrenUp = [];
     let childrenDown = [];
     let fps = 25;
-    let imagedata;
     function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
         Classes_Rodelhang.crc = canvas.getContext("2d");
+        imagedata = Classes_Rodelhang.crc.getImageData(0, 0, canvas.width, canvas.height);
         drawSky();
         drawHillside();
         drawSun();
@@ -62,6 +63,7 @@ var Classes_Rodelhang;
                 console.log("childDown.move();");
                 childDown.draw();
             }
+            update();
         } //update();
         //Bäume
         function generateTrees() {
@@ -117,9 +119,9 @@ var Classes_Rodelhang;
             Classes_Rodelhang.crc.beginPath();
             Classes_Rodelhang.crc.moveTo(0, 300);
             Classes_Rodelhang.crc.lineTo(700, 700);
-            Classes_Rodelhang.crc.lineTo(600, 700);
+            Classes_Rodelhang.crc.lineTo(700, 700);
             Classes_Rodelhang.crc.lineTo(0, 700);
-            Classes_Rodelhang.crc.lineTo(0, 500);
+            Classes_Rodelhang.crc.lineTo(0, 700);
             Classes_Rodelhang.crc.closePath();
             Classes_Rodelhang.crc.fillStyle = "#FFFFFF";
             Classes_Rodelhang.crc.fill();

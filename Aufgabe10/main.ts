@@ -11,6 +11,8 @@ namespace Classes_Rodelhang {
 
     export let crc: CanvasRenderingContext2D;
 
+    let imagedata: ImageData;
+
     let snowflakes: Snow[] = [];
     let cloudOne: CloudOne[] = [];
     let cloudTwo: CloudTwo[] = [];
@@ -19,20 +21,24 @@ namespace Classes_Rodelhang {
 
     let fps: number = 25;
 
-    let imagedata: ImageData;
+
 
     function init(): void {
 
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         crc = canvas.getContext("2d");
 
+        imagedata = crc.getImageData(0, 0, canvas.width, canvas.height);
+
         drawSky();
         drawHillside();
         drawSun();
+
         generateTrees();
         generateSnow();
         generateChildrenUp();
         generateChildrenDown();
+
         imagedata = crc.getImageData(0, 0, canvas.width, canvas.height);
 
         update();
@@ -50,7 +56,6 @@ namespace Classes_Rodelhang {
                 let snowflake: Snow = snowflakes[i];
                 snowflake.move();
                 snowflake.draw();
-
 
             }
 
@@ -92,6 +97,7 @@ namespace Classes_Rodelhang {
                 childDown.draw();
             }
 
+            update();
         } //update();
 
 
@@ -168,9 +174,9 @@ namespace Classes_Rodelhang {
             crc.beginPath();
             crc.moveTo(0, 300);
             crc.lineTo(700, 700);
-            crc.lineTo(600, 700);
+            crc.lineTo(700, 700);
             crc.lineTo(0, 700);
-            crc.lineTo(0, 500);
+            crc.lineTo(0, 700);
             crc.closePath();
             crc.fillStyle = "#FFFFFF";
             crc.fill();

@@ -18,8 +18,8 @@ namespace Classes_Rodelhang {
         move(): void {
 
 
-            this.yD = Math.random() * (-3);
-            this.xD = Math.random() * (-6);
+            this.yD = Math.random() * -3;
+            this.xD = Math.random() * -6;
 
             this.xP += this.xD;
             this.yP += this.yD;
@@ -27,7 +27,6 @@ namespace Classes_Rodelhang {
             if (this.xP > 500) {
                 this.xP = Math.random() * 20 + 10;
                 this.yP = 700;
-
 
             }
             this.draw();
