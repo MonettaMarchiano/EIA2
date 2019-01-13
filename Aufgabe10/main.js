@@ -17,7 +17,6 @@ var Classes_Rodelhang;
     function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
         Classes_Rodelhang.crc = canvas.getContext("2d");
-        imagedata = Classes_Rodelhang.crc.getImageData(0, 0, canvas.width, canvas.height);
         drawSky();
         drawHillside();
         drawSun();

@@ -29,7 +29,6 @@ namespace Classes_Rodelhang {
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         crc = canvas.getContext("2d");
 
-        imagedata = crc.getImageData(0, 0, canvas.width, canvas.height);
 
         drawSky();
         drawHillside();
