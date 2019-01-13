@@ -89,7 +89,7 @@ namespace Classes_Rodelhang {
 
                 childUp.move();
 
-                console.log("childUp.move();");
+                
 
                 childUp.draw();
             }
@@ -99,7 +99,6 @@ namespace Classes_Rodelhang {
 
                 childDown.move();
 
-                console.log("childDown.move();");
 
                 childDown.draw();
             }
