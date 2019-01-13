@@ -41,7 +41,7 @@ namespace Classes_Rodelhang {
 
         function update(): void {
             crc.putImageData(imagedata, 0, 0);
-            window.setTimeout(update, 6000 / fps);
+            window.setTimeout(update, 1000 / fps);
 
 
             //Schneeflocken    

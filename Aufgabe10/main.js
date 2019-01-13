@@ -29,7 +29,7 @@ var Classes_Rodelhang;
         //init();
         function update() {
             Classes_Rodelhang.crc.putImageData(imagedata, 0, 0);
-            window.setTimeout(update, 6000 / fps);
+            window.setTimeout(update, 1000 / fps);
             //Schneeflocken    
             for (let i = 0; i < snowflakes.length; i++) {
                 let snowflake = snowflakes[i];
