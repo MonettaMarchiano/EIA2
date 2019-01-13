@@ -53,11 +53,13 @@ var Classes_Rodelhang;
             for (let i = 0; i < Classes_Rodelhang.ChildrenUp.length; i++) {
                 let childUp = childrenUp[i];
                 childUp.move();
+                console.log("childUp.move();");
                 childUp.draw();
             }
             for (let i = 0; i < Classes_Rodelhang.ChildrenDown.length; i++) {
                 let childDown = childrenDown[i];
                 childDown.move();
+                console.log("childDown.move();");
                 childDown.draw();
             }
         } //update();

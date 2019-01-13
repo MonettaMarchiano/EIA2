@@ -16,8 +16,8 @@ namespace Classes_Rodelhang {
 
         move(): void {
             
-        this.yD = 2;
-        this.xD = Math.random() * 4 - 2; 
+        this.yD = 5;
+        this.xD = Math.random() * 3 - 3; 
             
         this.xP += this.xD;
         this.yP += this.yD;

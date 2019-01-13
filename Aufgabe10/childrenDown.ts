@@ -31,7 +31,9 @@ namespace Classes_Rodelhang {
                 this.yP = Math.random() * 300 + 200;
 
             }
+            this.draw();
         } // close move
+        
 
         draw(): void {
             crc.beginPath();

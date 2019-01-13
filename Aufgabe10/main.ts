@@ -80,12 +80,15 @@ namespace Classes_Rodelhang {
             for (let i: number = 0; i < ChildrenUp.length; i++) {
                 let childUp: ChildrenUp = childrenUp[i];
                 childUp.move();
+                console.log("childUp.move();");
                 childUp.draw();
             }
 
             for (let i: number = 0; i < ChildrenDown.length; i++) {
                 let childDown: ChildrenDown = childrenDown[i];
                 childDown.move();
+                console.log("childDown.move();");
+
                 childDown.draw();
             }
 

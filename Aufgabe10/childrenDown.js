@@ -16,6 +16,7 @@ var Classes_Rodelhang;
                 this.xP = -60;
                 this.yP = Math.random() * 300 + 200;
             }
+            this.draw();
         } // close move
         draw() {
             Classes_Rodelhang.crc.beginPath();
