@@ -63,24 +63,24 @@ namespace Classes_Rodelhang {
 
             //Wolken
 
-            let cloudOne: CloudOne = new CloudOne();
-            cloudOne.xP = 50;
-            cloudOne.yP = 100;
-
-            cloudOne.move();
-            cloudOne.draw();
-
-
-            console.log("cloud1");
-
-            let cloudTwo: CloudTwo = new CloudTwo();
-            cloudTwo.xP = 100;
-            cloudTwo.yP = 50;
-
-            cloudTwo.move();
-            cloudTwo.draw();
-
-            console.log("cloud2");
+//            let cloudOne: CloudOne = new CloudOne();
+//            cloudOne.xP = 50;
+//            cloudOne.yP = 100;
+//
+//            cloudOne.move();
+//            cloudOne.draw();
+//
+//
+//            console.log("cloud1");
+//
+//            let cloudTwo: CloudTwo = new CloudTwo();
+//            cloudTwo.xP = 100;
+//            cloudTwo.yP = 50;
+//
+//            cloudTwo.move();
+//            cloudTwo.draw();
+//
+//            console.log("cloud2");
 
 
             //Kinder
