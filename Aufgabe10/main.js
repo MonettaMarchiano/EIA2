@@ -29,7 +29,7 @@ var Classes_Rodelhang;
         //init();
         function update() {
             Classes_Rodelhang.crc.putImageData(imagedata, 0, 0);
-            window.setTimeout(update, 7500 / fps);
+            window.setTimeout(update, 6000 / fps);
             //Schneeflocken    
             for (let i = 0; i < snowflakes.length; i++) {
                 let snowflake = snowflakes[i];
@@ -50,13 +50,13 @@ var Classes_Rodelhang;
             cloudTwo.draw();
             console.log("cloud2");
             //Kinder
-            for (let i = 0; i < Classes_Rodelhang.ChildrenUp.length; i++) {
+            for (let i = 0; i < childrenUp.length; i++) {
                 let childUp = childrenUp[i];
                 childUp.move();
                 console.log("childUp.move();");
                 childUp.draw();
             }
-            for (let i = 0; i < Classes_Rodelhang.ChildrenDown.length; i++) {
+            for (let i = 0; i < childrenDown.length; i++) {
                 let childDown = childrenDown[i];
                 childDown.move();
                 console.log("childDown.move();");

@@ -8,8 +8,8 @@ var Classes_Rodelhang;
 (function (Classes_Rodelhang) {
     class ChildrenDown {
         move() {
-            this.yD = 2;
-            this.xD = 5;
+            this.yD = 3;
+            this.xD = 6;
             this.xP += this.xD;
             this.yP += this.yD;
             if (this.xP > 700) {

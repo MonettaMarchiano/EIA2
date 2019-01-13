@@ -16,16 +16,18 @@ namespace Classes_Rodelhang {
         colorHead: string;
         colorBody: string;
 
-        
+
         move(): void {
 
-            this.yD = 2;
-            this.xD = 5;
-            
+
+
+            this.yD = 3;
+            this.xD = 6;
+
             this.xP += this.xD;
             this.yP += this.yD;
-            
-            
+
+
             if (this.xP > 700) {
                 this.xP = -60;
                 this.yP = Math.random() * 300 + 200;
@@ -33,7 +35,7 @@ namespace Classes_Rodelhang {
             }
             this.draw();
         } // close move
-        
+
 
         draw(): void {
             crc.beginPath();

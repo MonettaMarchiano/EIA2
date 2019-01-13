@@ -41,7 +41,7 @@ namespace Classes_Rodelhang {
 
         function update(): void {
             crc.putImageData(imagedata, 0, 0);
-            window.setTimeout(update, 7500 / fps);
+            window.setTimeout(update, 6000 / fps);
 
 
             //Schneeflocken    
@@ -77,14 +77,14 @@ namespace Classes_Rodelhang {
 
 
             //Kinder
-            for (let i: number = 0; i < ChildrenUp.length; i++) {
+            for (let i: number = 0; i < childrenUp.length; i++) {
                 let childUp: ChildrenUp = childrenUp[i];
                 childUp.move();
                 console.log("childUp.move();");
                 childUp.draw();
             }
 
-            for (let i: number = 0; i < ChildrenDown.length; i++) {
+            for (let i: number = 0; i < childrenDown.length; i++) {
                 let childDown: ChildrenDown = childrenDown[i];
                 childDown.move();
                 console.log("childDown.move();");
