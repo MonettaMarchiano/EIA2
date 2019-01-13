@@ -37,24 +37,18 @@ var Classes_Rodelhang;
                 snowflake.draw();
             }
             //Wolken
-            //            let cloudOne: CloudOne = new CloudOne();
-            //            cloudOne.xP = 50;
-            //            cloudOne.yP = 100;
-            //
-            //            cloudOne.move();
-            //            cloudOne.draw();
-            //
-            //
-            //            console.log("cloud1");
-            //
-            //            let cloudTwo: CloudTwo = new CloudTwo();
-            //            cloudTwo.xP = 100;
-            //            cloudTwo.yP = 50;
-            //
-            //            cloudTwo.move();
-            //            cloudTwo.draw();
-            //
-            //            console.log("cloud2");
+            let cloudOne = new Classes_Rodelhang.CloudOne();
+            cloudOne.xP = 50;
+            cloudOne.yP = 100;
+            cloudOne.move();
+            cloudOne.draw();
+            console.log("cloud1");
+            let cloudTwo = new Classes_Rodelhang.CloudTwo();
+            cloudTwo.xP = 100;
+            cloudTwo.yP = 50;
+            cloudTwo.move();
+            cloudTwo.draw();
+            console.log("cloud2");
             //Kinder
             for (let i = 0; i < childrenUp.length; i++) {
                 let childUp = childrenUp[i];
