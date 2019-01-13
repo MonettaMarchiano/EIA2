@@ -8,13 +8,13 @@ var Classes_Rodelhang;
 (function (Classes_Rodelhang) {
     class ChildrenDown {
         move() {
-            this.yD = 3;
             this.xD = 6;
+            this.yD = 3;
             this.xP += this.xD;
             this.yP += this.yD;
             if (this.xP > 700) {
-                this.xP = -60;
                 this.yP = Math.random() * 300 + 300;
+                this.xP = -60;
             }
             this.draw();
         } // close move

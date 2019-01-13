@@ -81,7 +81,7 @@ var Classes_Rodelhang;
                 let snowflake = new Classes_Rodelhang.Snow();
                 snowflake.xP = Math.random() * 500;
                 snowflake.yP = Math.random() * 700;
-                snowflake.draw();
+                // snowflake.draw();
                 snowflakes.push(snowflake);
             }
         }
@@ -92,7 +92,7 @@ var Classes_Rodelhang;
                 childUp.xP = Math.random() * 75 + 400;
                 childUp.yP = Math.random() * 3 + 650;
                 childUp.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
-                childUp.draw();
+                // childUp.draw();
                 console.log("childrenUp");
                 childrenUp.push(childUp);
             }
@@ -103,7 +103,7 @@ var Classes_Rodelhang;
                 childDown.xP = Math.random() * 75 + 100;
                 childDown.yP = Math.random() * 75 + 400;
                 childDown.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
-                childDown.draw();
+                //  childDown.draw();
                 console.log("childrenDown");
                 childrenDown.push(childDown);
             }
