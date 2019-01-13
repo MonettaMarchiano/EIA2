@@ -16,6 +16,7 @@ namespace Classes_Rodelhang {
         colorHead: string;
         colorBody: string;
 
+        
         move(): void {
 
             this.yD = 2;
@@ -26,7 +27,7 @@ namespace Classes_Rodelhang {
             
             
             if (this.xP > 700) {
-                this.xP = -60
+                this.xP = -60;
                 this.yP = Math.random() * 300 + 200;
 
             }

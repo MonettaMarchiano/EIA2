@@ -30,156 +30,170 @@ namespace Classes_Rodelhang {
         drawHillside();
         drawSun();
         generateTrees();
-        generateChidlrenUp();
+        generateSnow();
+        generateChildrenUp();
         generateChildrenDown();
         imagedata = crc.getImageData(0, 0, canvas.width, canvas.height);
 
         update();
 
-    } //init();
+        //init();
 
-    function update(): void {
-        crc.putImageData(imagedata, 0, 0);
-        window.setTimeout(update, 7500 / fps);
-
-
-        //Schneeflocken    
-
-        for (let i: number = 0; i <= 200; i++) {
-            let snowflake: Snow = new Snow();
-            snowflake.xP = Math.random() * 500;
-            snowflake.yP = Math.random() * 700;
-
-            snowflake.draw();
-            snowflake.move();
-
-            snowflakes.push(snowflake);
-        }
-
-        //Wolken
-
-        let cloudOne: CloudOne = new CloudOne();
-        cloudOne.xP = 50;
-        cloudOne.yP = 100;
-
-        cloudOne.move();
-        cloudOne.draw();
+        function update(): void {
+            crc.putImageData(imagedata, 0, 0);
+            window.setTimeout(update, 7500 / fps);
 
 
-        console.log("cloud1");
+            //Schneeflocken    
 
-        let cloudTwo: CloudTwo = new CloudTwo();
-        cloudTwo.xP = 100;
-        cloudTwo.yP = 50;
-
-        cloudTwo.move();
-        cloudTwo.draw();
-
-        console.log("cloud2");
+            for (let i: number = 0; i < snowflakes.length; i++) {
+                let snowflake: Snow = snowflakes[i];
+                snowflake.move();
+                snowflake.draw();
 
 
-        //Kinder
-        for (let i: number = 0; i < ChildUp.lenght; i++) {
-            let childUp: ChildrenUp = ChildUp[i];
-            childUp.move();
-            childUp.draw();
+            }
 
-            for (let i: number = 0; i < ChildDown.lenght; i++) {
-                let childDown: ChildrenDown = ChildDown[i];
+            //Wolken
+
+            let cloudOne: CloudOne = new CloudOne();
+            cloudOne.xP = 50;
+            cloudOne.yP = 100;
+
+            cloudOne.move();
+            cloudOne.draw();
+
+
+            console.log("cloud1");
+
+            let cloudTwo: CloudTwo = new CloudTwo();
+            cloudTwo.xP = 100;
+            cloudTwo.yP = 50;
+
+            cloudTwo.move();
+            cloudTwo.draw();
+
+            console.log("cloud2");
+
+
+            //Kinder
+            for (let i: number = 0; i < ChildrenUp.length; i++) {
+                let childUp: ChildrenUp = childrenUp[i];
+                childUp.move();
+                childUp.draw();
+            }
+
+            for (let i: number = 0; i < ChildrenDown.length; i++) {
+                let childDown: ChildrenDown = childrenDown[i];
                 childDown.move();
                 childDown.draw();
-
-
-            } //update();
-
-
-            //Bäume
-            function generateTrees(): void {
-
-                for (let i: number = 0; i < 10; i++) {
-                    let x: number = 40 + Math.random() * 200;
-                    let y: number = 450 + Math.random() * 150;
-                    drawTree(x, y, "#0B6138");
-                }
-
-                for (let i: number = 0; i < 5; i++) {
-                    let x: number = 40 + Math.random() * 200;
-                    let y: number = 450 + Math.random() * 150;
-                    drawTree(x, y, "#0B3B2E");
-                }
             }
 
-            function generateChildrenUp(): void {
-                for (let i: number = 0; i <= 5; i++) {
-                    let childUp: ChildrenUp = new ChildrenUp();
-                    console.log(crc);
-                    childUp.xP = Math.random() * 75 + 400;
-                    childUp.yP = Math.random() * 3 + 650;
-                    childUp.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+        } //update();
 
-                    childUp.draw();
 
-                    console.log("childrenUp");
+        //Bäume
+        function generateTrees(): void {
 
-                    childrenUp.push(childUp);
-                }
+            for (let i: number = 0; i < 10; i++) {
+                let x: number = 40 + Math.random() * 200;
+                let y: number = 450 + Math.random() * 150;
+                drawTree(x, y, "#0B6138");
             }
 
-            function generateChildrenDown(): void {
-                for (let i: number = 0; i <= 5; i++) {
-                    let childDown: ChildrenDown = new ChildrenDown;
-                    childDown.xP = Math.random() * 75 + 100;
-                    childDown.yP = Math.random() * 75 + 400;
-                    childDown.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
-
-                    childDown.draw();
-
-                    console.log("childrenDown");
-
-                    childrenDown.push(childDown);
-                }
+            for (let i: number = 0; i < 5; i++) {
+                let x: number = 40 + Math.random() * 200;
+                let y: number = 450 + Math.random() * 150;
+                drawTree(x, y, "#0B3B2E");
             }
+        } //generateTrees();
 
-            function drawSky(): void {
+        function generateSnow(): void {
 
-                crc.fillStyle = "#CEF6F5";
-                crc.fillRect(0, 0, 500, 700);
-                crc.fill();
-            } //drawSky();
+            for (let i: number = 0; i <= 150; i++) {
+                let snowflake: Snow = new Snow();
+                snowflake.xP = Math.random() * 500;
+                snowflake.yP = Math.random() * 700;
 
-            function drawHillside(): void {
+                snowflake.draw();
 
-                crc.beginPath();
-                crc.moveTo(0, 300);
-                crc.lineTo(500, 700);
-                crc.lineTo(500, 700);
-                crc.lineTo(0, 700);
-                crc.lineTo(0, 300);
-                crc.closePath();
-                crc.fillStyle = "#FFFFFF";
-                crc.fill();
-            }//drawHillside();
+                snowflakes.push(snowflake);
 
-            function drawSun(): void {
+            }
+        }
 
-                crc.beginPath();
-                crc.arc(430, 100, 50, 0, 2 * Math.PI);
-                crc.fillStyle = "#FFFF00";
-                crc.fill();
-            } //drawSun();
+        function generateChildrenUp(): void {
+            for (let i: number = 0; i <= 5; i++) {
+                let childUp: ChildrenUp = new ChildrenUp();
+                console.log(crc);
+                childUp.xP = Math.random() * 75 + 400;
+                childUp.yP = Math.random() * 3 + 650;
+                childUp.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
 
-            function drawTree(_x: number, _y: number, _color: string): void {
+                childUp.draw();
 
-                crc.fillStyle = "#886A08";
-                crc.fillRect(_x - 8, _y + 60, 12, 15);
-                crc.beginPath();
-                crc.moveTo(_x, _y);
-                crc.lineTo(_x + 30, _y + 60);
-                crc.lineTo(_x - 30, _y + 60);
-                crc.closePath();
-                crc.fillStyle = _color;
-                crc.fill();
-            } //drawTree();
+                console.log("childrenUp");
 
-        } //namespace
-    
+                childrenUp.push(childUp);
+            }
+        } //generateChildrenUp();
+
+        function generateChildrenDown(): void {
+            for (let i: number = 0; i <= 5; i++) {
+                let childDown: ChildrenDown = new ChildrenDown;
+                childDown.xP = Math.random() * 75 + 100;
+                childDown.yP = Math.random() * 75 + 400;
+                childDown.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+
+                childDown.draw();
+
+                console.log("childrenDown");
+
+                childrenDown.push(childDown);
+            }
+        } //generateChildrenDown();
+
+        function drawSky(): void {
+
+            crc.fillStyle = "#CEF6F5";
+            crc.fillRect(0, 0, 500, 700);
+            crc.fill();
+        } //drawSky();
+
+        function drawHillside(): void {
+
+            crc.beginPath();
+            crc.moveTo(0, 300);
+            crc.lineTo(500, 700);
+            crc.lineTo(500, 700);
+            crc.lineTo(0, 700);
+            crc.lineTo(0, 300);
+            crc.closePath();
+            crc.fillStyle = "#FFFFFF";
+            crc.fill();
+        }//drawHillside();
+
+        function drawSun(): void {
+
+            crc.beginPath();
+            crc.arc(430, 100, 50, 0, 2 * Math.PI);
+            crc.fillStyle = "#FFFF00";
+            crc.fill();
+        } //drawSun();
+
+        function drawTree(_x: number, _y: number, _color: string): void {
+
+            crc.fillStyle = "#886A08";
+            crc.fillRect(_x - 8, _y + 60, 12, 15);
+            crc.beginPath();
+            crc.moveTo(_x, _y);
+            crc.lineTo(_x + 30, _y + 60);
+            crc.lineTo(_x - 30, _y + 60);
+            crc.closePath();
+            crc.fillStyle = _color;
+            crc.fill();
+        } //drawTree();
+
+    }
+
+}
