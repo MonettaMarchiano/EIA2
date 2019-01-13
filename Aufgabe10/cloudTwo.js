@@ -24,4 +24,4 @@ var Classes_Rodelhang;
     }
     Classes_Rodelhang.CloudTwo = CloudTwo;
 })(Classes_Rodelhang || (Classes_Rodelhang = {}));
-//# sourceMappingURL=cloudtwo.js.map
+//# sourceMappingURL=cloudTwo.js.map
