@@ -46,7 +46,6 @@ namespace Classes_Rodelhang {
             crc.fillRect(this.xP - 25, this.yP + 2, 10, 20);
             crc.stroke();
             crc.fill();
-            console.log("kind3");
 
             //Schlitten
             crc.beginPath();

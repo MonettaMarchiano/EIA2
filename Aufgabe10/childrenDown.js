@@ -28,7 +28,6 @@ var Classes_Rodelhang;
             Classes_Rodelhang.crc.fillRect(this.xP - 25, this.yP + 2, 10, 20);
             Classes_Rodelhang.crc.stroke();
             Classes_Rodelhang.crc.fill();
-            console.log("kind3");
             //Schlitten
             Classes_Rodelhang.crc.beginPath();
             Classes_Rodelhang.crc.moveTo(this.xP - 37, this.yP + 25);
