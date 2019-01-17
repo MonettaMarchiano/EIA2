@@ -9,10 +9,10 @@ var Inheritance_Rodelhang;
     window.addEventListener("load", init);
     let imagedata;
     let snowflakes = [];
-    let cloudOne;
-    let cloudTwo;
     let childrenUp = [];
     let childrenDown = [];
+    let cloudOne;
+    let cloudTwo;
     let fps = 25;
     function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
@@ -71,7 +71,6 @@ var Inheritance_Rodelhang;
                 let snowflake = new Inheritance_Rodelhang.Snow();
                 snowflake.xP = Math.random() * 500;
                 snowflake.yP = Math.random() * 700;
-                // snowflake.draw();
                 snowflakes.push(snowflake);
             }
         }

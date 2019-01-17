@@ -14,10 +14,11 @@ namespace Inheritance_Rodelhang {
     let imagedata: ImageData;
 
     let snowflakes: Snow[] = [];
-    let cloudOne: CloudOne;
-    let cloudTwo: CloudTwo;
     let childrenUp: ChildrenUp[] = [];
     let childrenDown: ChildrenDown[] = [];
+    
+    let cloudOne: CloudOne;
+    let cloudTwo: CloudTwo;
 
     let fps: number = 25;
 
@@ -97,12 +98,8 @@ namespace Inheritance_Rodelhang {
                 snowflake.xP = Math.random() * 500;
                 snowflake.yP = Math.random() * 700;
 
-                // snowflake.draw();
-
                 snowflakes.push(snowflake);
-
             }
-
         }
 
         function generateClouds(): void {
