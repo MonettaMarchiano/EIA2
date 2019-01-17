@@ -6,7 +6,12 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
 Er wurde nicht kopiert und auch nicht diktiert. */
 var Inheritance_Rodelhang;
 (function (Inheritance_Rodelhang) {
-    class Snow {
+    class Snow extends Inheritance_Rodelhang.DrawObject {
+        constructor() {
+            super();
+            this.xP = Math.random() * 500;
+            this.yP = Math.random() * 700;
+        }
         move() {
             this.yD = 5;
             this.xD = Math.random() * 0;

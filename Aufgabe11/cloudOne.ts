@@ -5,14 +5,18 @@ Datum: 17.01.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
 Er wurde nicht kopiert und auch nicht diktiert. */
 
-namespace Inheritance_Rodelhang  {
+namespace Inheritance_Rodelhang {
 
-    export class CloudOne {
-        xP: number;
-        yP: number;
+    export class CloudOne extends DrawObject {
         xD: number;
         yD: number;
-        
+
+        constructor() {
+            super();
+            this.xP = 50;
+            this.yP = 100;
+        }
+
 
         move(): void {
 
@@ -28,13 +32,13 @@ namespace Inheritance_Rodelhang  {
 
         draw(): void {
             crc.beginPath();
-            crc.arc(this.xP - 50, this.yP , 45, 0, 2 * Math.PI);
+            crc.arc(this.xP - 50, this.yP, 45, 0, 2 * Math.PI);
             crc.arc(this.xP, this.yP, 50, 0, 2 * Math.PI);
             crc.arc(this.xP + 40, this.yP, 40, 0, 2 * Math.PI);
             crc.fillStyle = "#FFFFFF";
             crc.fill();
 
-           
+
         }
 
     }

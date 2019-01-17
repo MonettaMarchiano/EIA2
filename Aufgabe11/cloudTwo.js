@@ -6,7 +6,12 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
 Er wurde nicht kopiert und auch nicht diktiert. */
 var Inheritance_Rodelhang;
 (function (Inheritance_Rodelhang) {
-    class CloudTwo {
+    class CloudTwo extends Inheritance_Rodelhang.DrawObject {
+        constructor() {
+            super();
+            this.xP = 100;
+            this.yP = 50;
+        }
         move() {
             if (this.xP > 500) {
                 this.xP = 0;

@@ -12,7 +12,10 @@ namespace Inheritance_Rodelhang {
     export let crc: CanvasRenderingContext2D;
 
     let imagedata: ImageData;
-
+    
+    let objects: DrawObject[] = [];
+    
+    //fliegen nachher raus
     let snowflakes: Snow[] = [];
     let childrenUp: ChildrenUp[] = [];
     let childrenDown: ChildrenDown[] = [];
@@ -95,8 +98,8 @@ namespace Inheritance_Rodelhang {
 
             for (let i: number = 0; i <= 150; i++) {
                 let snowflake: Snow = new Snow();
-                snowflake.xP = Math.random() * 500;
-                snowflake.yP = Math.random() * 700;
+//                snowflake.xP = Math.random() * 500;
+//                snowflake.yP = Math.random() * 700;
 
                 snowflakes.push(snowflake);
             }
@@ -104,21 +107,21 @@ namespace Inheritance_Rodelhang {
 
         function generateClouds(): void {
             cloudOne = new CloudOne();
-            cloudOne.xP = 50;
-            cloudOne.yP = 100;
+//            cloudOne.xP = 50;
+//            cloudOne.yP = 100;
 
             cloudTwo = new CloudTwo();
-            cloudTwo.xP = 100;
-            cloudTwo.yP = 50;
+//            cloudTwo.xP = 100;
+//            cloudTwo.yP = 50;
         }
 
         function generateChildrenUp(): void {
             for (let i: number = 0; i <= 4; i++) {
                 let childUp: ChildrenUp = new ChildrenUp();
                 console.log(crc);
-                childUp.xP = Math.random() * 75 + 400;
-                childUp.yP = Math.random() * 3 + 650;
-                childUp.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+//                childUp.xP = Math.random() * 75 + 400;
+//                childUp.yP = Math.random() * 3 + 650;
+//                childUp.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
 
                 childrenUp.push(childUp);
             }
@@ -127,9 +130,9 @@ namespace Inheritance_Rodelhang {
         function generateChildrenDown(): void {
             for (let i: number = 0; i <= 4; i++) {
                 let childDown: ChildrenDown = new ChildrenDown;
-                childDown.xP = Math.random() * 75 + 100;
-                childDown.yP = Math.random() * 75 + 400;
-                childDown.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+//                childDown.xP = Math.random() * 75 + 100;
+//                childDown.yP = Math.random() * 75 + 400;
+//                childDown.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
 
                 childrenDown.push(childDown);
             }

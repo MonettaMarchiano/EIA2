@@ -8,6 +8,8 @@ var Inheritance_Rodelhang;
 (function (Inheritance_Rodelhang) {
     window.addEventListener("load", init);
     let imagedata;
+    let objects = [];
+    //fliegen nachher raus
     let snowflakes = [];
     let childrenUp = [];
     let childrenDown = [];
@@ -69,35 +71,35 @@ var Inheritance_Rodelhang;
         function generateSnow() {
             for (let i = 0; i <= 150; i++) {
                 let snowflake = new Inheritance_Rodelhang.Snow();
-                snowflake.xP = Math.random() * 500;
-                snowflake.yP = Math.random() * 700;
+                //                snowflake.xP = Math.random() * 500;
+                //                snowflake.yP = Math.random() * 700;
                 snowflakes.push(snowflake);
             }
         }
         function generateClouds() {
             cloudOne = new Inheritance_Rodelhang.CloudOne();
-            cloudOne.xP = 50;
-            cloudOne.yP = 100;
+            //            cloudOne.xP = 50;
+            //            cloudOne.yP = 100;
             cloudTwo = new Inheritance_Rodelhang.CloudTwo();
-            cloudTwo.xP = 100;
-            cloudTwo.yP = 50;
+            //            cloudTwo.xP = 100;
+            //            cloudTwo.yP = 50;
         }
         function generateChildrenUp() {
             for (let i = 0; i <= 4; i++) {
                 let childUp = new Inheritance_Rodelhang.ChildrenUp();
                 console.log(Inheritance_Rodelhang.crc);
-                childUp.xP = Math.random() * 75 + 400;
-                childUp.yP = Math.random() * 3 + 650;
-                childUp.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+                //                childUp.xP = Math.random() * 75 + 400;
+                //                childUp.yP = Math.random() * 3 + 650;
+                //                childUp.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
                 childrenUp.push(childUp);
             }
         } //generateChildrenUp();
         function generateChildrenDown() {
             for (let i = 0; i <= 4; i++) {
                 let childDown = new Inheritance_Rodelhang.ChildrenDown;
-                childDown.xP = Math.random() * 75 + 100;
-                childDown.yP = Math.random() * 75 + 400;
-                childDown.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+                //                childDown.xP = Math.random() * 75 + 100;
+                //                childDown.yP = Math.random() * 75 + 400;
+                //                childDown.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
                 childrenDown.push(childDown);
             }
         } //generateChildrenDown();
