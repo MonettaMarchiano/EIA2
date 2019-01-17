@@ -27,7 +27,7 @@ namespace Classes_Rodelhang {
             this.yP += this.yD;
 
 
-            if (this.xP > 700) {
+            if (this.xP > 500) {
                 this.yP = Math.random() * 300 + 300;
                 this.xP = -60;
 

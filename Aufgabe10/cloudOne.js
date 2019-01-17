@@ -16,9 +16,9 @@ var Classes_Rodelhang;
         }
         draw() {
             Classes_Rodelhang.crc.beginPath();
-            Classes_Rodelhang.crc.arc(this.xP + 70, this.yP + 100, 45, 0, 2 * Math.PI);
-            Classes_Rodelhang.crc.arc(this.xP + 120, this.yP + 100, 50, 0, 2 * Math.PI);
-            Classes_Rodelhang.crc.arc(this.xP + 160, this.yP + 100, 40, 0, 2 * Math.PI);
+            Classes_Rodelhang.crc.arc(this.xP - 50, this.yP, 45, 0, 2 * Math.PI);
+            Classes_Rodelhang.crc.arc(this.xP, this.yP, 50, 0, 2 * Math.PI);
+            Classes_Rodelhang.crc.arc(this.xP + 40, this.yP, 40, 0, 2 * Math.PI);
             Classes_Rodelhang.crc.fillStyle = "#FFFFFF";
             Classes_Rodelhang.crc.fill();
         }

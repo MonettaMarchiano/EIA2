@@ -9,8 +9,8 @@ var Classes_Rodelhang;
     window.addEventListener("load", init);
     let imagedata;
     let snowflakes = [];
-    let cloudOne = [];
-    let cloudTwo = [];
+    let cloudOne;
+    let cloudTwo;
     let childrenUp = [];
     let childrenDown = [];
     let fps = 25;
@@ -22,6 +22,7 @@ var Classes_Rodelhang;
         drawSun();
         generateTrees();
         generateSnow();
+        generateClouds();
         generateChildrenUp();
         generateChildrenDown();
         imagedata = Classes_Rodelhang.crc.getImageData(0, 0, canvas.width, canvas.height);
@@ -37,14 +38,8 @@ var Classes_Rodelhang;
                 snowflake.draw();
             }
             //Wolken
-            let cloudOne = new Classes_Rodelhang.CloudOne();
-            cloudOne.xP = 50;
-            cloudOne.yP = 100;
             cloudOne.move();
             cloudOne.draw();
-            let cloudTwo = new Classes_Rodelhang.CloudTwo();
-            cloudTwo.xP = 100;
-            cloudTwo.yP = 50;
             cloudTwo.move();
             cloudTwo.draw();
             //Kinder
@@ -81,6 +76,14 @@ var Classes_Rodelhang;
                 snowflakes.push(snowflake);
             }
         }
+        function generateClouds() {
+            cloudOne = new Classes_Rodelhang.CloudOne();
+            cloudOne.xP = 50;
+            cloudOne.yP = 100;
+            cloudTwo = new Classes_Rodelhang.CloudTwo();
+            cloudTwo.xP = 100;
+            cloudTwo.yP = 50;
+        }
         function generateChildrenUp() {
             for (let i = 0; i <= 4; i++) {
                 let childUp = new Classes_Rodelhang.ChildrenUp();
@@ -89,7 +92,6 @@ var Classes_Rodelhang;
                 childUp.yP = Math.random() * 3 + 650;
                 childUp.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
                 // childUp.draw();
-                console.log("childrenUp");
                 childrenUp.push(childUp);
             }
         } //generateChildrenUp();

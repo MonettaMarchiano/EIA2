@@ -28,9 +28,9 @@ namespace Classes_Rodelhang {
 
         draw(): void {
             crc.beginPath();
-            crc.arc(this.xP + 70, this.yP + 100, 45, 0, 2 * Math.PI);
-            crc.arc(this.xP + 120, this.yP + 100, 50, 0, 2 * Math.PI);
-            crc.arc(this.xP + 160, this.yP + 100, 40, 0, 2 * Math.PI);
+            crc.arc(this.xP - 50, this.yP , 45, 0, 2 * Math.PI);
+            crc.arc(this.xP, this.yP, 50, 0, 2 * Math.PI);
+            crc.arc(this.xP + 40, this.yP, 40, 0, 2 * Math.PI);
             crc.fillStyle = "#FFFFFF";
             crc.fill();
 

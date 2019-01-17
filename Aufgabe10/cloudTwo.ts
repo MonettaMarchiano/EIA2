@@ -30,8 +30,8 @@ namespace Classes_Rodelhang {
             
 
             crc.beginPath();
-            crc.arc(this.xP + 250, this.yP + 150, 45, 0, 2 * Math.PI);
-            crc.arc(this.xP + 290, this.yP + 150, 50, 0, 2 * Math.PI);
+            crc.arc(this.xP , this.yP + 150, 45, 0, 2 * Math.PI);
+            crc.arc(this.xP + 40, this.yP + 150, 50, 0, 2 * Math.PI);
             crc.fillStyle = "#FFFFFF";
             crc.fill();
         }

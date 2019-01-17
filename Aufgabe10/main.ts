@@ -14,8 +14,8 @@ namespace Classes_Rodelhang {
     let imagedata: ImageData;
 
     let snowflakes: Snow[] = [];
-    let cloudOne: CloudOne[] = [];
-    let cloudTwo: CloudTwo[] = [];
+    let cloudOne: CloudOne;
+    let cloudTwo: CloudTwo;
     let childrenUp: ChildrenUp[] = [];
     let childrenDown: ChildrenDown[] = [];
 
@@ -34,6 +34,7 @@ namespace Classes_Rodelhang {
 
         generateTrees();
         generateSnow();
+        generateClouds();
         generateChildrenUp();
         generateChildrenDown();
 
@@ -60,18 +61,11 @@ namespace Classes_Rodelhang {
 
             //Wolken
 
-            let cloudOne: CloudOne = new CloudOne();
-            cloudOne.xP = 50;
-            cloudOne.yP = 100;
+           
 
             cloudOne.move();
             cloudOne.draw();
-
-
-
-            let cloudTwo: CloudTwo = new CloudTwo();
-            cloudTwo.xP = 100;
-            cloudTwo.yP = 50;
+           
 
             cloudTwo.move();
             cloudTwo.draw();
@@ -130,6 +124,21 @@ namespace Classes_Rodelhang {
                 snowflakes.push(snowflake);
 
             }
+
+        }
+        
+        function generateClouds(): void {
+
+            cloudOne = new CloudOne();
+            cloudOne.xP = 50;
+            cloudOne.yP = 100;
+            
+
+            cloudTwo = new CloudTwo();
+            cloudTwo.xP = 100;
+            cloudTwo.yP = 50;
+             
+
         }
 
         function generateChildrenUp(): void {
@@ -142,7 +151,6 @@ namespace Classes_Rodelhang {
 
                 // childUp.draw();
 
-                console.log("childrenUp");
 
                 childrenUp.push(childUp);
             }
