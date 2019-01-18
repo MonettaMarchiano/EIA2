@@ -47,34 +47,32 @@ var Inheritance_Rodelhang;
             //Bäume
             for (let i = 0; i < objects.length; i++) {
                 let tree = objects[i];
-                console.log("tree");
                 tree.draw();
             } //Bäume
+            for (let i = 0; i < objects.length; i++) {
+                let object = objects[i];
+            }
         } //update
         //Bäume
+        function generateObjects() {
+            for (let i = 0; i < 175; i++) {
+                let object = new Inheritance_Rodelhang.DrawObject();
+            }
+        }
         function generateTrees() {
-            for (let i = 0; i < 10; i++) {
-                let tree = new Inheritance_Rodelhang.Tree();
-            }
-            for (let i = 0; i < 5; i++) {
-                let tree = new Inheritance_Rodelhang.Tree();
-            }
+            let tree = new Inheritance_Rodelhang.Tree();
         } //generateTrees
         function generateSnow() {
-            for (let i = 0; i <= 150; i++) {
-                let snowflake = new Inheritance_Rodelhang.Snow();
-                objects.push(snowflake);
-            }
+            let snowflake = new Inheritance_Rodelhang.Snow();
+            objects.push(snowflake);
         } //generateSnow
         function generateClouds() {
             cloudOne = new Inheritance_Rodelhang.CloudOne();
             cloudTwo = new Inheritance_Rodelhang.CloudTwo();
         } //generateClouds
         function generateChild() {
-            for (let i = 0; i <= 10; i++) {
-                let child = new Inheritance_Rodelhang.Child();
-                objects.push(child);
-            }
+            let child = new Inheritance_Rodelhang.Child();
+            objects.push(child);
         } //generateChild
         function drawSky() {
             Inheritance_Rodelhang.crc.fillStyle = "#CEF6F5";

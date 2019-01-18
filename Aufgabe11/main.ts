@@ -66,60 +66,65 @@ namespace Inheritance_Rodelhang {
                 let tree: Tree = objects[i];
                 tree.draw();
             }//Bäume
+
+            for (let i: number = 0; i < objects.length; i++) {
+                let object: DrawObject = objects[i];
+            }
         } //update
 
         //Bäume
 
         function generateObjects(): void {
-            for (let i: number = 0; i < 175; i++)
+            for (let i: number = 0; i < 175; i++) {
                 let object: DrawObject = new DrawObject();
+            }
+
+        }
+
+        function generateTrees(): void {
+            let tree: Tree = new Tree();
+        } //generateTrees
+
+        function generateSnow(): void {
+            let snowflake: Snow = new Snow();
+            objects.push(snowflake);
+        }//generateSnow
+
+        function generateClouds(): void {
+            cloudOne = new CloudOne();
+            cloudTwo = new CloudTwo();
+        }//generateClouds
 
 
-
-            function generateTrees(): void {
-                let tree: Tree = new Tree();
-            } //generateTrees
-
-            function generateSnow(): void {
-                let snowflake: Snow = new Snow();
-                objects.push(snowflake);
-            }//generateSnow
-
-            function generateClouds(): void {
-                cloudOne = new CloudOne();
-                cloudTwo = new CloudTwo();
-            }//generateClouds
+        function generateChild(): void {
+            let child: Child = new Child();
+            objects.push(child);
+        }//generateChild
 
 
-            function generateChild(): void {
-                let child: Child = new Child();
-                objects.push(child);
-            }//generateChild
+        function drawSky(): void {
+            crc.fillStyle = "#CEF6F5";
+            crc.fillRect(0, 0, 500, 700);
+            crc.fill();
+        } //drawSky
 
+        function drawHillside(): void {
+            crc.beginPath();
+            crc.moveTo(0, 300);
+            crc.lineTo(700, 700);
+            crc.lineTo(700, 700);
+            crc.lineTo(0, 700);
+            crc.lineTo(0, 700);
+            crc.closePath();
+            crc.fillStyle = "#FFFFFF";
+            crc.fill();
+        }//drawHillside
 
-            function drawSky(): void {
-                crc.fillStyle = "#CEF6F5";
-                crc.fillRect(0, 0, 500, 700);
-                crc.fill();
-            } //drawSky
-
-            function drawHillside(): void {
-                crc.beginPath();
-                crc.moveTo(0, 300);
-                crc.lineTo(700, 700);
-                crc.lineTo(700, 700);
-                crc.lineTo(0, 700);
-                crc.lineTo(0, 700);
-                crc.closePath();
-                crc.fillStyle = "#FFFFFF";
-                crc.fill();
-            }//drawHillside
-
-            function drawSun(): void {
-                crc.beginPath();
-                crc.arc(430, 100, 50, 0, 2 * Math.PI);
-                crc.fillStyle = "#FFFF00";
-                crc.fill();
-            } //drawSun
-        } //init
-    }  //namespace
+        function drawSun(): void {
+            crc.beginPath();
+            crc.arc(430, 100, 50, 0, 2 * Math.PI);
+            crc.fillStyle = "#FFFF00";
+            crc.fill();
+        } //drawSun
+    } //init
+}  //namespace
