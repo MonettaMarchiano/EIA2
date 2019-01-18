@@ -20,6 +20,7 @@ namespace Inheritance_Rodelhang {
     let snowflakes: Snow[] = [];
     let childrenUp: ChildrenUp[] = [];
     let childrenDown: ChildrenDown[] = [];
+    let trees: Tree[] = [];
 
     let cloudOne: CloudOne;
     let cloudTwo: CloudTwo;
@@ -39,8 +40,6 @@ namespace Inheritance_Rodelhang {
         generateSnow();
         generateClouds();
         generateChild();
-        //        generateChildrenUp();
-        //        generateChildrenDown();
 
         imagedata = crc.getImageData(0, 0, canvas.width, canvas.height);
 
@@ -72,12 +71,16 @@ namespace Inheritance_Rodelhang {
                 child.draw();
             }//Kinder
 
-            //            for (let i: number = 0; i < childrenDown.length; i++) {
-            //                let childDown: ChildrenDown = childrenDown[i];
-            //
-            //                childDown.move();
-            //                childDown.draw();
-            //            }
+
+            //Bäume
+            for (let i: number = 0; i < trees.length; i++) {
+                let tree: Tree = trees[i];
+                console.log("tree");
+                tree.draw();
+            }//Kinder
+
+
+
         } //update
 
         //Bäume
@@ -121,28 +124,7 @@ namespace Inheritance_Rodelhang {
             }
         }//generateChild
 
-        //            function generateChildrenUp(): void {
-        //                for (let i: number = 0; i <= 4; i++) {
-        //                    let childUp: ChildrenUp = new ChildrenUp();
-        //                    console.log(crc);
-        //                    //                childUp.xP = Math.random() * 75 + 400;
-        //                    //                childUp.yP = Math.random() * 3 + 650;
-        //                    //                childUp.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
-        //
-        //                    childrenUp.push(childUp);
-        //                }
-        //            } //generateChildrenUp();
-        //
-        //            function generateChildrenDown(): void {
-        //                for (let i: number = 0; i <= 4; i++) {
-        //                    let childDown: ChildrenDown = new ChildrenDown;
-        //                    //                childDown.xP = Math.random() * 75 + 100;
-        //                    //                childDown.yP = Math.random() * 75 + 400;
-        //                    //                childDown.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
-        //
-        //                    childrenDown.push(childDown);
-        //                }
-        //            } //generateChildrenDown();
+
 
         function drawSky(): void {
             crc.fillStyle = "#CEF6F5";
@@ -169,16 +151,6 @@ namespace Inheritance_Rodelhang {
             crc.fill();
         } //drawSun
 
-        function drawTree(_x: number, _y: number, _color: string): void {
-            crc.fillStyle = "#886A08";
-            crc.fillRect(_x - 8, _y + 60, 12, 15);
-            crc.beginPath();
-            crc.moveTo(_x, _y);
-            crc.lineTo(_x + 30, _y + 60);
-            crc.lineTo(_x - 30, _y + 60);
-            crc.closePath();
-            crc.fillStyle = _color;
-            crc.fill();
-        } //drawTree
+
     } //init
 }  //namespace

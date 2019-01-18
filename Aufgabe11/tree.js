@@ -16,6 +16,17 @@ var Inheritance_Rodelhang;
             this.yP = 450 + Math.random() * 150;
             this.color = "#0B3B2E";
         }
+        draw() {
+            Inheritance_Rodelhang.crc.fillStyle = "#886A08";
+            Inheritance_Rodelhang.crc.fillRect(this.xP - 8, this.yP + 60, 12, 15);
+            Inheritance_Rodelhang.crc.beginPath();
+            Inheritance_Rodelhang.crc.moveTo(this.xP, this.yP);
+            Inheritance_Rodelhang.crc.lineTo(this.xP + 30, this.yP + 60);
+            Inheritance_Rodelhang.crc.lineTo(this.xP - 30, this.yP + 60);
+            Inheritance_Rodelhang.crc.closePath();
+            Inheritance_Rodelhang.crc.fillStyle = this.color;
+            Inheritance_Rodelhang.crc.fill();
+        }
     }
     Inheritance_Rodelhang.Tree = Tree;
 })(Inheritance_Rodelhang || (Inheritance_Rodelhang = {}));
