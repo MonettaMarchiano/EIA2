@@ -16,13 +16,10 @@ namespace Inheritance_Rodelhang {
         color: string;
         md: boolean;
 
-
-
-
         draw(): void {
 
         }
-
+        
         move(): void {
 
         }

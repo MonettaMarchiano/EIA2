@@ -13,7 +13,6 @@ namespace Inheritance_Rodelhang {
         colorBody: string;
         md: boolean;
 
-
         constructor() {
             super();
             this.xP = Math.random() * 75 + 100;
@@ -24,7 +23,6 @@ namespace Inheritance_Rodelhang {
         move(): void {
             if (this.md == true)
                 this.moveDown();
-
 
             else {
                 this.moveUp();
@@ -38,7 +36,6 @@ namespace Inheritance_Rodelhang {
 
             this.xP += this.xD;
             this.yP += this.yD;
-
 
             if (this.xP > 400) {
                 this.md = false;
@@ -58,7 +55,6 @@ namespace Inheritance_Rodelhang {
             }//if
             this.draw();
         }//moveUp
-
 
         draw(): void {
             crc.beginPath();
@@ -82,7 +78,5 @@ namespace Inheritance_Rodelhang {
             crc.stroke();
             crc.fill();
         }
-
     }
-
 }
