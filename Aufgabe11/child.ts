@@ -51,7 +51,7 @@ namespace Inheritance_Rodelhang {
                 this.xP += this.xD;
                 this.yP += this.yD;
 
-                if(this.xP < 50) {
+                if (this.xP < 50) {
                 this.md = true;
             }
             this.draw();
