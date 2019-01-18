@@ -11,6 +11,10 @@ var Inheritance_Rodelhang;
         }
         move() {
         }
+        moveDown() {
+        }
+        moveUp() {
+        }
     }
     Inheritance_Rodelhang.DrawObject = DrawObject;
 })(Inheritance_Rodelhang || (Inheritance_Rodelhang = {}));

@@ -12,6 +12,11 @@ namespace Inheritance_Rodelhang {
         yP: number;
         xD: number;
         yD: number;
+        colorBody: string;
+        color: string;
+        md: boolean;
+
+
 
 
         draw(): void {
@@ -19,6 +24,14 @@ namespace Inheritance_Rodelhang {
         }
 
         move(): void {
+
+        }
+
+        moveDown(): void {
+
+        }
+
+        moveUp(): void {
 
         }
     }
