@@ -30,30 +30,32 @@ var Inheritance_Rodelhang;
             window.setTimeout(update, 1000 / fps);
             //Schneeflocken    
             //            for (let i: number = 0; i < objects.length; i++) 
-            {
-                let snowflake = objects[i];
-                snowflake.move();
-                snowflake.draw();
-            }
+            //            {
+            //                let snowflake: Snow = objects[i];
+            //                snowflake.move();
+            //                snowflake.draw();
+            //            }
             //Wolken
             cloudOne.move();
             cloudOne.draw();
             cloudTwo.move();
             cloudTwo.draw();
             //Kinder
-            for (let i = 0; i < objects.length; i++) {
-                let child = objects[i];
-                child.move();
-                child.draw();
-            }
+            //            for (let i: number = 0; i < objects.length; i++) {
+            //                let child: Child = objects[i];
+            //                child.move();
+            //                child.draw();
+            //            }
             //Bäume
             //            for (let i: number = 0; i < objects.length; i++) 
-            {
-                let tree = objects[i];
-                tree.draw();
-            }
+            //            {
+            //                let tree: Tree = objects[i];
+            //                tree.draw();
+            //            }
             for (let i = 0; i < objects.length; i++) {
                 let object = objects[i];
+                object.draw();
+                object.move();
             }
         } //update
         //Bäume
