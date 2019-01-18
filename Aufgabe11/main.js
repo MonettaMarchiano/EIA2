@@ -32,7 +32,7 @@ var Inheritance_Rodelhang;
                 let snowflake = objects[i];
                 snowflake.move();
                 snowflake.draw();
-            } //Schneeflocken
+            }
             //Wolken
             cloudOne.move();
             cloudOne.draw();
@@ -43,36 +43,37 @@ var Inheritance_Rodelhang;
                 let child = objects[i];
                 child.move();
                 child.draw();
-            } //Kinder
+            }
             //Bäume
             for (let i = 0; i < objects.length; i++) {
                 let tree = objects[i];
                 tree.draw();
-            } //Bäume
+            }
             for (let i = 0; i < objects.length; i++) {
                 let object = objects[i];
             }
         } //update
         //Bäume
-        function generateObjects() {
-            for (let i = 0; i < 175; i++) {
-                let object = new Inheritance_Rodelhang.DrawObject();
-            }
-        }
         function generateTrees() {
-            let tree = new Inheritance_Rodelhang.Tree();
+            for (let i = 0; i < 10; i++) {
+                let tree = new Inheritance_Rodelhang.Tree();
+            }
         } //generateTrees
         function generateSnow() {
-            let snowflake = new Inheritance_Rodelhang.Snow();
-            objects.push(snowflake);
+            for (let i = 0; i < 150; i++) {
+                let snowflake = new Inheritance_Rodelhang.Snow();
+                objects.push(snowflake);
+            }
         } //generateSnow
         function generateClouds() {
             cloudOne = new Inheritance_Rodelhang.CloudOne();
             cloudTwo = new Inheritance_Rodelhang.CloudTwo();
         } //generateClouds
         function generateChild() {
-            let child = new Inheritance_Rodelhang.Child();
-            objects.push(child);
+            for (let i = 0; i < 10; i++) {
+                let child = new Inheritance_Rodelhang.Child();
+                objects.push(child);
+            }
         } //generateChild
         function drawSky() {
             Inheritance_Rodelhang.crc.fillStyle = "#CEF6F5";

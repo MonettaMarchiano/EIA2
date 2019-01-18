@@ -19,6 +19,7 @@ namespace Inheritance_Rodelhang {
 
     let fps: number = 25;
 
+
     function init(): void {
 
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
@@ -46,7 +47,7 @@ namespace Inheritance_Rodelhang {
                 let snowflake: Snow = objects[i];
                 snowflake.move();
                 snowflake.draw();
-            }//Schneeflocken
+            }
 
             //Wolken
             cloudOne.move();
@@ -59,35 +60,33 @@ namespace Inheritance_Rodelhang {
                 let child: Child = objects[i];
                 child.move();
                 child.draw();
-            }//Kinder
+            }
 
             //Bäume
             for (let i: number = 0; i < objects.length; i++) {
                 let tree: Tree = objects[i];
                 tree.draw();
-            }//Bäume
+            }
 
             for (let i: number = 0; i < objects.length; i++) {
                 let object: DrawObject = objects[i];
             }
-        } //update
+        }//update
 
         //Bäume
-
-        function generateObjects(): void {
-            for (let i: number = 0; i < 175; i++) {
-                let object: DrawObject = new DrawObject();
-            }
-
-        }
-
         function generateTrees(): void {
-            let tree: Tree = new Tree();
-        } //generateTrees
+            for (let i: number = 0; i < 10; i++) {
+
+                let tree: Tree = new Tree();
+            }
+        }//generateTrees
 
         function generateSnow(): void {
-            let snowflake: Snow = new Snow();
-            objects.push(snowflake);
+            for (let i: number = 0; i < 150; i++) {
+
+                let snowflake: Snow = new Snow();
+                objects.push(snowflake);
+            }
         }//generateSnow
 
         function generateClouds(): void {
@@ -97,10 +96,12 @@ namespace Inheritance_Rodelhang {
 
 
         function generateChild(): void {
-            let child: Child = new Child();
-            objects.push(child);
-        }//generateChild
+            for (let i: number = 0; i < 10; i++) {
 
+                let child: Child = new Child();
+                objects.push(child);
+            }
+        } //generateChild
 
         function drawSky(): void {
             crc.fillStyle = "#CEF6F5";
