@@ -17,7 +17,6 @@ namespace Inheritance_Rodelhang {
             this.yP = 100;
         }
 
-
         move(): void {
 
             if (this.xP > 500) {
@@ -27,7 +26,6 @@ namespace Inheritance_Rodelhang {
             this.xP += 6;
 
             this.draw();
-
         }
 
         draw(): void {
@@ -37,10 +35,6 @@ namespace Inheritance_Rodelhang {
             crc.arc(this.xP + 40, this.yP, 40, 0, 2 * Math.PI);
             crc.fillStyle = "#FFFFFF";
             crc.fill();
-
-
         }
-
     }
-
 }

@@ -43,33 +43,11 @@ namespace Inheritance_Rodelhang {
             crc.putImageData(imagedata, 0, 0);
             window.setTimeout(update, 1000 / fps);
 
-            //Schneeflocken    
-//            for (let i: number = 0; i < objects.length; i++) 
-//            {
-//                let snowflake: Snow = objects[i];
-//                snowflake.move();
-//                snowflake.draw();
-//            }
-
             //Wolken
             cloudOne.move();
             cloudOne.draw();
             cloudTwo.move();
             cloudTwo.draw();
-
-            //Kinder
-//            for (let i: number = 0; i < objects.length; i++) {
-//                let child: Child = objects[i];
-//                child.move();
-//                child.draw();
-//            }
-
-            //Bäume
-//            for (let i: number = 0; i < objects.length; i++) 
-//            {
-//                let tree: Tree = objects[i];
-//                tree.draw();
-//            }
 
             for (let i: number = 0; i < objects.length; i++) {
                 let object: DrawObject = objects[i];
@@ -131,6 +109,6 @@ namespace Inheritance_Rodelhang {
             crc.arc(430, 100, 50, 0, 2 * Math.PI);
             crc.fillStyle = "#FFFF00";
             crc.fill();
-        } //drawSun
-    } //init
-}  //namespace
+        }//drawSun
+    }//init
+}//namespace

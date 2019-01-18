@@ -27,8 +27,6 @@ namespace Inheritance_Rodelhang {
             crc.closePath();
             crc.fillStyle = this.color;
             crc.fill();
-
-            this.draw();
         }
     }
 }

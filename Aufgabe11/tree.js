@@ -23,7 +23,6 @@ var Inheritance_Rodelhang;
             Inheritance_Rodelhang.crc.closePath();
             Inheritance_Rodelhang.crc.fillStyle = this.color;
             Inheritance_Rodelhang.crc.fill();
-            this.draw();
         }
     }
     Inheritance_Rodelhang.Tree = Tree;
