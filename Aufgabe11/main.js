@@ -7,14 +7,8 @@ Er wurde nicht kopiert und auch nicht diktiert. */
 var Inheritance_Rodelhang;
 (function (Inheritance_Rodelhang) {
     window.addEventListener("load", init);
-    let imagedata;
     let objects = [];
-    //fliegen nachher raus
-    let children = [];
-    let snowflakes = [];
-    let childrenUp = [];
-    let childrenDown = [];
-    let trees = [];
+    let imagedata;
     let cloudOne;
     let cloudTwo;
     let fps = 25;
@@ -34,8 +28,8 @@ var Inheritance_Rodelhang;
             Inheritance_Rodelhang.crc.putImageData(imagedata, 0, 0);
             window.setTimeout(update, 1000 / fps);
             //Schneeflocken    
-            for (let i = 0; i < snowflakes.length; i++) {
-                let snowflake = snowflakes[i];
+            for (let i = 0; i < objects.length; i++) {
+                let snowflake = objects[i];
                 snowflake.move();
                 snowflake.draw();
             } //Schneeflocken
@@ -45,45 +39,41 @@ var Inheritance_Rodelhang;
             cloudTwo.move();
             cloudTwo.draw();
             //Kinder
-            for (let i = 0; i < children.length; i++) {
-                let child = children[i];
+            for (let i = 0; i < objects.length; i++) {
+                let child = objects[i];
                 child.move();
                 child.draw();
             } //Kinder
             //Bäume
-            for (let i = 0; i < trees.length; i++) {
-                let tree = trees[i];
+            for (let i = 0; i < objects.length; i++) {
+                let tree = objects[i];
                 console.log("tree");
                 tree.draw();
-            } //Kinder
+            } //Bäume
         } //update
         //Bäume
         function generateTrees() {
             for (let i = 0; i < 10; i++) {
+                let tree = new Inheritance_Rodelhang.Tree();
             }
             for (let i = 0; i < 5; i++) {
+                let tree = new Inheritance_Rodelhang.Tree();
             }
         } //generateTrees
         function generateSnow() {
             for (let i = 0; i <= 150; i++) {
                 let snowflake = new Inheritance_Rodelhang.Snow();
-                //                snowflake.xP = Math.random() * 500;
-                //                snowflake.yP = Math.random() * 700;
-                snowflakes.push(snowflake);
+                objects.push(snowflake);
             }
         } //generateSnow
         function generateClouds() {
             cloudOne = new Inheritance_Rodelhang.CloudOne();
-            //            cloudOne.xP = 50;
-            //            cloudOne.yP = 100;
             cloudTwo = new Inheritance_Rodelhang.CloudTwo();
-            //            cloudTwo.xP = 100;
-            //            cloudTwo.yP = 50;
         } //generateClouds
         function generateChild() {
             for (let i = 0; i <= 10; i++) {
                 let child = new Inheritance_Rodelhang.Child();
-                children.push(child);
+                objects.push(child);
             }
         } //generateChild
         function drawSky() {

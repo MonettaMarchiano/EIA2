@@ -11,18 +11,9 @@ namespace Inheritance_Rodelhang {
 
     export let crc: CanvasRenderingContext2D;
 
-    let imagedata: ImageData;
-
     let objects: DrawObject[] = [];
 
-    //fliegen nachher raus
-
-    //    let children: Child[] = [];
-    //    let snowflakes: Snow[] = [];
-    //    let childrenUp: ChildrenUp[] = [];
-    //    let childrenDown: ChildrenDown[] = [];
-    //    let trees: Tree[] = [];
-
+    let imagedata: ImageData;
     let cloudOne: CloudOne;
     let cloudTwo: CloudTwo;
 
@@ -134,7 +125,5 @@ namespace Inheritance_Rodelhang {
             crc.fillStyle = "#FFFF00";
             crc.fill();
         } //drawSun
-
-
     } //init
 }  //namespace
