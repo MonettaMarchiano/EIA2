@@ -16,11 +16,12 @@ namespace Inheritance_Rodelhang {
     let objects: DrawObject[] = [];
 
     //fliegen nachher raus
-    let children: Child[] = [];
-    let snowflakes: Snow[] = [];
-    let childrenUp: ChildrenUp[] = [];
-    let childrenDown: ChildrenDown[] = [];
-    let trees: Tree[] = [];
+    
+//    let children: Child[] = [];
+//    let snowflakes: Snow[] = [];
+//    let childrenUp: ChildrenUp[] = [];
+//    let childrenDown: ChildrenDown[] = [];
+//    let trees: Tree[] = [];
 
     let cloudOne: CloudOne;
     let cloudTwo: CloudTwo;
