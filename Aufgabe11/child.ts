@@ -26,7 +26,6 @@ namespace Inheritance_Rodelhang {
 
             else {
                 this.moveUp();
-                console.log("moveUp");
             }//else
         }//if
 

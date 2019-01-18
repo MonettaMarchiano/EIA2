@@ -20,7 +20,7 @@ namespace Inheritance_Rodelhang {
             this.yP = 450 + Math.random() * 150;
             this.color = "#0B3B2E";
         }
-        
+
         draw(): void {
             crc.fillStyle = "#886A08";
             crc.fillRect(this.xP - 8, this.yP + 60, 12, 15);
@@ -31,6 +31,8 @@ namespace Inheritance_Rodelhang {
             crc.closePath();
             crc.fillStyle = this.color;
             crc.fill();
+
+            this.draw();
         }
     }
 }

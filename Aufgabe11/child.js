@@ -18,7 +18,6 @@ var Inheritance_Rodelhang;
                 this.moveDown();
             else {
                 this.moveUp();
-                console.log("moveUp");
             } //else
         } //if
         moveDown() {

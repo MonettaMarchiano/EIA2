@@ -64,27 +64,24 @@ namespace Inheritance_Rodelhang {
             //Bäume
             for (let i: number = 0; i < objects.length; i++) {
                 let tree: Tree = objects[i];
-                console.log("tree");
                 tree.draw();
             }//Bäume
         } //update
 
         //Bäume
+
+        function generateObjects(): void {
+            for (let i: number = 0; i < 175; i++)
+                let object: DrawObject = new DrawObject();
+        }
+
         function generateTrees(): void {
-            for (let i: number = 0; i < 10; i++) {
-                let tree: Tree = new Tree();
-            }
-            for (let i: number = 0; i < 5; i++) {
-                let tree: Tree = new Tree();
-            }
+            let tree: Tree = new Tree();
         } //generateTrees
 
         function generateSnow(): void {
-
-            for (let i: number = 0; i <= 150; i++) {
-                let snowflake: Snow = new Snow();
-                objects.push(snowflake);
-            }
+            let snowflake: Snow = new Snow();
+            objects.push(snowflake);
         }//generateSnow
 
         function generateClouds(): void {
@@ -94,10 +91,8 @@ namespace Inheritance_Rodelhang {
 
 
         function generateChild(): void {
-            for (let i: number = 0; i <= 10; i++) {
-                let child: Child = new Child();
-                objects.push(child);
-            }
+            let child: Child = new Child();
+            objects.push(child);
         }//generateChild
 
 
