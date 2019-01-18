@@ -10,6 +10,7 @@ var Inheritance_Rodelhang;
     let imagedata;
     let objects = [];
     //fliegen nachher raus
+    let children = [];
     let snowflakes = [];
     let childrenUp = [];
     let childrenDown = [];
@@ -25,8 +26,9 @@ var Inheritance_Rodelhang;
         generateTrees();
         generateSnow();
         generateClouds();
-        generateChildrenUp();
-        generateChildrenDown();
+        generateChild();
+        //        generateChildrenUp();
+        //        generateChildrenDown();
         imagedata = Inheritance_Rodelhang.crc.getImageData(0, 0, canvas.width, canvas.height);
         update();
         function update() {
@@ -37,37 +39,32 @@ var Inheritance_Rodelhang;
                 let snowflake = snowflakes[i];
                 snowflake.move();
                 snowflake.draw();
-            }
+            } //Schneeflocken
             //Wolken
             cloudOne.move();
             cloudOne.draw();
             cloudTwo.move();
             cloudTwo.draw();
             //Kinder
-            for (let i = 0; i < childrenUp.length; i++) {
-                let childUp = childrenUp[i];
-                childUp.move();
-                childUp.draw();
-            }
-            for (let i = 0; i < childrenDown.length; i++) {
-                let childDown = childrenDown[i];
-                childDown.move();
-                childDown.draw();
-            }
-        } //update();
+            for (let i = 0; i < children.length; i++) {
+                let child = children[i];
+                child.move();
+                child.draw();
+            } //Kinder
+            //            for (let i: number = 0; i < childrenDown.length; i++) {
+            //                let childDown: ChildrenDown = childrenDown[i];
+            //
+            //                childDown.move();
+            //                childDown.draw();
+            //            }
+        } //update
         //Bäume
         function generateTrees() {
             for (let i = 0; i < 10; i++) {
-                let x = 40 + Math.random() * 200;
-                let y = 450 + Math.random() * 150;
-                drawTree(x, y, "#0B6138");
             }
             for (let i = 0; i < 5; i++) {
-                let x = 40 + Math.random() * 200;
-                let y = 450 + Math.random() * 150;
-                drawTree(x, y, "#0B3B2E");
             }
-        } //generateTrees();
+        } //generateTrees
         function generateSnow() {
             for (let i = 0; i <= 150; i++) {
                 let snowflake = new Inheritance_Rodelhang.Snow();
@@ -75,7 +72,7 @@ var Inheritance_Rodelhang;
                 //                snowflake.yP = Math.random() * 700;
                 snowflakes.push(snowflake);
             }
-        }
+        } //generateSnow
         function generateClouds() {
             cloudOne = new Inheritance_Rodelhang.CloudOne();
             //            cloudOne.xP = 50;
@@ -83,31 +80,40 @@ var Inheritance_Rodelhang;
             cloudTwo = new Inheritance_Rodelhang.CloudTwo();
             //            cloudTwo.xP = 100;
             //            cloudTwo.yP = 50;
-        }
-        function generateChildrenUp() {
-            for (let i = 0; i <= 4; i++) {
-                let childUp = new Inheritance_Rodelhang.ChildrenUp();
-                console.log(Inheritance_Rodelhang.crc);
-                //                childUp.xP = Math.random() * 75 + 400;
-                //                childUp.yP = Math.random() * 3 + 650;
-                //                childUp.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
-                childrenUp.push(childUp);
+        } //generateClouds
+        function generateChild() {
+            for (let i = 0; i <= 10; i++) {
+                let child = new Inheritance_Rodelhang.Child();
+                children.push(child);
             }
-        } //generateChildrenUp();
-        function generateChildrenDown() {
-            for (let i = 0; i <= 4; i++) {
-                let childDown = new Inheritance_Rodelhang.ChildrenDown;
-                //                childDown.xP = Math.random() * 75 + 100;
-                //                childDown.yP = Math.random() * 75 + 400;
-                //                childDown.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
-                childrenDown.push(childDown);
-            }
-        } //generateChildrenDown();
+        } //generateChild
+        //            function generateChildrenUp(): void {
+        //                for (let i: number = 0; i <= 4; i++) {
+        //                    let childUp: ChildrenUp = new ChildrenUp();
+        //                    console.log(crc);
+        //                    //                childUp.xP = Math.random() * 75 + 400;
+        //                    //                childUp.yP = Math.random() * 3 + 650;
+        //                    //                childUp.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+        //
+        //                    childrenUp.push(childUp);
+        //                }
+        //            } //generateChildrenUp();
+        //
+        //            function generateChildrenDown(): void {
+        //                for (let i: number = 0; i <= 4; i++) {
+        //                    let childDown: ChildrenDown = new ChildrenDown;
+        //                    //                childDown.xP = Math.random() * 75 + 100;
+        //                    //                childDown.yP = Math.random() * 75 + 400;
+        //                    //                childDown.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+        //
+        //                    childrenDown.push(childDown);
+        //                }
+        //            } //generateChildrenDown();
         function drawSky() {
             Inheritance_Rodelhang.crc.fillStyle = "#CEF6F5";
             Inheritance_Rodelhang.crc.fillRect(0, 0, 500, 700);
             Inheritance_Rodelhang.crc.fill();
-        } //drawSky();
+        } //drawSky
         function drawHillside() {
             Inheritance_Rodelhang.crc.beginPath();
             Inheritance_Rodelhang.crc.moveTo(0, 300);
@@ -118,13 +124,13 @@ var Inheritance_Rodelhang;
             Inheritance_Rodelhang.crc.closePath();
             Inheritance_Rodelhang.crc.fillStyle = "#FFFFFF";
             Inheritance_Rodelhang.crc.fill();
-        } //drawHillside();
+        } //drawHillside
         function drawSun() {
             Inheritance_Rodelhang.crc.beginPath();
             Inheritance_Rodelhang.crc.arc(430, 100, 50, 0, 2 * Math.PI);
             Inheritance_Rodelhang.crc.fillStyle = "#FFFF00";
             Inheritance_Rodelhang.crc.fill();
-        } //drawSun();
+        } //drawSun
         function drawTree(_x, _y, _color) {
             Inheritance_Rodelhang.crc.fillStyle = "#886A08";
             Inheritance_Rodelhang.crc.fillRect(_x - 8, _y + 60, 12, 15);
@@ -135,7 +141,7 @@ var Inheritance_Rodelhang;
             Inheritance_Rodelhang.crc.closePath();
             Inheritance_Rodelhang.crc.fillStyle = _color;
             Inheritance_Rodelhang.crc.fill();
-        } //drawTree();
-    }
-})(Inheritance_Rodelhang || (Inheritance_Rodelhang = {}));
+        } //drawTree
+    } //init
+})(Inheritance_Rodelhang || (Inheritance_Rodelhang = {})); //namespace
 //# sourceMappingURL=main.js.map

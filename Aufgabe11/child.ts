@@ -19,17 +19,18 @@ namespace Inheritance_Rodelhang {
             this.xP = Math.random() * 75 + 100;
             this.yP = Math.random() * 75 + 400;
             this.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
-        }
+        }//constructor
 
         move(): void {
             if (this.md == true)
                 this.moveDown();
 
+
             else {
                 this.moveUp();
-            }
-
-        }
+                console.log("moveUp");
+            }//else
+        }//if
 
         moveDown(): void {
             this.xD = 6;
@@ -41,21 +42,22 @@ namespace Inheritance_Rodelhang {
 
             if (this.xP > 400) {
                 this.md = false;
-            }
+            }//if
+        }//moveDown
 
-            moveUp(): void {
+        moveUp(): void {
 
-                this.xD = Math.random() * (-6);
-                this.yD = Math.random() * (-3); 
+            this.xD = Math.random() * (-6);
+            this.yD = Math.random() * (-3);
 
-                this.xP += this.xD;
-                this.yP += this.yD;
+            this.xP += this.xD;
+            this.yP += this.yD;
 
-                if (this.xP < 50) {
+            if (this.xP < 50) {
                 this.md = true;
-            }
+            }//if
             this.draw();
-        }
+        }//moveUp
 
 
         draw(): void {
