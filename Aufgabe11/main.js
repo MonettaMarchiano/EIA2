@@ -12,6 +12,7 @@ var Inheritance_Rodelhang;
     let cloudOne;
     let cloudTwo;
     let fps = 25;
+    let i = 0;
     function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
         Inheritance_Rodelhang.crc = canvas.getContext("2d");
@@ -28,7 +29,8 @@ var Inheritance_Rodelhang;
             Inheritance_Rodelhang.crc.putImageData(imagedata, 0, 0);
             window.setTimeout(update, 1000 / fps);
             //Schneeflocken    
-            for (let i = 0; i < objects.length; i++) {
+            //            for (let i: number = 0; i < objects.length; i++) 
+            {
                 let snowflake = objects[i];
                 snowflake.move();
                 snowflake.draw();
@@ -45,7 +47,8 @@ var Inheritance_Rodelhang;
                 child.draw();
             }
             //Bäume
-            for (let i = 0; i < objects.length; i++) {
+            //            for (let i: number = 0; i < objects.length; i++) 
+            {
                 let tree = objects[i];
                 tree.draw();
             }

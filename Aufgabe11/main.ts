@@ -18,6 +18,7 @@ namespace Inheritance_Rodelhang {
     let cloudTwo: CloudTwo;
 
     let fps: number = 25;
+    let i: number = 0;
 
 
     function init(): void {
@@ -43,7 +44,8 @@ namespace Inheritance_Rodelhang {
             window.setTimeout(update, 1000 / fps);
 
             //Schneeflocken    
-            for (let i: number = 0; i < objects.length; i++) {
+//            for (let i: number = 0; i < objects.length; i++) 
+            {
                 let snowflake: Snow = objects[i];
                 snowflake.move();
                 snowflake.draw();
@@ -63,7 +65,8 @@ namespace Inheritance_Rodelhang {
             }
 
             //Bäume
-            for (let i: number = 0; i < objects.length; i++) {
+//            for (let i: number = 0; i < objects.length; i++) 
+            {
                 let tree: Tree = objects[i];
                 tree.draw();
             }
