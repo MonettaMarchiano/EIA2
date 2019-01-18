@@ -62,6 +62,7 @@ var Inheritance_Rodelhang;
         function generateTrees() {
             for (let i = 0; i < 10; i++) {
                 let tree = new Inheritance_Rodelhang.Tree();
+                objects.push(tree);
             }
         } //generateTrees
         function generateSnow() {

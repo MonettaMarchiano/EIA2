@@ -81,8 +81,8 @@ namespace Inheritance_Rodelhang {
         //Bäume
         function generateTrees(): void {
             for (let i: number = 0; i < 10; i++) {
-
                 let tree: Tree = new Tree();
+                objects.push(tree);
             }
         }//generateTrees
 

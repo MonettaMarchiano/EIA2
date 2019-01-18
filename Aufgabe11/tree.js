@@ -12,9 +12,6 @@ var Inheritance_Rodelhang;
             this.xP = 40 + Math.random() * 200;
             this.yP = 450 + Math.random() * 150;
             this.color = "#0B6138";
-            this.xP = 40 + Math.random() * 200;
-            this.yP = 450 + Math.random() * 150;
-            this.color = "#0B3B2E";
         }
         draw() {
             Inheritance_Rodelhang.crc.fillStyle = "#886A08";
