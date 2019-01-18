@@ -16,12 +16,12 @@ namespace Inheritance_Rodelhang {
     let objects: DrawObject[] = [];
 
     //fliegen nachher raus
-    
-//    let children: Child[] = [];
-//    let snowflakes: Snow[] = [];
-//    let childrenUp: ChildrenUp[] = [];
-//    let childrenDown: ChildrenDown[] = [];
-//    let trees: Tree[] = [];
+
+    //    let children: Child[] = [];
+    //    let snowflakes: Snow[] = [];
+    //    let childrenUp: ChildrenUp[] = [];
+    //    let childrenDown: ChildrenDown[] = [];
+    //    let trees: Tree[] = [];
 
     let cloudOne: CloudOne;
     let cloudTwo: CloudTwo;
@@ -51,107 +51,103 @@ namespace Inheritance_Rodelhang {
             window.setTimeout(update, 1000 / fps);
 
             //Schneeflocken    
-            for (let i: number = 0; i < snowflakes.length; i++) {
-                let snowflake: Snow = snowflakes[i];
+            for (let i: number = 0; i < objects.length; i++) {
+                let snowflake: Snow = objects[i];
                 snowflake.move();
                 snowflake.draw();
-            }//Schneeflocken
+                //            }//Schneeflocken
 
-            //Wolken
-            cloudOne.move();
-            cloudOne.draw();
+                //Wolken
+                cloudOne.move();
+                cloudOne.draw();
 
-            cloudTwo.move();
-            cloudTwo.draw();
+                cloudTwo.move();
+                cloudTwo.draw();
 
-            //Kinder
-            for (let i: number = 0; i < children.length; i++) {
-                let child: Child = children[i];
+                //Kinder
+                for (let i: number = 0; i < objects.length; i++) {
+                    let child: Child = objects[i];
 
-                child.move();
-                child.draw();
-            }//Kinder
-
-
-            //Bäume
-            for (let i: number = 0; i < trees.length; i++) {
-                let tree: Tree = trees[i];
-                console.log("tree");
-                tree.draw();
-            }//Kinder
+                    child.move();
+                    child.draw();
+                    //            }//Kinder
 
 
+                    //Bäume
+                    for (let i: number = 0; i < objects.length; i++) {
+                        let tree: Tree = objects[i];
+                        console.log("tree");
+                        tree.draw();
+                        //            
+                    }//Kinder
 
-        } //update
+                } //update
 
-        //Bäume
-        function generateTrees(): void {
+                //Bäume
+                function generateTrees(): void {
 
-            for (let i: number = 0; i < 10; i++) {
-            }
+                    for (let i: number = 0; i < 10; i++) {
+                        let tree: Tree = new Tree();
+                    }
 
-            for (let i: number = 0; i < 5; i++) {
-            }
-        } //generateTrees
+                    for (let i: number = 0; i < 5; i++) {
+                        let tree: Tree = new Tree();
 
-        function generateSnow(): void {
+                    }
+                } //generateTrees
 
-            for (let i: number = 0; i <= 150; i++) {
-                let snowflake: Snow = new Snow();
-                //                snowflake.xP = Math.random() * 500;
-                //                snowflake.yP = Math.random() * 700;
+                function generateSnow(): void {
 
-                snowflakes.push(snowflake);
-            }
-        }//generateSnow
+                    for (let i: number = 0; i <= 150; i++) {
+                        let snowflake: Snow = new Snow();
 
-        function generateClouds(): void {
-            cloudOne = new CloudOne();
-            //            cloudOne.xP = 50;
-            //            cloudOne.yP = 100;
+                        objects.push(snowflake);
+                    }
+                }//generateSnow
 
-            cloudTwo = new CloudTwo();
-            //            cloudTwo.xP = 100;
-            //            cloudTwo.yP = 50;
-        }//generateClouds
+                function generateClouds(): void {
+                    cloudOne = new CloudOne();
+
+                    cloudTwo = new CloudTwo();
+                }//generateClouds
 
 
-        function generateChild(): void {
-            for (let i: number = 0; i <= 10; i++) {
-                let child: Child = new Child();
+                function generateChild(): void {
+                    for (let i: number = 0; i <= 10; i++) {
+                        let child: Child = new Child();
 
-                children.push(child);
+                        objects.push(child);
 
-            }
-        }//generateChild
+                    }
+                }//generateChild
 
 
 
-        function drawSky(): void {
-            crc.fillStyle = "#CEF6F5";
-            crc.fillRect(0, 0, 500, 700);
-            crc.fill();
-        } //drawSky
+                function drawSky(): void {
+                    crc.fillStyle = "#CEF6F5";
+                    crc.fillRect(0, 0, 500, 700);
+                    crc.fill();
+                } //drawSky
 
-        function drawHillside(): void {
-            crc.beginPath();
-            crc.moveTo(0, 300);
-            crc.lineTo(700, 700);
-            crc.lineTo(700, 700);
-            crc.lineTo(0, 700);
-            crc.lineTo(0, 700);
-            crc.closePath();
-            crc.fillStyle = "#FFFFFF";
-            crc.fill();
-        }//drawHillside
+                function drawHillside(): void {
+                    crc.beginPath();
+                    crc.moveTo(0, 300);
+                    crc.lineTo(700, 700);
+                    crc.lineTo(700, 700);
+                    crc.lineTo(0, 700);
+                    crc.lineTo(0, 700);
+                    crc.closePath();
+                    crc.fillStyle = "#FFFFFF";
+                    crc.fill();
+                }//drawHillside
 
-        function drawSun(): void {
-            crc.beginPath();
-            crc.arc(430, 100, 50, 0, 2 * Math.PI);
-            crc.fillStyle = "#FFFF00";
-            crc.fill();
-        } //drawSun
+                function drawSun(): void {
+                    crc.beginPath();
+                    crc.arc(430, 100, 50, 0, 2 * Math.PI);
+                    crc.fillStyle = "#FFFF00";
+                    crc.fill();
+                } //drawSun
 
 
-    } //init
-}  //namespace
+            } //init
+        }  //namespace
