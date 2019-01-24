@@ -39,7 +39,6 @@ var Inheritance_Rodelhang;
                 object.move();
             }
         } //update
-        //Bäume
         function generateTrees() {
             for (let i = 0; i < 10; i++) {
                 let tree = new Inheritance_Rodelhang.Tree();
