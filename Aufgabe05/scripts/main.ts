@@ -18,40 +18,30 @@ namespace A05_wbk {
     function init(): void {
         createFormElements(items);
     }
-
-
     function createFormElements(_item: HomoItem): void {
         let parentDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("dynamic");
-
         for (let key in _item) {
             let value: HeteroItem[] = _item[key];
-
             createFieldset(parentDiv, key);
-
             for (let i: number = 0; i < value.length; i++) {
                 let parentFieldset: HTMLFieldSetElement = <HTMLFieldSetElement>document.getElementById(key);
-
                 switch (key) {
                     case ("baumart"):
                         createRadioButt(parentFieldset, value[i].name);
                         break;
-
                     case ("halterung"):
                         createRadioButt(parentFieldset, value[i].name);
                         break;
-
                     case ("beleuchtung"):
                         createCheckBox(parentFieldset, value[i].name);
                         createStepper(parentFieldset, value[i].name, "0", "100", "20");
                         createSelect(parentFieldset, value[i].name, value[i].attr, "farbe/material");
                         break;
-
                     case ("baumschmuck"):
                         createCheckBox(parentFieldset, value[i].name);
                         createStepper(parentFieldset, value[i].name, "0", "30", "5");
                         createSelect(parentFieldset, value[i].name, value[i].attr, "farbe/material");
                         break;
-
                     case ("lieferung"):
                         createRadioButt(parentFieldset, value[i].name);
                         createSelect(parentFieldset, value[i].name, value[i].attr, "lieferzeit");
@@ -62,9 +52,7 @@ namespace A05_wbk {
                 }
             }
         }
-
     }
-
 
     function createRadioButt(_container: HTMLFieldSetElement, _itemName: string): void {
         let radioButt: HTMLInputElement = document.createElement("input");
@@ -80,7 +68,6 @@ namespace A05_wbk {
         _container.appendChild(label);
     }
 
-
     function createCheckBox(_container: HTMLFieldSetElement, _itemName: string): void {
         let checkBox: HTMLInputElement = document.createElement("input");
         checkBox.type = "checkbox";
@@ -94,7 +81,6 @@ namespace A05_wbk {
         label.innerHTML = _itemName;
         _container.appendChild(label);
     }
-
 
     function createSelect(_container: HTMLFieldSetElement, _itemName: string, _itemAttrArray: string[], _whatsAdd: string): void {
 
@@ -123,7 +109,6 @@ namespace A05_wbk {
         }
     }
 
-
     function createStepper(_container: HTMLFieldSetElement, _itemName: string, _min: string, _max: string, _step: string): void {
         let stepper: HTMLInputElement = document.createElement("input");
         stepper.type = "number";
@@ -139,10 +124,7 @@ namespace A05_wbk {
         button.innerText = "";
         button.id = "";
         button.addEventListener("click", addToBasket);
-
-
     }
-
 
     function createBreak(_container: Element): void {
         let br: HTMLBRElement = document.createElement("br");
@@ -160,17 +142,11 @@ namespace A05_wbk {
         _parent.appendChild(fieldset);
     }
 
-    //_______________    
-
     function dynamicBasket(): void {
         let basketDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("warenkorbText");
-
     }
-
 
     function addToBasket(_event: MouseEvent): void {
-
     }
-
     //namespace
 }

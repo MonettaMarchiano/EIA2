@@ -126,7 +126,6 @@ var A04_wbk;
         h.innerText = _container.id;
         _container.appendChild(h);
     }
-    //__________________
     function dynamicBasket() {
     }
 })(A04_wbk || (A04_wbk = {}));

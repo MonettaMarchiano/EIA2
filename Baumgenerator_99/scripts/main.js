@@ -22,23 +22,6 @@ var probs12;
         document.getElementById("uebersicht").addEventListener("click", createOverview);
     }
     function handleClickOnAsync() {
-        //        document.getElementById("uebersicht").innerHTML;
-        //        let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
-        //        for (let i: number = 0; i < inputs.length; i++) {
-        //            let input: HTMLInputElement = inputs[i];
-        //            if (input.type == "number") {
-        //                if (parseInt(input.value) > 0) {
-        //                    sendRequestWithCustomData(input.name, parseInt(input.value));
-        //                }
-        //            }
-        //
-        //            if (input.checked == true) {
-        //                sendRequestWithCustomData(input.value, 1);
-        //
-        //            }
-        //       } 
-        //        let product: string = (<HTMLInputElement>document.querySelector(":checked")).value;
-        //        console.log(product);
         sendRequestWithCustomData();
     }
     function sendRequestWithCustomData() {

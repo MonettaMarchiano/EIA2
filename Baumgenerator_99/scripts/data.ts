@@ -27,7 +27,6 @@ namespace probs12 {
             { name: "Fichte", price: 30.0 },
            // { name: "Kiefer", price: 30.0 },
             { name: "Plastik", price: 20.0 }
-
         ],
 
         "Halterung": [

@@ -6,16 +6,14 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
 Er wurde nicht kopiert und auch nicht diktiert. */
 
 namespace Rodelhang {
-
+    
     window.addEventListener("load", init);
-
+    
     let crc: CanvasRenderingContext2D;
-
+    
     function init(): void {
-
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         crc = canvas.getContext("2d");
-
         drawSky();
         drawHillside();
         drawSun();

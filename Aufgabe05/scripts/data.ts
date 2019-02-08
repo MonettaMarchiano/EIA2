@@ -21,7 +21,7 @@ namespace A05_wbk {
     export interface HomoItem {
         [key: string]: HeteroItem[];
     };
-   
+
     export let items: HomoItem =
 
         {
@@ -40,17 +40,13 @@ namespace A05_wbk {
                 { name: "klemmbacken", attr: [], price: [0.0] }
             ],
 
-
             //Beleuchtungsartikel
-
             "beleuchtung": [
                 { name: "kerze", attr: ["weiss", "rot", "bienenwachs"], price: [0.0, 0.0, 0.0] },
                 { name: "lichterkette", attr: ["warmweiss", "kaltweiss"], price: [0.0, 0.0] }
             ],
 
-
             //Schmuckartikel
-
             "baumschmuck": [
                 { name: "glaskugel", attr: ["rot", "silber", "roségold", "gold"], price: [0.0, 0.0, 0.0, 0.0] },
                 { name: "glasglocke", attr: ["silber", "roségold", "gold"], price: [0.0, 0.0, 0.0] },
@@ -59,7 +55,6 @@ namespace A05_wbk {
                 { name: "herz", attr: ["kristall", "filz", "draht", "stroh"], price: [0.0, 0.0, 0.0, 0.0] },
                 { name: "lametta", attr: ["silber", "roségold", "gold"], price: [0.0, 0.0, 0.0] },
                 { name: "natur", attr: ["orangenscheibe", "zimtstange", "zuckerstange", "zapfen"], price: [0.0, 0.0, 0.0, 0.0] }
-
             ],
 
             "lieferung": [
@@ -67,9 +62,5 @@ namespace A05_wbk {
                 { name: "DHL", attr: ["standard", "24h-express", "morning-express"], price: [0.0, 0.0, 0.0] },
                 { name: "UPS", attr: ["standard", "24h-express", "morning-express"], price: [0.0, 0.0, 0.0] }
             ]
-
         };
-    
-    
-    
 }

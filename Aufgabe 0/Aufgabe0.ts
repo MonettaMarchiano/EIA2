@@ -17,6 +17,4 @@ function text(): void {                                                         
     node.innerHTML += ", alles gut?";
     console.log ("Hey ", n , ", alles gut?");
 }
-
 document.addEventListener("DOMContentLoaded", text);
-

@@ -16,38 +16,30 @@ nicht kopiert und auch nicht diktiert.
 <head>
 <meta charset="utf-8" />
 <title>Aufgabe 06</title>
-<link rel="stylesheet" href="style/style.css" type="text/css"
-	media="screen" />
+<link rel="stylesheet" href="style/style.css" type="text/css" media="screen" />
 <script src="scripts/data.js" type="text/javascript" charset="utf-8"></script>
 <script src="scripts/main.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
-
 	<main>
-
 	<h1>Der Weihnachtsbaum Generator</h1>
 	<form id="form" action="https://eia-2-marchian.herokuapp.com" method="get">
-
 		<div id="dynamic"></div>
 
 		<fieldset id="daten">
 			<legend>Persönliche Angaben</legend>
-			<br> 
-			<input type="text" name="Nachname" placeholder="Nachname"/> 
-			<input type="text" name="Vorname" placeholder="Vorname"/>
-			<br><br>
-			<input type="text" name="Straße" placeholder="Straße"/> 
-			<input type="text" name="Hausnummer" placeholder="Nr."/>
-			<br><br>
-			<input type="text" name="PLZ" placeholder="PLZ"/> 
-			<input type="text" name="Ort" placeholder="Ort"/>
-			<br><br>
+			<br> <input type="text" name="Nachname" placeholder="Nachname" />
+			<input type="text" name="Vorname" placeholder="Vorname" /> <br>
+			<br> <input type="text" name="Straße" placeholder="Straße" /> <input
+				type="text" name="Hausnummer" placeholder="Nr." /> <br>
+			<br> <input type="text" name="PLZ" placeholder="PLZ" /> <input
+				type="text" name="Ort" placeholder="Ort" /> <br>
+			<br>
 			<button type="submit" formtarget="_blank">Jetzt bestellen</button>
 			<button id="uebersicht" type="button">Bestellübersicht</button>
 			<div id="anzeige"></div>
 		</fieldset>
-
 		<div id="basket"></div>
 
 	</form>

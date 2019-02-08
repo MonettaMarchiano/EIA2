@@ -12,7 +12,7 @@ nicht kopiert und auch nicht diktiert.
 namespace A3 {
 
     document.addEventListener("DOMContentLoaded", init);
-    
+
     //declare globals
     let cardContentAll: string[];
     let cardContentHand: string[];
@@ -26,7 +26,6 @@ namespace A3 {
         let cards: string = prompt("Ziehe zwischen 5 und 10 Karten!");
         //declare [cardsSum] & assign parsed input as it's value
         let cardsSum: number = parseInt(cards);
-
         //if (conditions for invaide input)
         if (isNaN(cardsSum) || cardsSum < 5 || cardsSum > 10) {
             //condition [true]
@@ -37,52 +36,48 @@ namespace A3 {
         //condition [false]
         else {
             //call [createGame] & transfer parameter [cardsSum]
-             createGame(cardsSum);
+            createGame(cardsSum);
         }
     }
 
     function createGame(_cards: number): void {
-        
         //install EventListener on body | [keydown] releasing [spaceDown]
         document.body.addEventListener("keydown", spaceDown);
-
         //>> 10=missTurn| 11=changeDirection | 12=2+ | ajoker00=colorChange | ajoker04=colorChange4+|
         cardContentAll = [
             //blue | 1x0 | 2x1-9, missTurn, changeDirection, take2Cards
-            "img/blue00.png", "img/blue01.png", "img/blue02.png", "img/blue03.png", "img/blue04.png", 
+            "img/blue00.png", "img/blue01.png", "img/blue02.png", "img/blue03.png", "img/blue04.png",
             "img/blue05.png", "img/blue06.png", "img/blue07.png", "img/blue08.png", "img/blue09.png",
             "img/blue10.png", "img/blue11.png", "img/blue12.png",
-                              "img/blue01.png", "img/blue02.png", "img/blue03.png", "img/blue04.png",
+            "img/blue01.png", "img/blue02.png", "img/blue03.png", "img/blue04.png",
             "img/blue05.png", "img/blue06.png", "img/blue07.png", "img/blue08.png", "img/blue09.png",
             "img/blue10.png", "img/blue11.png", "img/blue12.png",
             //green | 1x0 | 2x1-9, missTurn, changeDirection, take2Cards
             "img/green00.png", "img/green01.png", "img/green02.png", "img/green03.png", "img/green04.png",
             "img/green05.png", "img/green06.png", "img/green07.png", "img/green08.png", "img/green09.png",
             "img/green10.png", "img/green11.png", "img/green12.png",
-                               "img/green01.png", "img/green02.png", "img/green03.png", "img/green04.png",
+            "img/green01.png", "img/green02.png", "img/green03.png", "img/green04.png",
             "img/green05.png", "img/green06.png", "img/green07.png", "img/green08.png", "img/green09.png",
             "img/green10.png", "img/green11.png", "img/green12.png",
             //red | 1x0 | 2x1-9, missTurn, changeDirection, take2Cards
             "img/red00.png", "img/red01.png", "img/red02.png", "img/red03.png", "img/red04.png",
             "img/red05.png", "img/red06.png", "img/red07.png", "img/red08.png", "img/red09.png",
             "img/red10.png", "img/red11.png", "img/red12.png",
-                             "img/red01.png", "img/red02.png", "img/red03.png", "img/red04.png",
+            "img/red01.png", "img/red02.png", "img/red03.png", "img/red04.png",
             "img/red05.png", "img/red06.png", "img/red07.png", "img/red08.png", "img/red09.png",
             "img/red10.png", "img/red11.png", "img/red12.png",
             //yellow | 1x0 | 2x1-9, missTurn, changeDirection, take2Cards
             "img/yellow00.png", "img/yellow01.png", "img/yellow02.png", "img/yellow03.png", "img/yellow04.png",
             "img/yellow05.png", "img/yellow06.png", "img/yellow07.png", "img/yellow08.png", "img/yellow09.png",
             "img/yellow10.png", "img/yellow11.png", "img/yellow12.png",
-                                "img/yellow01.png", "img/yellow02.png", "img/yellow03.png", "img/yellow04.png",
+            "img/yellow01.png", "img/yellow02.png", "img/yellow03.png", "img/yellow04.png",
             "img/yellow05.png", "img/yellow06.png", "img/yellow07.png", "img/yellow08.png", "img/yellow09.png",
             "img/yellow10.png", "img/yellow11.png", "img/yellow12.png",
             //jokers | 4x colorChange, colorChangeTake4
             "img/ajoker00.png", "img/ajoker00.png", "img/ajoker00.png", "img/ajoker00.png",
             "img/ajoker04.png", "img/ajoker04.png", "img/ajoker04.png", "img/ajoker04.png"];
-
         //calls [shuffleArray] & transfers [cardContentAll] as a parameter
         shuffleArray(cardContentAll);
-        
         //the slice() method returns the selected elements in an array, as a new array object
         //assign sliced out elements, dependet on [_cards] as [cardContentHand]'s value
         cardContentHand = cardContentAll.slice(0, _cards);
@@ -90,13 +85,11 @@ namespace A3 {
         cardContentDiscard = cardContentAll.slice(_cards, (_cards + 1));
         //assign sliced out elements, dependet on [_cards] as [cardContentStack]'s value
         cardContentStack = cardContentAll.slice((_cards + 1), cardContentAll.length);
-
         //calls [createSection] & transfers [string] as parameter
         createSection("stack");
         createSection("discard");
         createSection("button");
         createSection("hand");
-
     }
 
     function shuffleArray(_array: string[]): void {
@@ -117,7 +110,6 @@ namespace A3 {
         section.id = _name + "Sec";
         //[main] appends [created section] as it's child 
         main.appendChild(section);
-
         //following commands are dependent on value of parameter [_name]
         switch (_name) {
             //for value ["stack"]
@@ -147,7 +139,6 @@ namespace A3 {
                 }
                 break;
         }
-
     }
 
     function createCard(_src: string, _parent: HTMLElement): void {
@@ -161,7 +152,6 @@ namespace A3 {
             //the substring() method extracts the characters from a string, between two specified indices, & returns the new sub string
             /*color*/_src.substring(4, _src.length - 6),
             /*number*/_src.substring(_src.length - 6, _src.length - 4));
-
         //following commands are dependent on value of parameter [_parent.id]
         switch (_parent.id) {
             //for value ["stackSec"]
@@ -201,7 +191,6 @@ namespace A3 {
         //declare [takenCard] & assgin [cardContentStack.pop()] as it's value
         //the pop() method removes the last element of an array, & returns that element
         let takenCard: string = cardContentStack.pop();
-        
         //if(condition for an empty [cardContentStack] array)
         if (cardContentStack.length < 1) {
             //[true]
@@ -212,7 +201,6 @@ namespace A3 {
             //because the [img] itself has no id this indirect way is necessary to get access to the [stackSec<img]
             document.getElementById("stackSec").firstChild.removeEventListener("click", takeCard);
         }
-
         //the push() method adds new items to the end of an array, & returns the new length
         //push [takenCard] at the end of [cardContentHand]
         cardContentHand.push(takenCard);
@@ -226,25 +214,21 @@ namespace A3 {
         //declare [handPosition] & assgin [array.IndexOf([checkedCard.src])] as it's value
         //the indexOf() method searches the array for the specified item, & returns its position
         let handPosition: number = cardContentHand.indexOf(checkedCard.src);
-        
         //the splice() method adds/removes items to/from an array, & returns the removed item(s)
         //splices out the index element number which is [_event.target]
         cardContentHand.splice(handPosition, 1);
         //push() [checkedCard.src] at the end of [cardContentDiscard]
         cardContentDiscard.push(checkedCard.src);
-        
         //[handSec] removes [_event.target] & it's children
         checkedCard.parentNode.removeChild(checkedCard);
         //remove EventListener from checkedCard | [click] releasing [playCard]
         checkedCard.removeEventListener("click", playCard);
-
         //declare [rotationValues] & assgin [array.string] as it's value
         let rotationValues: string[] = ["0", "22", "45", "67", "90", "112", "135", "157", "180", "202", "225", "247", "270", "292", "315", "337"];
         //declare [random] & assgin [random number between 0 and [length of array] as it's value
         let random: number = Math.floor(Math.random() * rotationValues.length);
         //add rotation.class to [checkedCard]
         checkedCard.classList.add("rotate" + rotationValues[random]);
-        
         //[discardSec] appends [checkedCard] a it's child
         document.getElementById("discardSec").appendChild(checkedCard);
     }

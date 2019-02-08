@@ -15,43 +15,18 @@ namespace probs12 {
     let address: string = "https://eia-2-marchian.herokuapp.com";
     let url: string = "";
 
-    
     //_____initial function
     function init(): void {
 
-       
         // create fieldsets (in "dynamic")
         createFieldsets(items);
-
         // eventListener for change => changeAttributes 
         document.getElementsByTagName("body")[0].addEventListener("input", changeAttributes);
         document.getElementById("uebersicht").addEventListener("click", createOverview);
-
     }
 
     function handleClickOnAsync(): void {
-//        document.getElementById("uebersicht").innerHTML;
-//        let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
-//        for (let i: number = 0; i < inputs.length; i++) {
-//            let input: HTMLInputElement = inputs[i];
-//            if (input.type == "number") {
-//                if (parseInt(input.value) > 0) {
-//                    sendRequestWithCustomData(input.name, parseInt(input.value));
-//                }
-//            }
-//
-//            if (input.checked == true) {
-//                sendRequestWithCustomData(input.value, 1);
-//
-//            }
-//       } 
-
-//        let product: string = (<HTMLInputElement>document.querySelector(":checked")).value;
-
-//        console.log(product);
-        
         sendRequestWithCustomData();
-        
     }
 
     function sendRequestWithCustomData(): void {
@@ -67,11 +42,9 @@ namespace probs12 {
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             console.log("response: " + xhr.response);
 
-         
             document.getElementById("anzeige").innerHTML = xhr.response;
         }
     }
-
 
     //creates all fieldsets in "dynamic" based on data-content
     function createFieldsets(_items: HomoItem): void {
@@ -112,9 +85,7 @@ namespace probs12 {
                 }
             }
         }
-
     }
-
     //_____creates fieldset >> returns created fieldset: HTMLFieldSetElement
     function createFieldset(_parent: HTMLElement, _name: string): HTMLFieldSetElement {
         //create fieldset & legend
@@ -232,8 +203,6 @@ namespace probs12 {
                 writeBasket();
                 break;
 
-
-
             //if target.type=number
             case ("number"):
                 //case 1: target.value=0
@@ -254,7 +223,6 @@ namespace probs12 {
                 writePersonsData();
                 break;
         }
-        
     }
 
     //_creates p's in basket & fills them
@@ -524,11 +492,10 @@ namespace probs12 {
         endpreis += "\n";
 
         alert(caption + txt + endpreis);
-        
+
         handleClickOnAsync();
-        }
-    
-// create <p> >> return paragraph:HTMLParagraphElement
+    }
+    // create <p> >> return paragraph:HTMLParagraphElement
     function createParagraph(_parent: HTMLDivElement): HTMLParagraphElement {
 
         //create <p>
@@ -543,5 +510,4 @@ namespace probs12 {
         //returns <p>
         return paragraph;
     }
-
 }

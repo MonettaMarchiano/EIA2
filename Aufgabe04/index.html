@@ -1,5 +1,4 @@
-<!--
-/* 
+<!--/* 
 Aufgabe: 4
 Name: Monetta Marchiano
 Matrikel: 256063
@@ -8,106 +7,81 @@ Datum: 18.11.2018
 Hiermit versichere ich, dass ich diesen
 Code selbst geschrieben habe. Er wurde
 nicht kopiert und auch nicht diktiert. 
-*/
--->
+*/-->
 
 <!DOCTYPE html>
 <html lang="de">
-	<head>
-		<meta charset="utf-8"/>
-		<title>Aufgabe04</title>
-		<link rel="stylesheet" href="style/style.css" type="text/css" media="screen"/>
-		<script src="scripts/data.js" type="text/javascript" charset="utf-8"></script>
-		<script src="scripts/main.js" type="text/javascript" charset="utf-8"></script>
-	</head>
-	
-	<body>
-	
-		<main>
-	
-		<h1>Der Weihnachtsbaum Generator</h1>
-		<form>
-			<fieldset id="basic">
+<head>
+<meta charset="utf-8" />
+<title>Aufgabe04</title>
+<link rel="stylesheet" href="style/style.css" type="text/css"
+	media="screen" />
+<script src="scripts/data.js" type="text/javascript" charset="utf-8"></script>
+<script src="scripts/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+	<main>
+	<h1>Der Weihnachtsbaum Generator</h1>
+	<form>
+		<fieldset id="basic">
 			<legend>die basics</legend>
-				
-				
-				<div id="baumart" class="container">
+			<div id="baumart" class="container">
 				<!-- basic radioGroup -->
-				</div>
-				
-				<div id="halterung" class="container">
+			</div>
+			<div id="halterung" class="container">
 				<!-- basic radioGroup -->
-				</div>
-			</fieldset>
-	
-	
-			<fieldset id="advanced">
-				<legend>baumschmuck</legend>
-				
-				<div id="beleuchtung" class="container">
+			</div>
+		</fieldset>
+
+		<fieldset id="advanced">
+			<legend>baumschmuck</legend>
+			<div id="beleuchtung" class="container">
 				<!-- radio && stepper && selectbox -->
-				</div>
-				
-				<div id="schmuck" class="container">
+			</div>
+			<div id="schmuck" class="container">
 				<!-- checkbox && stepper && selectbox -->
-				</div>
-				
-				<div id="bio-schmuck" class="container">
+			</div>
+			<div id="bio-schmuck" class="container">
 				<!-- checkbox && stepper && selectbox -->
-				</div>
-				
-				<div id="spitze" class="container">
+			</div>
+			<div id="spitze" class="container">
 				<!-- radio && selectbox -->
-				</div>
-			</fieldset>
-	
-			<fieldset id="daten">
-				<legend>lieferdaten</legend>
-				
-				<div id="lieferung" class="container">
+			</div>
+		</fieldset>
+
+		<fieldset id="daten">
+			<legend>lieferdaten</legend>
+			<div id="lieferung" class="container">
 				<!-- radios && selectbox -->
-				</div>
-				<br>
-				
-				<div id="persDaten">
+			</div>
+			<br>
+			<div id="persDaten">
 				<h4>persönliche angaben</h4>
-				
 				<select name="anrede" id="select">
-				<optgroup label="anrede"></optgroup>
+					<optgroup label="anrede"></optgroup>
 					<option value="frau">frau</option>
 					<option value="herr">herr</option>
 					<option value="familie">familie</option>
-				</select><br>
-				
-				
-				<input type="text" name="nname" placeholder="nachname"/>
-				<input type="text" name="vname" placeholder="vorname"/><br>
-				
-				<input type="text" name="strasse" placeholder="strasse"/>
-				<input type="text" name="hnr" placeholder="nr."/><br>
-				
-				
-				<input type="text" name="plz" placeholder="plz"/>
-				<input type="text" name="ort" placeholder="ort"/><br>
-				
-				<br>
-				<input type="text" name="tel" placeholder="mobil"/>
-				<input type="text" name="email" placeholder="e-mail"/><br>
-				<br>
-				<textarea name="nachricht" cols="30" rows="3" placeholder="nachricht...."></textarea>
-				</div>
-				
-				<button type="submit">bestellung pruefen</button>
-				<button type="reset">delete all</button>
-			</fieldset>
-	
-			<fieldset id="warenkorb">
-				<legend>Warenkorb</legend>
-				<div id="warenkorbText"></div>
-			</fieldset>
-			
-		</form>
-		</main>
-	
-	</body>
+				</select><br> <input type="text" name="nname" placeholder="nachname" />
+				<input type="text" name="vname" placeholder="vorname" /><br> <input
+					type="text" name="strasse" placeholder="strasse" /> <input
+					type="text" name="hnr" placeholder="nr." /><br> <input
+					type="text" name="plz" placeholder="plz" /> <input type="text"
+					name="ort" placeholder="ort" /><br> <br> <input
+					type="text" name="tel" placeholder="mobil" /> <input type="text"
+					name="email" placeholder="e-mail" /><br> <br>
+				<textarea name="nachricht" cols="30" rows="3"
+					placeholder="nachricht...."></textarea>
+			</div>
+			<button type="submit">bestellung pruefen</button>
+			<button type="reset">delete all</button>
+		</fieldset>
+		<fieldset id="warenkorb">
+			<legend>Warenkorb</legend>
+			<div id="warenkorbText"></div>
+		</fieldset>
+	</form>
+	</main>
+</body>
 </html>

@@ -123,7 +123,6 @@ var A05_wbk;
         fieldset.appendChild(legend);
         _parent.appendChild(fieldset);
     }
-    //_______________    
     function dynamicBasket() {
         let basketDiv = document.getElementById("warenkorbText");
     }

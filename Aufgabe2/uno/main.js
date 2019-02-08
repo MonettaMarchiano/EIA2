@@ -11,7 +11,6 @@ nicht kopiert und auch nicht diktiert.
 //namespace machen 
 var Aufgabe2;
 (function (Aufgabe2) {
-    //_____________________________________________________________________________________________________________________
     //ruft function init auf
     document.addEventListener("DOMContentLoaded", init); //sobald DOM geladen ist, wird Funktion init ausgeführt
     function init() {
@@ -21,7 +20,6 @@ var Aufgabe2;
         //Rufe createGame auf(mit dem Parameter cards auf dem prompt)
         //createGame(cards);
     }
-    //_____________________________________________________________________________________________________________________    
     function promptCards() {
         let cards = prompt("Ziehe zwischen 5 und 10 Karten!");
         let cardsSum = parseInt(cards); //parseInt = konvertiert String zu Number
@@ -36,7 +34,6 @@ var Aufgabe2;
             console.log("valide input");
         }
     }
-    //_____________________________________________________________________________________________________________________     
     function createGame(_cards) {
         console.log("*call function createGame*");
         //semantischen elemente werden erstellt
@@ -54,8 +51,6 @@ var Aufgabe2;
         //Funktion die den Footer generiert
         createFooter();
     }
-    //_____________________________________________________________________________________________________________________    
-    //_____________________________________________________________________________________________________________________     
     function createGameArea(_cards, _main) {
         console.log("*call function createGameArea*");
         //kompletter Satz UNO-Karten 
@@ -149,7 +144,6 @@ var Aufgabe2;
             createCard(cardContentHand[i], handSec);
         }
     }
-    //__________________________________________________________________________________________________________________    
     // diese funktion shuffelt das Array durcheinander
     // simuliert mischeln
     // aus dem internet
@@ -165,7 +159,6 @@ var Aufgabe2;
             _array[b] = rndm;
         }
     }
-    //_____________________________________________________________________________________________________________________    
     //das ist die Funktion in der eine einzelne kate erstellt wird, also der div, der die karte sein soll
     function createCard(_src, _parent) {
         console.log("*call function createCard*");
@@ -187,7 +180,6 @@ var Aufgabe2;
         card.appendChild(cardImg);
         console.log(card.id);
     }
-    //__________________________________________________________________________________________________________________    
     function createFooter() {
         console.log("*call function createFooter*");
         let footer = document.createElement("footer");
