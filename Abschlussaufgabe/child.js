@@ -12,12 +12,18 @@ var Abschlussaufgabe_Rodelhang;
             this.xP = Math.random() * 75 + 100;
             this.yP = Math.random() * 75 + 400;
             this.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+            this.childGone = false;
         } //constructor
         move() {
             if (this.md == true)
                 this.moveDown();
             else {
-                this.moveUp();
+                if (this.childGone == true) {
+                    this.moveDown();
+                }
+                else {
+                    this.moveUp();
+                }
             } //else
         } //if
         moveDown() {
@@ -40,15 +46,17 @@ var Abschlussaufgabe_Rodelhang;
             this.draw();
         } //moveUp
         draw() {
-            Abschlussaufgabe_Rodelhang.crc.beginPath();
-            Abschlussaufgabe_Rodelhang.crc.fillStyle = "#000000";
-            Abschlussaufgabe_Rodelhang.crc.arc(this.xP - 20, this.yP - 5, 6, 0, 2 * Math.PI);
-            Abschlussaufgabe_Rodelhang.crc.fill();
-            Abschlussaufgabe_Rodelhang.crc.beginPath();
-            Abschlussaufgabe_Rodelhang.crc.fillStyle = this.colorBody;
-            Abschlussaufgabe_Rodelhang.crc.fillRect(this.xP - 25, this.yP + 2, 10, 20);
-            Abschlussaufgabe_Rodelhang.crc.stroke();
-            Abschlussaufgabe_Rodelhang.crc.fill();
+            if (this.childGone == false) {
+                Abschlussaufgabe_Rodelhang.crc.beginPath();
+                Abschlussaufgabe_Rodelhang.crc.fillStyle = "#000000";
+                Abschlussaufgabe_Rodelhang.crc.arc(this.xP - 20, this.yP - 5, 6, 0, 2 * Math.PI);
+                Abschlussaufgabe_Rodelhang.crc.fill();
+                Abschlussaufgabe_Rodelhang.crc.beginPath();
+                Abschlussaufgabe_Rodelhang.crc.fillStyle = this.colorBody;
+                Abschlussaufgabe_Rodelhang.crc.fillRect(this.xP - 25, this.yP + 2, 10, 20);
+                Abschlussaufgabe_Rodelhang.crc.stroke();
+                Abschlussaufgabe_Rodelhang.crc.fill();
+            }
             //Schlitten
             Abschlussaufgabe_Rodelhang.crc.beginPath();
             Abschlussaufgabe_Rodelhang.crc.moveTo(this.xP - 37, this.yP + 25);

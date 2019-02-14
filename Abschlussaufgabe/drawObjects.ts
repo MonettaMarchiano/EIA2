@@ -15,6 +15,7 @@ namespace Abschlussaufgabe_Rodelhang {
         colorBody: string;
         color: string;
         md: boolean;
+        childGone: boolean;
 
         draw(): void {
 

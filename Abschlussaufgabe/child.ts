@@ -18,6 +18,7 @@ namespace Abschlussaufgabe_Rodelhang {
             this.xP = Math.random() * 75 + 100;
             this.yP = Math.random() * 75 + 400;
             this.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+            this.childGone = false;
         }//constructor
 
         move(): void {
@@ -25,7 +26,13 @@ namespace Abschlussaufgabe_Rodelhang {
                 this.moveDown();
 
             else {
-                this.moveUp();
+
+                if (this.childGone == true) {
+                    this.moveDown();
+                }
+                else {
+                    this.moveUp();
+                }
             }//else
         }//if
 
@@ -56,15 +63,19 @@ namespace Abschlussaufgabe_Rodelhang {
         }//moveUp
 
         draw(): void {
-            crc.beginPath();
-            crc.fillStyle = "#000000";
-            crc.arc(this.xP - 20, this.yP - 5, 6, 0, 2 * Math.PI);
-            crc.fill();
-            crc.beginPath();
-            crc.fillStyle = this.colorBody;
-            crc.fillRect(this.xP - 25, this.yP + 2, 10, 20);
-            crc.stroke();
-            crc.fill();
+
+            if (this.childGone == false) {
+
+                crc.beginPath();
+                crc.fillStyle = "#000000";
+                crc.arc(this.xP - 20, this.yP - 5, 6, 0, 2 * Math.PI);
+                crc.fill();
+                crc.beginPath();
+                crc.fillStyle = this.colorBody;
+                crc.fillRect(this.xP - 25, this.yP + 2, 10, 20);
+                crc.stroke();
+                crc.fill();
+            }
 
             //Schlitten
             crc.beginPath();
