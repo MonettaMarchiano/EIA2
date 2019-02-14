@@ -18,7 +18,7 @@ namespace Abschlussaufgabe_Rodelhang {
     let cloudTwo: CloudTwo;
 
     let fps: number = 25;
-    let i: number = 0;
+    let score: number = 0; 
 
 
     function init(): void {
@@ -44,14 +44,18 @@ namespace Abschlussaufgabe_Rodelhang {
     function hitChild(): void {
 
         if (snowball.radius <= 5) {
+           
 
             for (let i: number = 0; i < objects.length; i++) {
                 if (objects[i] instanceof Child) {
-
-                    if (childHit(i))
+                     
+                    if (childHit(i)) {
                         objects[i].childGone = true;
+                        score += 50;
+                        console.log(score);
+                        
+                      break;
 
-                    else {
                     }
                 }
             }
@@ -66,9 +70,11 @@ namespace Abschlussaufgabe_Rodelhang {
     }
 
     function childHit(_i: number): boolean {
+      
         if (snowball.xP >= objects[_i].xP && snowball.xP <= objects[_i].xP + 100) {
-            if (snowball.yP >= objects[_i].xP && snowball.yP <= objects[_i].yP - 140) {
-
+              
+            if (snowball.yP <= objects[_i].yP && snowball.yP >= objects[_i].yP - 140) {
+            console.log("kind getroffen");
                 return true;
             }
         }
@@ -88,7 +94,12 @@ namespace Abschlussaufgabe_Rodelhang {
     function update(): void {
         crc.putImageData(imagedata, 0, 0);
         window.setTimeout(update, 1000 / fps);
-
+        
+        
+        crc.font = "25px Verdana";
+        crc.fillText("Score" + " " + score, 50, 50);
+        
+        
         if (snowball) {
             hitChild();
         }

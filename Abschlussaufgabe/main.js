@@ -13,7 +13,7 @@ var Abschlussaufgabe_Rodelhang;
     let cloudOne;
     let cloudTwo;
     let fps = 25;
-    let i = 0;
+    let score = 0;
     function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
         Abschlussaufgabe_Rodelhang.crc = canvas.getContext("2d");
@@ -32,9 +32,11 @@ var Abschlussaufgabe_Rodelhang;
         if (snowball.radius <= 5) {
             for (let i = 0; i < objects.length; i++) {
                 if (objects[i] instanceof Abschlussaufgabe_Rodelhang.Child) {
-                    if (childHit(i))
+                    if (childHit(i)) {
                         objects[i].childGone = true;
-                    else {
+                        score += 50;
+                        console.log(score);
+                        break;
                     }
                 }
             }
@@ -48,7 +50,8 @@ var Abschlussaufgabe_Rodelhang;
     }
     function childHit(_i) {
         if (snowball.xP >= objects[_i].xP && snowball.xP <= objects[_i].xP + 100) {
-            if (snowball.yP >= objects[_i].xP && snowball.yP <= objects[_i].yP - 140) {
+            if (snowball.yP <= objects[_i].yP && snowball.yP >= objects[_i].yP - 140) {
+                console.log("kind getroffen");
                 return true;
             }
         }
@@ -65,6 +68,8 @@ var Abschlussaufgabe_Rodelhang;
     function update() {
         Abschlussaufgabe_Rodelhang.crc.putImageData(imagedata, 0, 0);
         window.setTimeout(update, 1000 / fps);
+        Abschlussaufgabe_Rodelhang.crc.font = "25px Verdana";
+        Abschlussaufgabe_Rodelhang.crc.fillText("Score" + " " + score, 50, 50);
         if (snowball) {
             hitChild();
         }
