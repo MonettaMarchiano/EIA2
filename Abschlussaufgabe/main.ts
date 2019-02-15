@@ -18,7 +18,7 @@ namespace Abschlussaufgabe_Rodelhang {
     let cloudTwo: CloudTwo;
 
     let fps: number = 25;
-    let score: number = 0; 
+    let score: number = 0;
 
     function init(): void {
 
@@ -43,17 +43,16 @@ namespace Abschlussaufgabe_Rodelhang {
     function hitChild(): void {
 
         if (snowball.radius <= 5) {
-           
+
             for (let i: number = 0; i < objects.length; i++) {
                 if (objects[i] instanceof Child) {
-                     
+
                     if (childHit(i)) {
                         objects[i].childGone = true;
                         score += 50;
                         console.log(score);
-                        
-                      break;
 
+                        break;
                     }
                 }
             }
@@ -68,11 +67,10 @@ namespace Abschlussaufgabe_Rodelhang {
     }
 
     function childHit(_i: number): boolean {
-      
+
         if (snowball.xP >= objects[_i].xP && snowball.xP <= objects[_i].xP + 100) {
-              
             if (snowball.yP <= objects[_i].yP && snowball.yP >= objects[_i].yP - 140) {
-            console.log("kind getroffen");
+                console.log("kind getroffen");
                 return true;
             }
         }
@@ -83,8 +81,8 @@ namespace Abschlussaufgabe_Rodelhang {
         if (!snowball) {
             snowball = new Snowball();
             objects.push(snowball);
-            snowball.xP = _event.touches[0].clientX;
-            snowball.yP = _event.touches[0].clientY;
+            snowball.xP = _event.touches[0].pageX;
+            snowball.yP = _event.touches[0].pageY;
             console.log("1");
         }
     }
@@ -92,10 +90,10 @@ namespace Abschlussaufgabe_Rodelhang {
     function update(): void {
         crc.putImageData(imagedata, 0, 0);
         window.setTimeout(update, 1000 / fps);
-        
+
         crc.font = "25px Verdana";
         crc.fillText("Score" + " " + score, 50, 50);
-        
+
         if (snowball) {
             hitChild();
         }
@@ -131,7 +129,6 @@ namespace Abschlussaufgabe_Rodelhang {
         cloudOne = new CloudOne();
         cloudTwo = new CloudTwo();
     }//generateClouds
-
 
     function generateChild(): void {
         for (let i: number = 0; i < 50; i++) {

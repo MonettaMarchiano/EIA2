@@ -60,8 +60,8 @@ var Abschlussaufgabe_Rodelhang;
         if (!snowball) {
             snowball = new Abschlussaufgabe_Rodelhang.Snowball();
             objects.push(snowball);
-            snowball.xP = _event.touches[0].clientX;
-            snowball.yP = _event.touches[0].clientY;
+            snowball.xP = _event.touches[0].pageX;
+            snowball.yP = _event.touches[0].pageY;
             console.log("1");
         }
     }
