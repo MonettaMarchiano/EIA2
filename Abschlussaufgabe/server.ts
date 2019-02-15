@@ -39,7 +39,7 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
             Database.insert(highscore);
             respond(_response, "storing data");
             break;
-        case "getHighScore":
+        case "getHighscore":
             Database.findAll(findCallback);
             break;
         

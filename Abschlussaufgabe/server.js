@@ -32,7 +32,7 @@ function handleRequest(_request, _response) {
             Database.insert(highscore);
             respond(_response, "storing data");
             break;
-        case "getHighScore":
+        case "getHighscore":
             Database.findAll(findCallback);
             break;
         default:
