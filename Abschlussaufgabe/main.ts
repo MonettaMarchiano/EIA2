@@ -11,7 +11,8 @@ namespace Abschlussaufgabe_Rodelhang {
 
     export let crc: CanvasRenderingContext2D;
 
-    let name: string;
+    export let name: string;
+    export let score: number = 0;
 
     let objects: DrawObject[] = [];
     let snowball: Snowball;
@@ -20,10 +21,9 @@ namespace Abschlussaufgabe_Rodelhang {
     let cloudTwo: CloudTwo;
 
     let fps: number = 25;
-    let score: number = 0;
-
+    
     function init(): void {
-        console.log("inti");
+        console.log("init");
         document.getElementById("Endbildschirm").hidden = true;
         let spielstartButton: HTMLElement = document.getElementById("Spielbeginn");
         spielstartButton.addEventListener("click", spielstart);
@@ -34,7 +34,7 @@ namespace Abschlussaufgabe_Rodelhang {
         console.log("spielstart");
         document.getElementById("Startbildschirm").hidden = true;
 
-        window.setTimeout(spielende, 3000);
+        window.setTimeout(spielende, 60000);
 
         name = document.getElementsByTagName("input")[0].value;
         if (name != "") {

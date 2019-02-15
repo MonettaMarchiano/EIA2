@@ -7,16 +7,15 @@ Er wurde nicht kopiert und auch nicht diktiert. */
 var Abschlussaufgabe_Rodelhang;
 (function (Abschlussaufgabe_Rodelhang) {
     window.addEventListener("load", init);
-    let name;
+    Abschlussaufgabe_Rodelhang.score = 0;
     let objects = [];
     let snowball;
     let imagedata;
     let cloudOne;
     let cloudTwo;
     let fps = 25;
-    let score = 0;
     function init() {
-        console.log("inti");
+        console.log("init");
         document.getElementById("Endbildschirm").hidden = true;
         let spielstartButton = document.getElementById("Spielbeginn");
         spielstartButton.addEventListener("click", spielstart);
@@ -25,9 +24,9 @@ var Abschlussaufgabe_Rodelhang;
     function spielstart(_event) {
         console.log("spielstart");
         document.getElementById("Startbildschirm").hidden = true;
-        window.setTimeout(spielende, 3000);
-        name = document.getElementsByTagName("input")[0].value;
-        if (name != "") {
+        window.setTimeout(spielende, 60000);
+        Abschlussaufgabe_Rodelhang.name = document.getElementsByTagName("input")[0].value;
+        if (Abschlussaufgabe_Rodelhang.name != "") {
             document.getElementById("Spielbeginn").hidden = true;
             let canvas = document.getElementsByTagName("canvas")[0];
             Abschlussaufgabe_Rodelhang.crc = canvas.getContext("2d");
@@ -49,8 +48,8 @@ var Abschlussaufgabe_Rodelhang;
                 if (objects[i] instanceof Abschlussaufgabe_Rodelhang.Child) {
                     if (childHit(i)) {
                         objects[i].childGone = true;
-                        score += 50;
-                        console.log(score);
+                        Abschlussaufgabe_Rodelhang.score += 50;
+                        console.log(Abschlussaufgabe_Rodelhang.score);
                         break;
                     }
                 }
@@ -94,7 +93,7 @@ var Abschlussaufgabe_Rodelhang;
         Abschlussaufgabe_Rodelhang.crc.putImageData(imagedata, 0, 0);
         window.setTimeout(update, 1000 / fps);
         Abschlussaufgabe_Rodelhang.crc.font = "25px Verdana";
-        Abschlussaufgabe_Rodelhang.crc.fillText("Score" + " " + score, 50, 50);
+        Abschlussaufgabe_Rodelhang.crc.fillText("Score" + " " + Abschlussaufgabe_Rodelhang.score, 50, 50);
         if (snowball) {
             hitChild();
         }
