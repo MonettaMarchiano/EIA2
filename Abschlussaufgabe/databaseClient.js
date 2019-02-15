@@ -37,6 +37,18 @@ var DatabaseClient;
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             console.log(xhr.response);
+            let hs = JSON.parse(xhr.response);
+            function sortScores(_h1, _h2) {
+                if (_h1.score > _h2.score) {
+                    return -1;
+                }
+                if (_h1.score < _h2.score) {
+                    return 1;
+                }
+                return 0;
+            }
+            hs.sort(sortScores);
+            console.log(hs);
         }
     }
 })(DatabaseClient || (DatabaseClient = {}));
