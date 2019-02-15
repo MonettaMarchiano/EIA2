@@ -25,7 +25,7 @@ var Abschlussaufgabe_Rodelhang;
         console.log("spielstart");
         document.getElementById("Startbildschirm").hidden = true;
         document.getElementsByTagName("h1")[0].hidden = true;
-        window.setTimeout(spielende, 10000);
+        window.setTimeout(spielende, 30000);
         Abschlussaufgabe_Rodelhang.name = document.getElementsByTagName("input")[0].value;
         if (Abschlussaufgabe_Rodelhang.name != "") {
             document.getElementById("Spielbeginn").hidden = true;
