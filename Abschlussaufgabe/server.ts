@@ -7,7 +7,7 @@ Er wurde nicht kopiert und auch nicht diktiert. */
 
 import * as Http from "http";
 import * as Url from "url";
-import * as Database from "./Database";
+import * as Database from "./database";
 
 console.log("Server starting");
 

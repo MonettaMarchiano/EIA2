@@ -34,7 +34,7 @@ namespace Abschlussaufgabe_Rodelhang {
         console.log("spielstart");
         document.getElementById("Startbildschirm").hidden = true;
 
-        window.setTimeout(spielende, 60000);
+        window.setTimeout(spielende, 10000);
 
         name = document.getElementsByTagName("input")[0].value;
         if (name != "") {
@@ -120,6 +120,9 @@ namespace Abschlussaufgabe_Rodelhang {
         document.getElementById("Endbildschirm").hidden = false;
         document.getElementsByTagName("h1")[0].hidden = true;
         crc = canvas.getContext("2d");
+        DatabaseClient.insert();
+        DatabaseClient.getHighscore();
+        
     }
 
     function update(): void {

@@ -24,7 +24,7 @@ var Abschlussaufgabe_Rodelhang;
     function spielstart(_event) {
         console.log("spielstart");
         document.getElementById("Startbildschirm").hidden = true;
-        window.setTimeout(spielende, 60000);
+        window.setTimeout(spielende, 10000);
         Abschlussaufgabe_Rodelhang.name = document.getElementsByTagName("input")[0].value;
         if (Abschlussaufgabe_Rodelhang.name != "") {
             document.getElementById("Spielbeginn").hidden = true;
@@ -88,6 +88,8 @@ var Abschlussaufgabe_Rodelhang;
         document.getElementById("Endbildschirm").hidden = false;
         document.getElementsByTagName("h1")[0].hidden = true;
         Abschlussaufgabe_Rodelhang.crc = canvas.getContext("2d");
+        DatabaseClient.insert();
+        DatabaseClient.getHighscore();
     }
     function update() {
         Abschlussaufgabe_Rodelhang.crc.putImageData(imagedata, 0, 0);

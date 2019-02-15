@@ -8,17 +8,17 @@ Er wurde nicht kopiert und auch nicht diktiert. */
 namespace DatabaseClient {
     window.addEventListener("load", init);
    // let serverAddress: string = "http://localhost:8100";
-    let serverAddress: string = "https://eia2-marchian.herokuapp.com";    
+    let serverAddress: string = "https://eia-2-marchian.herokuapp.com";    
 
-    function init(_event: Event): void {
+    function init(): void {
     }
 
-    function insert(_event: Event): void {
+    export function insert(): void {
         let url: string = "command=insert" + "&score=" + Abschlussaufgabe_Rodelhang.score + "&name=" + Abschlussaufgabe_Rodelhang.name;
         sendRequest(url, handleInsertResponse);
     }
 
-    function getHighscore(_event: Event): void {
+    export function getHighscore(): void {
         let url: string = "command=getHighscore";
         sendRequest(url, handleHighscoreResponse);
     }

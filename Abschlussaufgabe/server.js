@@ -7,7 +7,7 @@ Er wurde nicht kopiert und auch nicht diktiert. */
 "use strict";
 const Http = require("http");
 const Url = require("url");
-const Database = require("./Database");
+const Database = require("./database");
 console.log("Server starting");
 let port = process.env.PORT;
 if (port == undefined)
