@@ -30,7 +30,6 @@ var DatabaseClient;
     function handleInsertResponse(_event) {
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            alert(xhr.response);
         }
     }
     function handleHighscoreResponse(_event) {
