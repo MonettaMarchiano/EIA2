@@ -24,7 +24,7 @@ namespace Abschlussaufgabe_Rodelhang {
 
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         crc = canvas.getContext("2d");
-        canvas.addEventListener("touchstart", throwSnowball, false);
+        canvas.addEventListener("touchstart", throwSnowball);
 
         drawSky();
         drawHillside();
@@ -43,7 +43,7 @@ namespace Abschlussaufgabe_Rodelhang {
     function hitChild(): void {
 
         if (snowball.radius <= 5) {
-
+            
             for (let i: number = 0; i < objects.length; i++) {
                 if (objects[i] instanceof Child) {
 
@@ -78,11 +78,15 @@ namespace Abschlussaufgabe_Rodelhang {
 
     function throwSnowball(_event: TouchEvent): void {
 
+        console.log(_event.touches[0].clientX, _event.touches[0].clientY);
         if (!snowball) {
             snowball = new Snowball();
-            objects.push(snowball);
+            
             snowball.xP = _event.touches[0].pageX;
             snowball.yP = _event.touches[0].pageY;
+            console.log(snowball.xP, snowball.yP);
+            
+            objects.push(snowball);
             console.log("1");
         }
     }

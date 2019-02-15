@@ -17,7 +17,7 @@ var Abschlussaufgabe_Rodelhang;
     function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
         Abschlussaufgabe_Rodelhang.crc = canvas.getContext("2d");
-        canvas.addEventListener("touchstart", throwSnowball, false);
+        canvas.addEventListener("touchstart", throwSnowball);
         drawSky();
         drawHillside();
         drawSun();
@@ -57,11 +57,13 @@ var Abschlussaufgabe_Rodelhang;
         }
     }
     function throwSnowball(_event) {
+        console.log(_event.touches[0].clientX, _event.touches[0].clientY);
         if (!snowball) {
             snowball = new Abschlussaufgabe_Rodelhang.Snowball();
-            objects.push(snowball);
             snowball.xP = _event.touches[0].pageX;
             snowball.yP = _event.touches[0].pageY;
+            console.log(snowball.xP, snowball.yP);
+            objects.push(snowball);
             console.log("1");
         }
     }
