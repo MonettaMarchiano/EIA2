@@ -7,6 +7,7 @@ Er wurde nicht kopiert und auch nicht diktiert. */
 var Abschlussaufgabe_Rodelhang;
 (function (Abschlussaufgabe_Rodelhang) {
     window.addEventListener("load", init);
+    let name;
     let objects = [];
     let snowball;
     let imagedata;
@@ -15,18 +16,32 @@ var Abschlussaufgabe_Rodelhang;
     let fps = 25;
     let score = 0;
     function init() {
-        let canvas = document.getElementsByTagName("canvas")[0];
-        Abschlussaufgabe_Rodelhang.crc = canvas.getContext("2d");
-        canvas.addEventListener("touchstart", throwSnowball);
-        drawSky();
-        drawHillside();
-        drawSun();
-        generateTrees();
-        generateSnow();
-        generateClouds();
-        generateChild();
-        imagedata = Abschlussaufgabe_Rodelhang.crc.getImageData(0, 0, canvas.width, canvas.height);
-        update();
+        console.log("inti");
+        document.getElementById("Endbildschirm").hidden = true;
+        let spielstartButton = document.getElementById("Spielbeginn");
+        spielstartButton.addEventListener("touch", spielstart);
+        console.log(spielstartButton);
+    }
+    function spielstart(_event) {
+        console.log("spielstart");
+        document.getElementById("Startbildschirm").hidden = true;
+        window.setTimeout(spielende, 3000);
+        name = document.getElementsByTagName("input")[0].value;
+        if (name != "") {
+            document.getElementById("Spielbeginn").hidden = true;
+            let canvas = document.getElementsByTagName("canvas")[0];
+            Abschlussaufgabe_Rodelhang.crc = canvas.getContext("2d");
+            canvas.addEventListener("touchstart", throwSnowball);
+            drawSky();
+            drawHillside();
+            drawSun();
+            generateTrees();
+            generateSnow();
+            generateClouds();
+            generateChild();
+            imagedata = Abschlussaufgabe_Rodelhang.crc.getImageData(0, 0, canvas.width, canvas.height);
+            update();
+        }
     }
     function hitChild() {
         if (snowball.radius <= 5) {
@@ -67,6 +82,12 @@ var Abschlussaufgabe_Rodelhang;
             objects.push(snowball);
             console.log("1");
         }
+    }
+    function spielende() {
+        let canvas = document.getElementsByTagName("canvas")[0];
+        canvas.hidden = true;
+        document.getElementById("Endbildschirm").style.display = "";
+        Abschlussaufgabe_Rodelhang.crc = canvas.getContext("2d");
     }
     function update() {
         Abschlussaufgabe_Rodelhang.crc.putImageData(imagedata, 0, 0);

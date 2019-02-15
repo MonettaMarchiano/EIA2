@@ -11,6 +11,8 @@ namespace Abschlussaufgabe_Rodelhang {
 
     export let crc: CanvasRenderingContext2D;
 
+    let name: string;
+
     let objects: DrawObject[] = [];
     let snowball: Snowball;
     let imagedata: ImageData;
@@ -21,29 +23,47 @@ namespace Abschlussaufgabe_Rodelhang {
     let score: number = 0;
 
     function init(): void {
+        console.log("inti");
+        document.getElementById("Endbildschirm").hidden = true;
+        let spielstartButton: HTMLElement = document.getElementById("Spielbeginn");
+        spielstartButton.addEventListener("touch", spielstart);
+        console.log(spielstartButton);
+    }
 
-        let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
-        crc = canvas.getContext("2d");
-        canvas.addEventListener("touchstart", throwSnowball);
+    function spielstart(_event: Event): void {
+        console.log("spielstart");
+        document.getElementById("Startbildschirm").hidden = true;
 
-        drawSky();
-        drawHillside();
-        drawSun();
+        window.setTimeout(spielende, 3000);
 
-        generateTrees();
-        generateSnow();
-        generateClouds();
-        generateChild();
+        name = document.getElementsByTagName("input")[0].value;
+        if (name != "") {
 
-        imagedata = crc.getImageData(0, 0, canvas.width, canvas.height);
+            document.getElementById("Spielbeginn").hidden = true;
 
-        update();
+            let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
+            crc = canvas.getContext("2d");
+            canvas.addEventListener("touchstart", throwSnowball);
+
+            drawSky();
+            drawHillside();
+            drawSun();
+
+            generateTrees();
+            generateSnow();
+            generateClouds();
+            generateChild();
+
+            imagedata = crc.getImageData(0, 0, canvas.width, canvas.height);
+
+            update();
+        }
     }
 
     function hitChild(): void {
 
         if (snowball.radius <= 5) {
-            
+
             for (let i: number = 0; i < objects.length; i++) {
                 if (objects[i] instanceof Child) {
 
@@ -77,19 +97,28 @@ namespace Abschlussaufgabe_Rodelhang {
     }
 
     function throwSnowball(_event: TouchEvent): void {
+
         _event.preventDefault();
 
         console.log(_event.touches[0].clientX, _event.touches[0].clientY);
         if (!snowball) {
             snowball = new Snowball();
-            
+
             snowball.xP = _event.touches[0].pageX;
             snowball.yP = _event.touches[0].pageY;
             console.log(snowball.xP, snowball.yP);
-            
+
             objects.push(snowball);
             console.log("1");
         }
+    }
+
+    function spielende(): void {
+
+        let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
+        canvas.hidden = true;
+        document.getElementById("Endbildschirm").style.display = "";
+        crc = canvas.getContext("2d");
     }
 
     function update(): void {
