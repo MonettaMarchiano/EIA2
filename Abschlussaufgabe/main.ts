@@ -20,7 +20,6 @@ namespace Abschlussaufgabe_Rodelhang {
     let fps: number = 25;
     let score: number = 0; 
 
-
     function init(): void {
 
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
@@ -45,7 +44,6 @@ namespace Abschlussaufgabe_Rodelhang {
 
         if (snowball.radius <= 5) {
            
-
             for (let i: number = 0; i < objects.length; i++) {
                 if (objects[i] instanceof Child) {
                      
@@ -95,10 +93,8 @@ namespace Abschlussaufgabe_Rodelhang {
         crc.putImageData(imagedata, 0, 0);
         window.setTimeout(update, 1000 / fps);
         
-        
         crc.font = "25px Verdana";
         crc.fillText("Score" + " " + score, 50, 50);
-        
         
         if (snowball) {
             hitChild();
