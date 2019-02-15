@@ -33,6 +33,7 @@ namespace Abschlussaufgabe_Rodelhang {
     function spielstart(_event: Event): void {
         console.log("spielstart");
         document.getElementById("Startbildschirm").hidden = true;
+        document.getElementsByTagName("h1")[0].hidden = true;
 
         window.setTimeout(spielende, 10000);
 
@@ -121,8 +122,7 @@ namespace Abschlussaufgabe_Rodelhang {
         document.getElementsByTagName("h1")[0].hidden = true;
         crc = canvas.getContext("2d");
         DatabaseClient.insert();
-        DatabaseClient.getHighscore();
-        
+        DatabaseClient.getHighscore();       
     }
 
     function update(): void {

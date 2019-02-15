@@ -51,12 +51,18 @@ namespace DatabaseClient {
                 if (_h1.score < _h2.score) {
                     return 1;
                 }
-
                 return 0;
             }
 
             hs.sort(sortScores);
             console.log(hs);
+
+            for (let i: number = 0; i < hs.length; i++) {
+                let div: HTMLDivElement = document.createElement("div");
+                document.getElementById("highscore").appendChild(div);
+                div.innerHTML = hs[i].name + ": ";
+                div.innerHTML += hs[i].score;
+            }
         }
     }
 }

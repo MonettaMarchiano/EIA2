@@ -49,6 +49,12 @@ var DatabaseClient;
             }
             hs.sort(sortScores);
             console.log(hs);
+            for (let i = 0; i < hs.length; i++) {
+                let div = document.createElement("div");
+                document.getElementById("highscore").appendChild(div);
+                div.innerHTML = hs[i].name + ": ";
+                div.innerHTML += hs[i].score;
+            }
         }
     }
 })(DatabaseClient || (DatabaseClient = {}));
