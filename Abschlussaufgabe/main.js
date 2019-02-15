@@ -19,7 +19,7 @@ var Abschlussaufgabe_Rodelhang;
         console.log("inti");
         document.getElementById("Endbildschirm").hidden = true;
         let spielstartButton = document.getElementById("Spielbeginn");
-        spielstartButton.addEventListener("touch", spielstart);
+        spielstartButton.addEventListener("click", spielstart);
         console.log(spielstartButton);
     }
     function spielstart(_event) {
@@ -86,7 +86,8 @@ var Abschlussaufgabe_Rodelhang;
     function spielende() {
         let canvas = document.getElementsByTagName("canvas")[0];
         canvas.hidden = true;
-        document.getElementById("Endbildschirm").style.display = "";
+        document.getElementById("Endbildschirm").hidden = false;
+        document.getElementsByTagName("h1")[0].hidden = true;
         Abschlussaufgabe_Rodelhang.crc = canvas.getContext("2d");
     }
     function update() {

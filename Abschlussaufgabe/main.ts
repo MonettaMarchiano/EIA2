@@ -26,7 +26,7 @@ namespace Abschlussaufgabe_Rodelhang {
         console.log("inti");
         document.getElementById("Endbildschirm").hidden = true;
         let spielstartButton: HTMLElement = document.getElementById("Spielbeginn");
-        spielstartButton.addEventListener("touch", spielstart);
+        spielstartButton.addEventListener("click", spielstart);
         console.log(spielstartButton);
     }
 
@@ -117,7 +117,8 @@ namespace Abschlussaufgabe_Rodelhang {
 
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         canvas.hidden = true;
-        document.getElementById("Endbildschirm").style.display = "";
+        document.getElementById("Endbildschirm").hidden = false;
+        document.getElementsByTagName("h1")[0].hidden = true;
         crc = canvas.getContext("2d");
     }
 
