@@ -17,6 +17,8 @@ namespace Abschlussaufgabe_Rodelhang {
         md: boolean;
         childGone: boolean;
 
+        constructor () {
+            }
         draw(): void {
 
         }

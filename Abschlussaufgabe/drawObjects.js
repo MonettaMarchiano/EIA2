@@ -7,6 +7,8 @@ Er wurde nicht kopiert und auch nicht diktiert. */
 var Abschlussaufgabe_Rodelhang;
 (function (Abschlussaufgabe_Rodelhang) {
     class DrawObject {
+        constructor() {
+        }
         draw() {
         }
         move() {

@@ -12,7 +12,6 @@ namespace Abschlussaufgabe_Rodelhang {
         radius: number;
 
         constructor() {
-
             super();
             this.radius = 25;
         }
