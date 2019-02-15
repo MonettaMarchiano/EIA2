@@ -30,7 +30,7 @@ input {
 }
 
 canvas {
-	width: screen-width;
-	height: screen-height;
+	width: max. screen-width;
+	height: max. screen-height;
 	
 }
