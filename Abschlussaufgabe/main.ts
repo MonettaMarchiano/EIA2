@@ -77,6 +77,7 @@ namespace Abschlussaufgabe_Rodelhang {
     }
 
     function throwSnowball(_event: TouchEvent): void {
+        _event.preventDefault();
 
         console.log(_event.touches[0].clientX, _event.touches[0].clientY);
         if (!snowball) {

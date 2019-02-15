@@ -57,6 +57,7 @@ var Abschlussaufgabe_Rodelhang;
         }
     }
     function throwSnowball(_event) {
+        _event.preventDefault();
         console.log(_event.touches[0].clientX, _event.touches[0].clientY);
         if (!snowball) {
             snowball = new Abschlussaufgabe_Rodelhang.Snowball();
