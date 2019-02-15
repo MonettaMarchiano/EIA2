@@ -12,6 +12,18 @@ html { font-family: 'Abril Fatface', cursive;
 }
 
 fieldset {
-	max-width: 500px;
-	
+	max-width: 400px;
+	font-size: 3em;
+}
+
+button {
+	font-size: 2em;
+	font-family: 'Abril Fatface', cursive;
+}
+
+input {
+	width: 15em;
+	height: 2em;
+	font-size: 1em;
+	font-family: 'Abril Fatface', cursive;
 }
