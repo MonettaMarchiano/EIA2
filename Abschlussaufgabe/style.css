@@ -5,8 +5,13 @@ Datum: 11.02.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
 Er wurde nicht kopiert und auch nicht diktiert. */
 
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
 
-font-family: { 'Permanent Marker', cursive;
+html { font-family: 'Abril Fatface', cursive;
+	
+}
+
+fieldset {
+	max-width: 500px;
 	
 }
